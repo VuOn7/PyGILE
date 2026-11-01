@@ -2,7 +2,7 @@
 
 A complete, hands-on course in Python and geospatial science for **absolute beginners**: no coding and no GIS experience needed. Every example uses data from Nepal and the Himalaya.
 
-> **Status:** Part A (Python), Part B (vector GIS) and Part C (rasters) are ready: 29 lessons and 786 practice questions. Parts D and E are being written. The four older satellite-imagery notebooks left in `../pyGILE_notebooks/` stay available until Part D replaces them.
+> **Status:** Parts A (Python), B (vector GIS) and C (rasters) and the first three lessons of Part D (satellite imagery) are ready: 32 lessons and 867 practice questions. D4 (land-cover classification) and Part E are being written. The one older notebook left in `../pyGILE_notebooks/` stays available until D4 replaces it.
 
 Every lesson has a navigation bar at the top and bottom, so you can move through the course like a book: **← Previous · Course home · Next →**.
 
@@ -73,16 +73,28 @@ All eight lessons use one real elevation model: a 30 m Copernicus DEM from the K
 
 **Part C total: 222 questions with worked solutions.**
 
+## Part D · Satellite imagery: the 2021 Melamchi flood
+
+Two Sentinel-2 images of the Melamchi valley in Sindhupalchok, from 29 October 2020 and 11 November 2021, before and after the June 2021 debris flow and flood.
+
+| Lesson | You will learn | Questions |
+| --- | --- | --- |
+| [D1 · Satellite images and spectral bands](D_Imagery/D01_Satellite_images_and_spectral_bands.ipynb) | What a satellite measures, multi-band images, reflectance, true and false colour, spectral profiles | 28 |
+| [D2 · Spectral indices](D_Imagery/D02_Spectral_indices.ipynb) | Safe band maths, NDVI, NDWI and MNDWI, thresholds and areas, NDVI against elevation | 25 |
+| [D3 · Change detection: the 2021 Melamchi flood](D_Imagery/D03_Change_detection_Melamchi_flood.ipynb) | Image differencing, thresholds and their effect on area, cleaning masks, false change, a terrain rule, flood polygons and a final map | 28 |
+| D4 · Land-cover classification | *Being written* | |
+
+**Part D so far: 81 questions with worked solutions.**
+
 ## Coming next
 
-- **Part D · Satellite imagery:** Sentinel-2 through STAC, spectral indices, change detection, classification.
 - **Part E · Capstone:** a landslide susceptibility model, leading on to PyGILE-Plus.
 
 ## Folders
 
 | Folder | Contents |
 | --- | --- |
-| `A_Python/`, `B_Vector/`, `C_Raster/` | The lessons |
+| `A_Python/`, `B_Vector/`, `C_Raster/`, `D_Imagery/` | The lessons |
 | `data/` | Small datasets used by the lessons, with sources and licences (see `data/README.md`) |
 | `images/` | Concept diagrams used by the lessons (see `images/README.md`) |
 | `outputs/` | Files the lessons write. Created when you run them and ignored by git |
