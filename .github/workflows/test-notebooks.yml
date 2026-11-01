@@ -33,4 +33,4 @@ jobs:
 
       - name: Run all notebooks (original notebooks and the new course)
         run: |
-          pytest --nbmake --nbmake-timeout=600 PyGILE_course pyGILE_notebooks
+          pytest --nbmake --nbmake-timeout=600 PyGILE_course

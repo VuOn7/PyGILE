@@ -91,9 +91,9 @@ Once you've completed the installation:
 
 1. **Start Jupyter Lab** - This opens your web-based coding environment
 2. **Open the course** - Go to [`PyGILE_course/`](PyGILE_course/README.md) and start with Lesson A1
-3. **Start learning!** - Each lesson links to the next. The one older notebook left in [`pyGILE_notebooks/`](pyGILE_notebooks) stays until Lesson D4 replaces it
+3. **Start learning!** - Each lesson links to the next
 
-Files the lessons create are saved in `PyGILE_course/outputs/` (older notebooks use `pygis/temp/`). Git ignores both folders, so your outputs never get mixed into the course files.
+Files the lessons create are saved in `PyGILE_course/outputs/`. Git ignores that folder, so your outputs never get mixed into the course files.
 
 ## Need Help?
 

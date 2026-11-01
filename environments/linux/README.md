@@ -99,7 +99,7 @@ Every time you want to use PyGILE:
 2. `mamba activate pygile`
 3. `jupyter lab`
 
-Navigate to pyGILE-main folder and open notebooks in pyGILE_notebooks folder
+Navigate to the PyGILE folder, open PyGILE_course and start with Lesson A1
 
 ## Installed Packages
 

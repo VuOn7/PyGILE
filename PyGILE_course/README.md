@@ -2,7 +2,7 @@
 
 A complete, hands-on course in Python and geospatial science for **absolute beginners**: no coding and no GIS experience needed. Every example uses data from Nepal and the Himalaya.
 
-> **Status:** Parts A (Python), B (vector GIS) and C (rasters) and the first three lessons of Part D (satellite imagery) are ready: 32 lessons and 867 practice questions. D4 (land-cover classification) and Part E are being written. The one older notebook left in `../pyGILE_notebooks/` stays available until D4 replaces it.
+> **Status:** Parts A (Python), B (vector GIS) and C (rasters) and the first three lessons of Part D (satellite imagery) are ready: 32 lessons and 867 practice questions. D4 (land-cover classification) and Part E are being written. All the older pyGILE notebooks have now been rewritten into the course; the last one, on machine learning, sits in `D_Imagery/` until D4 replaces it.
 
 Every lesson has a navigation bar at the top and bottom, so you can move through the course like a book: **← Previous · Course home · Next →**.
 
@@ -82,7 +82,7 @@ Two Sentinel-2 images of the Melamchi valley in Sindhupalchok, from 29 October 2
 | [D1 · Satellite images and spectral bands](D_Imagery/D01_Satellite_images_and_spectral_bands.ipynb) | What a satellite measures, multi-band images, reflectance, true and false colour, spectral profiles | 28 |
 | [D2 · Spectral indices](D_Imagery/D02_Spectral_indices.ipynb) | Safe band maths, NDVI, NDWI and MNDWI, thresholds and areas, NDVI against elevation | 25 |
 | [D3 · Change detection: the 2021 Melamchi flood](D_Imagery/D03_Change_detection_Melamchi_flood.ipynb) | Image differencing, thresholds and their effect on area, cleaning masks, false change, a terrain rule, flood polygons and a final map | 28 |
-| D4 · Land-cover classification | *Being written* | |
+| D4 · Land-cover classification | *Being written.* Until then, the older notebook [Spatial prediction with ML](D_Imagery/D_extra_Spatial_prediction_with_ML.ipynb) shows a land-cover classification on a Landsat example image (no practice questions) | |
 
 **Part D so far: 81 questions with worked solutions.**
 

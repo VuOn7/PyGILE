@@ -3,9 +3,6 @@ pygis/temp/*
 !pygis/temp/.gitkeep
 pygis/data/temp/
 outputs/
-pyGILE_notebooks/**/*.tif
-pyGILE_notebooks/**/*.TIF
-pyGILE_notebooks/**/*.nc
 
 # GDAL side files created when rasters are opened
 *.aux.xml
