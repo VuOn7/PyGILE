@@ -34,3 +34,5 @@ Small files used by the lessons, kept tiny so the course works offline.
 Spellings follow the source data, which sometimes differ from common usage: for example the boundary layer writes **Chitawan**, while the practice landslide file writes **Chitwan**. Lesson B6 shows how to find and fix such mismatches, a very common problem with real data.
 
 `make_data.py` rebuilds the Part B files and the Part C DEM from the original sources. The made-up practice files are kept as they are.
+
+`get_sentinel2_melamchi.py` downloads the two Sentinel-2 images of the Melamchi valley (before and after the June 2021 flood) that Part D will use. Run it once in the PyGILE-Plus container or the `pygile` environment.
