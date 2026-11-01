@@ -28,7 +28,7 @@ PyGILE is an educational/application toolkit that includes:
 
 ## New: the PyGILE Course
 
-A step-by-step course for absolute beginners, in [`PyGILE_course/`](PyGILE_course/README.md). Every step has theory, a worked example on Nepal data, and practice questions with worked solutions; the lessons are linked in order like a book. **Ready now: Part A · Python (10 lessons) and Part B · Vector GIS (11 lessons), with 564 practice questions.** Parts C (rasters), D (satellite imagery) and E (a landslide capstone) are in progress.
+A step-by-step course for absolute beginners, in [`PyGILE_course/`](PyGILE_course/README.md). Every step has theory, a worked example on Nepal data, and practice questions with worked solutions; the lessons are linked in order like a book. **Ready now: Part A · Python (10 lessons), Part B · Vector GIS (11 lessons) and Part C · Rasters (8 lessons), with 786 practice questions.** Parts D (satellite imagery) and E (a landslide capstone) are in progress.
 
 ## Getting Started
 
@@ -77,6 +77,12 @@ docker run -it --name pygile -p 127.0.0.1:8888:8888 -v "${PWD}:/workspace/PyGILE
 
 (Windows Command Prompt: replace `${PWD}` with `%cd%`.) Then open http://localhost:8888 and go to the `PyGILE` folder. Your work is saved in your own PyGILE folder.
 
+One small library is missing from the image: `matplotlib-scalebar`, which draws the scale bars in Lesson B11. Add it once, from a terminal in JupyterLab (**File → New → Terminal**):
+
+```bash
+pip install matplotlib-scalebar
+```
+
 Note: the image is large, because PyGILE-Plus also includes SAGA, GRASS, Orfeo ToolBox and deep-learning libraries. On a slow connection, Option 1 or 2 is quicker. The `127.0.0.1` part keeps Jupyter visible only on your own computer, which matters on shared Wi-Fi.
 
 ## How to Use PyGILE
@@ -85,7 +91,7 @@ Once you've completed the installation:
 
 1. **Start Jupyter Lab** - This opens your web-based coding environment
 2. **Open the course** - Go to [`PyGILE_course/`](PyGILE_course/README.md) and start with Lesson A1
-3. **Start learning!** - Each lesson links to the next. The older raster and remote-sensing notebooks are in [`pyGILE_notebooks/`](pyGILE_notebooks) until the course replaces them
+3. **Start learning!** - Each lesson links to the next. The few older satellite-imagery notebooks left in [`pyGILE_notebooks/`](pyGILE_notebooks) stay until Part D replaces them
 
 Files the lessons create are saved in `PyGILE_course/outputs/` (older notebooks use `pygis/temp/`). Git ignores both folders, so your outputs never get mixed into the course files.
 

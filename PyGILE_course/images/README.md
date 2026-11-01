@@ -5,7 +5,7 @@ Concept diagrams used in the lessons. All of them come from the [pyGIS project](
 | File | Used in | Original file in this repository |
 | --- | --- | --- |
 | `lat_vs_lon.png` | B1 | `pygis/_static/img/lat_vs_lon.png` |
-| `vector_vs_raster.jpg` | B1 | `pygis/_static/img/vector_vs_raster.jpg` |
+| `vector_vs_raster.jpg` | B1, C1 | `pygis/_static/img/vector_vs_raster.jpg` |
 | `mercator_vs_equal_area.png` | B4 | rendered to PNG from `pygis/_static/img/Cylindrical_Examples.svg` |
 | `join_types.jpg` | B6, B9 | `pygis/_static/img/join_types.jpg` |
 | `vector_intersection.jpg` | B9 | `pygis/_static/img/vector_intersection.jpg` |

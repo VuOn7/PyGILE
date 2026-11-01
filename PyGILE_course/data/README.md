@@ -21,6 +21,16 @@ Small files used by the lessons, kept tiny so the course works offline.
 | `world_countries.geojson` | Countries of the world at 1:110 million scale, for location maps | [Natural Earth](https://www.naturalearthdata.com/) (public domain) |
 | `everest_trek.csv` | Eight stops on the Lukla–Everest Base Camp trek with elevation | Approximate coordinates and commonly cited elevations, for teaching |
 
+## Part C
+
+| File | What it is | Source and licence |
+| --- | --- | --- |
+| `dem_kathmandu_melamchi.tif` | Digital elevation model of the Kathmandu Valley and Sindhupalchok (85.2–85.8° E, 27.55–28.0° N), 1 arc-second (about 30 m) cells, WGS84, elevations in whole metres (`int16`) | Clipped from the Copernicus DEM GLO-30 tile N27 E085 (see the notice below) |
+| `practice_landslides_melamchi.csv` | 60 landslide points inside the DEM area, with area | **Made-up practice data.** Points were placed at random, more often on slopes steeper than about 15°, to imitate how real landslides favour steep ground. They are not observations |
+| `practice_rain_gauges.csv` | 24 rain gauges with elevation and annual rainfall | **Made-up practice data.** Rainfall was set to rise with elevation plus random noise; the values are not measurements |
+
+**Copernicus DEM notice (required by its licence).** `dem_kathmandu_melamchi.tif` was produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM-30. This course is not endorsed by the Copernicus programme, the European Union, ESA, DLR or Airbus. Anyone who redistributes this file must keep this notice.
+
 Spellings follow the source data, which sometimes differ from common usage: for example the boundary layer writes **Chitawan**, while the practice landslide file writes **Chitwan**. Lesson B6 shows how to find and fix such mismatches, a very common problem with real data.
 
-`make_data.py` rebuilds the Part B files from the original sources.
+`make_data.py` rebuilds the Part B files and the Part C DEM from the original sources. The made-up practice files are kept as they are.

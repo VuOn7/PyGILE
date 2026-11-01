@@ -2,7 +2,7 @@
 
 A complete, hands-on course in Python and geospatial science for **absolute beginners**: no coding and no GIS experience needed. Every example uses data from Nepal and the Himalaya.
 
-> **Status:** Part A (Python) and Part B (vector GIS) are ready: 21 lessons and 564 practice questions. Parts C to E are being written. The older raster and remote-sensing notebooks in `../pyGILE_notebooks/` stay available until Parts C and D replace them.
+> **Status:** Part A (Python), Part B (vector GIS) and Part C (rasters) are ready: 29 lessons and 786 practice questions. Parts D and E are being written. The four older satellite-imagery notebooks left in `../pyGILE_notebooks/` stay available until Part D replaces them.
 
 Every lesson has a navigation bar at the top and bottom, so you can move through the course like a book: **← Previous · Course home · Next →**.
 
@@ -56,9 +56,25 @@ Type your answer in the empty cell under each question, run it, then click **Sho
 
 **Part B total: 289 questions with worked solutions.**
 
+## Part C · Rasters: the terrain of the Kathmandu Valley and Melamchi
+
+All eight lessons use one real elevation model: a 30 m Copernicus DEM from the Kathmandu Valley to the Melamchi valley (85.2–85.8°E, 27.55–28.0°N).
+
+| Lesson | You will learn | Questions |
+| --- | --- | --- |
+| [C1 · What a raster is](C_Raster/C01_What_a_raster_is.ipynb) | Cells, resolution, bands, nodata, the transform; reading and writing GeoTIFFs | 28 |
+| [C2 · Plotting rasters](C_Raster/C02_Plotting_rasters.ipynb) | `imshow`, colour maps, `extent`, colour bars, stretches, hillshade under colour | 28 |
+| [C3 · Clip, mask and subset](C_Raster/C03_Clip_mask_and_subset.ipynb) | Windows, clipping to a box, masking with district polygons | 28 |
+| [C4 · Reproject, resample and mosaic](C_Raster/C04_Reproject_resample_and_mosaic.ipynb) | The DEM on a 30 m UTM grid, resampling methods, coarser cells, mosaics | 28 |
+| [C5 · Raster algebra and reclassification](C_Raster/C05_Raster_algebra_and_reclassification.ipynb) | Arithmetic on whole grids, conditions, elevation zones, filling gaps | 28 |
+| [C6 · Terrain analysis](C_Raster/C06_Terrain_analysis.ipynb) | Slope, aspect and hillshade, and the degrees-versus-metres trap | 28 |
+| [C7 · Vector and raster together](C_Raster/C07_Vector_and_raster_together.ipynb) | Sampling slope at landslides, zonal statistics, rasterizing, distance grids | 28 |
+| [C8 · Interpolation](C_Raster/C08_Interpolation.ipynb) | Nearest neighbour, IDW and kriging from 24 rain gauges, tested honestly | 26 |
+
+**Part C total: 222 questions with worked solutions.**
+
 ## Coming next
 
-- **Part C · Rasters:** elevation models of Nepal, clipping, reprojecting, slope, aspect and hillshade, zonal statistics, interpolation.
 - **Part D · Satellite imagery:** Sentinel-2 through STAC, spectral indices, change detection, classification.
 - **Part E · Capstone:** a landslide susceptibility model, leading on to PyGILE-Plus.
 
@@ -66,7 +82,7 @@ Type your answer in the empty cell under each question, run it, then click **Sho
 
 | Folder | Contents |
 | --- | --- |
-| `A_Python/`, `B_Vector/` | The lessons |
+| `A_Python/`, `B_Vector/`, `C_Raster/` | The lessons |
 | `data/` | Small datasets used by the lessons, with sources and licences (see `data/README.md`) |
 | `images/` | Concept diagrams used by the lessons (see `images/README.md`) |
 | `outputs/` | Files the lessons write. Created when you run them and ignored by git |
