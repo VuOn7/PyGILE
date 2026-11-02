@@ -38,8 +38,11 @@ Small files used by the lessons, kept tiny so the course works offline.
 | `s2_melamchi_before.tif` | Sentinel-2 Level-2A surface reflectance of the Melamchi valley, 29 October 2020: 10 bands (B02, B03, B04, B05, B06, B07, B08, B8A, B11, B12), resampled to one 20 m grid in UTM 45N (EPSG:32645), 1006 × 702 cells, `uint16`, nodata 0. Multiply by 0.0001 for reflectance | Copernicus Sentinel-2 (free and open), through Microsoft Planetary Computer; made with `get_sentinel2_melamchi.py` |
 | `s2_melamchi_after.tif` | The same grid and bands, 11 November 2021, after the June 2021 Melamchi flood | As above |
 | `s2_melamchi_scenes.csv` | The two scenes used, with dates and cloud cover | As above |
+| `worldcover_melamchi_2021.tif` | ESA WorldCover 2021 land cover on the same 20 m grid as the Sentinel-2 images (the most common 10 m class in each 20 m cell), `uint8`, nodata 0. Codes: 10 tree cover, 30 grassland, 40 cropland, 50 built-up, 60 bare or sparse vegetation, 80 permanent water | [ESA WorldCover](https://esa-worldcover.org/) 2021 (v200), CC BY 4.0, through Microsoft Planetary Computer; made with `get_worldcover_melamchi.py` |
 
 **Sentinel-2 credit (required).** Contains modified Copernicus Sentinel data 2020–2021, processed by ESA.
+
+**WorldCover credit (required, CC BY 4.0).** © ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium.
 
 Spellings follow the source data, which sometimes differ from common usage: for example the boundary layer writes **Chitawan**, while the practice landslide file writes **Chitwan**. Lesson B6 shows how to find and fix such mismatches, a very common problem with real data.
 
