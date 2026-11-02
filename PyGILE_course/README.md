@@ -2,7 +2,7 @@
 
 A complete, hands-on course in Python and geospatial science for **absolute beginners**: no coding and no GIS experience needed. Every example uses data from Nepal and the Himalaya.
 
-> **Status:** Parts A to D are ready: 33 lessons and 896 practice questions, from your first line of Python to classifying satellite images. The course ends with Part D; [PyGILE-Plus](https://github.com/Geoinformatics-Lab/PyGILE-Plus) continues from there.
+> **Status:** Parts A to D are ready: 36 lessons and 977 practice questions, from your first line of Python to classifying satellite images. Three more lessons are being written: A11 (dates and time series), D5 (roads and networks) and D6 (image time series).
 
 Every lesson has a navigation bar at the top and bottom, so you can move through the course like a book: **← Previous · Course home · Next →**.
 
@@ -35,8 +35,9 @@ Type your answer in the empty cell under each question, run it, then click **Sho
 | [A8 · NumPy arrays](A_Python/A08_NumPy_arrays.ipynb) | Grids of numbers, masks, a first look at slope | 29 |
 | [A9 · Pandas tables](A_Python/A09_Pandas_tables.ipynb) | Reading, filtering, grouping and saving tables | 28 |
 | [A10 · Plotting with Matplotlib](A_Python/A10_Plotting_with_Matplotlib.ipynb) | Line, bar and scatter charts; honest, readable figures | 28 |
+| [A12 · Scripts, modules and good habits](A_Python/A12_Scripts_modules_and_good_habits.ipynb) | `while` loops, tuples and sets, your own module, getting help, notebooks you can trust, checking code (also from AI) | 28 |
 
-**Part A total: 275 questions with worked solutions.**
+**Part A total: 303 questions with worked solutions.**
 
 ## Part B · Vector GIS: the map of Nepal
 
@@ -53,8 +54,9 @@ Type your answer in the empty cell under each question, run it, then click **Sho
 | [B9 · Spatial joins and overlays](B_Vector/B09_Spatial_joins_and_overlays.ipynb) | Landslides per district, intersection, union, difference | 28 |
 | [B10 · Counting points and density maps](B_Vector/B10_Counting_points_and_density_maps.ipynb) | Grids, hexagons, density, honest map classification | 28 |
 | [B11 · Making a beautiful map](B_Vector/B11_Making_a_beautiful_map.ipynb) | Layers, colours, labels, scale bar, north arrow, inset map | 27 |
+| [B12 · Interactive web maps](B_Vector/B12_Interactive_web_maps.ipynb) | `explore()` and folium: layers, tooltips, popups, choropleths; [lat, lon] order; sharing maps as HTML | 25 |
 
-**Part B total: 289 questions with worked solutions.**
+**Part B total: 314 questions with worked solutions.**
 
 ## Part C · Rasters: the terrain of the Kathmandu Valley and Melamchi
 
@@ -70,8 +72,9 @@ All eight lessons use one real elevation model: a 30 m Copernicus DEM from the K
 | [C6 · Terrain analysis](C_Raster/C06_Terrain_analysis.ipynb) | Slope, aspect and hillshade, and the degrees-versus-metres trap | 28 |
 | [C7 · Vector and raster together](C_Raster/C07_Vector_and_raster_together.ipynb) | Sampling slope at landslides, zonal statistics, rasterizing, distance grids | 28 |
 | [C8 · Interpolation](C_Raster/C08_Interpolation.ipynb) | Nearest neighbour, IDW and kriging from 24 rain gauges, tested honestly | 26 |
+| [C9 · Spatial autocorrelation](C_Raster/C09_Spatial_autocorrelation.ipynb) | Neighbours and weights, spatial lag, Moran's I, permutation tests, local clusters, why random test splits mislead on maps | 28 |
 
-**Part C total: 222 questions with worked solutions.**
+**Part C total: 250 questions with worked solutions.**
 
 ## Part D · Satellite imagery: the 2021 Melamchi flood
 
