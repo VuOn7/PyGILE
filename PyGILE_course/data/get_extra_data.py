@@ -20,7 +20,7 @@ run the script again later: files that already exist are skipped.
    Credit: "© OpenStreetMap contributors, available under the ODbL."
 
 3. A Sentinel-2 time series of the Melamchi valley, 2019-2023, at 100 m (Lesson D6)
-   -> s2_melamchi_timeseries_100m.nc                         (about 10-20 MB)
+   -> s2_melamchi_timeseries_100m.nc                         (about 13 MB)
    Source: Microsoft Planetary Computer. No account needed.
    Credit: "Contains modified Copernicus Sentinel data 2019-2023, processed by ESA."
 
@@ -158,7 +158,7 @@ def get_s2_series():
                                 datetime="2019-01-01/2023-12-31",
                                 query={"eo:cloud_cover": {"lt": 60}}).items())
     print(f"  {len(items)} scenes found")
-    bands = ["B03", "B04", "B08", "B11", "SCL"]
+    bands = ["B04", "B08", "B11", "SCL"]
     ds = load(items, bands=bands, bbox=BBOX, crs="EPSG:32645", resolution=100,
               groupby="solar_day", resampling={"SCL": "nearest", "*": "average"},
               chunks={"x": 512, "y": 512})
@@ -173,7 +173,7 @@ def get_s2_series():
         baseline[day] = max(baseline.get(day, 0), b)
     shift = xr.DataArray([1000 if baseline.get(str(t)[:10], 0) >= 4.0 else 0 for t in ds.time.values],
                          dims="time", coords={"time": ds.time})
-    for b in ["B03", "B04", "B08", "B11"]:
+    for b in ["B04", "B08", "B11"]:
         valid = ds[b] > 0
         v = (ds[b].astype("int32") - shift).clip(1, 65535)   # keep valid cells above 0 (0 = no data)
         ds[b] = v.where(valid, 0).astype("uint16")
@@ -183,16 +183,23 @@ def get_s2_series():
     clear = scl.isin([4, 5, 6, 11]).mean(dim=["x", "y"])   # vegetation, bare, water, snow
     ds = ds.sel(time=clear.values >= 0.3)
     ds["clear_fraction"] = clear.sel(time=ds.time)
+    # Keep the file small: the 2 clearest dates of each month
+    cf = ds["clear_fraction"].to_pandas()
+    keep = cf.groupby([cf.index.year, cf.index.month]).nlargest(2).index.get_level_values(-1)
+    ds = ds.sel(time=np.sort(keep.values))
+    ds["SCL"] = ds["SCL"].astype("uint8")
     ds.attrs = {"title": "Sentinel-2 L2A time series of the Melamchi valley, 100 m",
                 "credit": "Contains modified Copernicus Sentinel data 2019-2023, processed by ESA",
                 "scale_factor_note": "reflectance = value x 0.0001 (the 2022 offset was removed); 0 = no data",
+                "selection": "the 2 clearest dates of each month, 2019-2023 (clear = SCL 4, 5, 6 or 11)",
                 "scl_note": "SCL: Sentinel-2 scene classification (4 vegetation, 5 bare, 6 water, "
                             "8-10 cloud, 3 cloud shadow, 11 snow)"}
     ds = ds.drop_vars([v for v in ds.coords if v not in ("time", "x", "y", "spatial_ref")])
     import rioxarray  # noqa: F401  (adds .rio)
     ds = ds.rio.write_crs("EPSG:32645")
-    for b in ["B03", "B04", "B08", "B11", "SCL"]:   # compress; set here so the CRS link is kept
-        ds[b].encoding.update({"zlib": True, "complevel": 5, "_FillValue": 0})
+    for b in ["B04", "B08", "B11", "SCL"]:   # compress; set here so the CRS link is kept
+        ds[b].encoding.update({"zlib": True, "complevel": 9, "shuffle": True, "_FillValue": 0,
+                               "dtype": "uint8" if b == "SCL" else "uint16"})
     ds.to_netcdf(out)
     return (f"saved {out.name}: {ds.sizes['time']} dates, {ds.sizes['y']} x {ds.sizes['x']} cells, "
             f"{out.stat().st_size / 1e6:.1f} MB")

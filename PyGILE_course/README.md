@@ -2,7 +2,7 @@
 
 A complete, hands-on course in Python and geospatial science for **absolute beginners**: no coding and no GIS experience needed. Every example uses data from Nepal and the Himalaya.
 
-> **Status:** Parts A to D are ready: 36 lessons and 977 practice questions, from your first line of Python to classifying satellite images. Three more lessons are being written: A11 (dates and time series), D5 (roads and networks) and D6 (image time series).
+> **Status:** complete: 39 lessons and 1,061 practice questions, from your first line of Python to satellite time series. The course ends with Part D; [PyGILE-Plus](https://github.com/Geoinformatics-Lab/PyGILE-Plus) continues from there.
 
 Every lesson has a navigation bar at the top and bottom, so you can move through the course like a book: **← Previous · Course home · Next →**.
 
@@ -35,9 +35,10 @@ Type your answer in the empty cell under each question, run it, then click **Sho
 | [A8 · NumPy arrays](A_Python/A08_NumPy_arrays.ipynb) | Grids of numbers, masks, a first look at slope | 29 |
 | [A9 · Pandas tables](A_Python/A09_Pandas_tables.ipynb) | Reading, filtering, grouping and saving tables | 28 |
 | [A10 · Plotting with Matplotlib](A_Python/A10_Plotting_with_Matplotlib.ipynb) | Line, bar and scatter charts; honest, readable figures | 28 |
+| [A11 · Dates and time series](A_Python/A11_Dates_and_time_series.ipynb) | Dates in pandas, `resample`, monthly climatology, rolling rainfall totals, extremes; 24 years of daily rainfall at Melamchi and Kathmandu | 28 |
 | [A12 · Scripts, modules and good habits](A_Python/A12_Scripts_modules_and_good_habits.ipynb) | `while` loops, tuples and sets, your own module, getting help, notebooks you can trust, checking code (also from AI) | 28 |
 
-**Part A total: 303 questions with worked solutions.**
+**Part A total: 331 questions with worked solutions.**
 
 ## Part B · Vector GIS: the map of Nepal
 
@@ -78,7 +79,7 @@ All eight lessons use one real elevation model: a 30 m Copernicus DEM from the K
 
 ## Part D · Satellite imagery: the 2021 Melamchi flood
 
-Two Sentinel-2 images of the Melamchi valley in Sindhupalchok, from 29 October 2020 and 11 November 2021, before and after the June 2021 debris flow and flood.
+Sentinel-2 images of the Melamchi valley in Sindhupalchok, before and after the June 2021 debris flow and flood, with OpenStreetMap roads and a five-year image time series.
 
 | Lesson | You will learn | Questions |
 | --- | --- | --- |
@@ -86,8 +87,10 @@ Two Sentinel-2 images of the Melamchi valley in Sindhupalchok, from 29 October 2
 | [D2 · Spectral indices](D_Imagery/D02_Spectral_indices.ipynb) | Safe band maths, NDVI, NDWI and MNDWI, thresholds and areas, NDVI against elevation | 25 |
 | [D3 · Change detection: the 2021 Melamchi flood](D_Imagery/D03_Change_detection_Melamchi_flood.ipynb) | Image differencing, thresholds and their effect on area, cleaning masks, false change, a terrain rule, flood polygons and a final map | 28 |
 | [D4 · Land-cover classification](D_Imagery/D04_Land_cover_classification.ipynb) | Images as tables, k-means, random forests with ESA WorldCover labels, honest accuracy, spatial tests, land-cover change | 29 |
+| [D5 · Roads and networks: what the flood cut](D_Imagery/D05_Roads_and_networks.ipynb) | OpenStreetMap with osmnx and networkx: road types, shortest routes, roads in the flood strip, detours and accessibility | 28 |
+| [D6 · Image time series and data cubes](D_Imagery/D06_Image_time_series_and_data_cubes.ipynb) | Five years of Sentinel-2 as an xarray cube: cloud masks, NDVI time series, seasons, before and after the flood, dask | 28 |
 
-**Part D total: 110 questions with worked solutions.**
+**Part D total: 166 questions with worked solutions.**
 
 ## After the course
 

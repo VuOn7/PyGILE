@@ -44,8 +44,19 @@ Small files used by the lessons, kept tiny so the course works offline.
 
 **WorldCover credit (required, CC BY 4.0).** © ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium.
 
+## Extra lessons (A11, D5, D6)
+
+| File | What it is | Source and licence |
+| --- | --- | --- |
+| `rain_daily_melamchi_kathmandu.csv` | Daily rainfall (`rain_mm`) and mean air temperature (`temp_mean_c`) for 2001–2024 at two places, Melamchi (27.83° N, 85.57° E) and Kathmandu (27.70° N, 85.32° E): 8,766 days each. Columns `date`, `place`, `rain_mm`, `temp_mean_c` | Open-Meteo historical weather API (CC BY 4.0), values from the **ERA5 reanalysis** of the Copernicus Climate Change Service. ERA5 cells are about 25–30 km wide: these are model estimates for a large area, not rain-gauge measurements, and they smooth out local extremes |
+| `osm_melamchi_roads.graphml` | The road network of the Melamchi valley (854 junctions, 1,942 road segments): motorable roads and tracks, as a graph for osmnx and networkx | © OpenStreetMap contributors, ODbL; downloaded with osmnx |
+| `osm_melamchi.gpkg` | The same roads as lines (layer `roads`), rivers and streams (`rivers`) and named places (`places`) | © OpenStreetMap contributors, ODbL |
+| `s2_melamchi_timeseries_100m.nc` | Sentinel-2 L2A time series of the Part D box, 2019–2023: the 2 clearest dates of each month (112 dates), bands B04, B08, B11 and the scene classification `SCL`, 100 m cells, UTM 45N, NetCDF. Reflectance = value × 0.0001 (ESA's 2022 offset removed), 0 = no data | Copernicus Sentinel-2 (free and open), through Microsoft Planetary Computer |
+
+**Credits (required).** Weather data by Open-Meteo.com (CC BY 4.0), from the ERA5 reanalysis of the Copernicus Climate Change Service. Map data © OpenStreetMap contributors, available under the Open Database Licence (ODbL). Contains modified Copernicus Sentinel data 2019–2023, processed by ESA.
+
 Spellings follow the source data, which sometimes differ from common usage: for example the boundary layer writes **Chitawan**, while the practice landslide file writes **Chitwan**. Lesson B6 shows how to find and fix such mismatches, a very common problem with real data.
 
 `make_data.py` rebuilds the Part B files and the Part C DEM from the original sources. The made-up practice files are kept as they are.
 
-`get_sentinel2_melamchi.py` downloads the two Sentinel-2 images of Part D, and `get_worldcover_melamchi.py` the ESA WorldCover 2021 land-cover map on the same grid. Both use Microsoft Planetary Computer (no account needed); run them once in the PyGILE-Plus container or the `pygile` environment.
+`get_sentinel2_melamchi.py` downloads the two Sentinel-2 images of Part D, `get_worldcover_melamchi.py` the ESA WorldCover 2021 land-cover map on the same grid, and `get_extra_data.py` the files of lessons A11, D5 and D6. They use Microsoft Planetary Computer, Open-Meteo and OpenStreetMap, none of which needs an account; run them once in the PyGILE-Plus container or the `pygile` environment.
