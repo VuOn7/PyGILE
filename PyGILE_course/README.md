@@ -2,7 +2,7 @@
 
 A complete, hands-on course in Python and geospatial science for **absolute beginners**: no coding and no GIS experience needed. Every example uses data from Nepal and the Himalaya.
 
-> **Status:** Parts A to D are ready: 33 lessons and 896 practice questions, from your first line of Python to classifying satellite images. Part E (the capstone) is being written.
+> **Status:** Parts A to D are ready: 33 lessons and 896 practice questions, from your first line of Python to classifying satellite images. The course ends with Part D; [PyGILE-Plus](https://github.com/Geoinformatics-Lab/PyGILE-Plus) continues from there.
 
 Every lesson has a navigation bar at the top and bottom, so you can move through the course like a book: **← Previous · Course home · Next →**.
 
@@ -86,9 +86,9 @@ Two Sentinel-2 images of the Melamchi valley in Sindhupalchok, from 29 October 2
 
 **Part D total: 110 questions with worked solutions.**
 
-## Coming next
+## After the course
 
-- **Part E · Capstone:** a landslide susceptibility model, leading on to PyGILE-Plus.
+[PyGILE-Plus](https://github.com/Geoinformatics-Lab/PyGILE-Plus) builds on these foundations with landslide susceptibility modelling, deep learning and more tools (SAGA, GRASS, Orfeo ToolBox) in one Docker image.
 
 ## Folders
 
