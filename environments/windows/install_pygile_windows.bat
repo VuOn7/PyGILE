@@ -75,13 +75,10 @@ echo Using: !INSTALLER! >> "%LOGFILE%"
 REM ------------------------------------------------------------
 REM [2/7] Fresh environment with Python 3.12
 REM ------------------------------------------------------------
-REM The JSON list looks the same in conda and in every version of mamba.
-REM It goes through a file, not a pipe: !variables! are not expanded in pipes.
-set "ENVLIST=%TEMP%\pygile_env_list.json"
-call "!INSTALLER!" env list --json > "!ENVLIST!" 2>nul
-findstr /R /C:"envs.*pygile[^a-zA-Z0-9_.-]" "!ENVLIST!" >nul
+REM Does "pygile" exist already? Python only starts inside it if it does.
+REM (This works the same in conda and in every version of mamba.)
+call "!INSTALLER!" run -n pygile python -c "pass" >nul 2>&1
 set FOUND=!errorlevel!
-del "!ENVLIST!" >nul 2>&1
 if !FOUND! equ 0 (
     echo.
     echo An environment called "pygile" already exists on this computer.
