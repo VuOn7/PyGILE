@@ -10,6 +10,7 @@ Exit code 1 if anything fails.
 import copy, re, sys, os
 import nbformat
 from nbclient import NotebookClient
+from nbclient.exceptions import CellTimeoutError
 
 path = sys.argv[1]
 quiet = "--quiet" in sys.argv
@@ -18,9 +19,24 @@ workdir = os.path.dirname(os.path.abspath(path))
 ok = True
 
 
-def run(notebook):
-    NotebookClient(notebook, timeout=180, kernel_name="python3", allow_errors=True,
-                   resources={"metadata": {"path": workdir}}).execute()
+def run(notebook, attempts=3):
+    # Errors inside cells never raise here (allow_errors=True); they are read
+    # from the outputs below. An exception therefore means the kernel itself
+    # failed, for example two lessons run in parallel picking the same port.
+    # That is not the lesson's fault, so try again with a fresh kernel.
+    original = copy.deepcopy(notebook)
+    for attempt in range(1, attempts + 1):
+        try:
+            NotebookClient(notebook, timeout=180, kernel_name="python3", allow_errors=True,
+                           resources={"metadata": {"path": workdir}}).execute()
+            break
+        except CellTimeoutError:
+            raise
+        except Exception as e:  # kernel did not start or died
+            if attempt == attempts:
+                raise
+            print(f"Kernel problem ({type(e).__name__}: {e}); retrying, attempt {attempt + 1}")
+            notebook.cells = copy.deepcopy(original.cells)
     errs = []
     for i, c in enumerate(notebook.cells):
         if c.cell_type != "code":
