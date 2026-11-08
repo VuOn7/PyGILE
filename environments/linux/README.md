@@ -4,13 +4,13 @@ Complete Python environment for geospatial analysis
 
 ## 1. Download and Extract Repository
 
-Go to: https://github.com/Geoinformatics-Lab/pyGILE
+Go to: https://github.com/Geoinformatics-Lab/PyGILE
 
 Click green "Code" button -> "Download ZIP"
 
 Extract the ZIP file to your home directory
 
-You will get a folder named "pyGILE-main"
+You will get a folder named "PyGILE-main"
 
 ## 2. Download Miniforge3
 
@@ -58,7 +58,7 @@ You should see a version number like "mamba 2.1.1"
 Navigate to the Linux setup folder:
 
 ```bash
-cd pyGILE-main/environments/linux
+cd PyGILE-main/environments/linux
 ```
 
 Run the installation script:
@@ -84,7 +84,7 @@ Your prompt should now show (pygile) at the beginning of each line.
 ## 7. Test Installation
 
 ```bash
-python -c 'import geopandas, rasterio, xarray, matplotlib, numpy, pandas, folium, plotly; print("All packages working!")'
+python -c 'import geopandas, rasterio, xarray, matplotlib, numpy, pandas, folium; print("All packages working!")'
 ```
 
 You should see: "All packages working!"
@@ -103,4 +103,10 @@ Navigate to the PyGILE folder, open PyGILE_course and start with Lesson A1
 
 ## Installed Packages
 
-The installer adds packages in groups (foundation, geospatial core, rasters, JupyterLab and maps, specialised tools), the same groups as the Windows installer. The core libraries match [`environment.yml`](../../environment.yml), which the automatic notebook tests use: GeoPandas, Shapely, PyProj, Rasterio, rioxarray, Xarray, OSMnx, Matplotlib, Folium, Contextily, scikit-learn, STAC tools for satellite imagery, and JupyterLab.
+The installer installs exactly the packages in [`environment.yml`](../../environment.yml), the file the automatic notebook tests use, in five groups: core scientific Python, vector data, rasters and remote sensing, maps and interpolation, and JupyterLab. If an environment called `pygile` already exists, the installer asks before replacing it.
+
+To do the same in one command, run this from the PyGILE folder:
+
+```bash
+mamba env create -f environment.yml
+```

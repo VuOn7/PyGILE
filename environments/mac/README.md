@@ -2,11 +2,11 @@
 
 ## 1. Download PyGILE Repository
 
-Go to https://github.com/Geoinformatics-Lab/pyGILE
+Go to https://github.com/Geoinformatics-Lab/PyGILE
 
 Click green Code button and Download ZIP
 
-Extract to home directory to get pyGILE-main folder
+Extract to home directory to get PyGILE-main folder
 
 ## 2. Download Miniforge3
 
@@ -75,7 +75,7 @@ mamba --version
 Navigate to setup folder:
 
 ```bash
-cd pyGILE-main/environments/mac
+cd PyGILE-main/environments/mac
 ```
 
 Run the installation script:
@@ -93,7 +93,7 @@ mamba activate pygile
 ## 7. Test Installation
 
 ```bash
-python -c 'import geopandas, rasterio, xarray, matplotlib, numpy, pandas, folium, plotly; print("All packages working!")'
+python -c 'import geopandas, rasterio, xarray, matplotlib, numpy, pandas, folium; print("All packages working!")'
 ```
 
 Should show: All packages working!
@@ -109,4 +109,10 @@ Navigate to the PyGILE folder, open PyGILE_course and start with Lesson A1
 
 ## Installed Packages
 
-The installer adds packages in groups (foundation, geospatial core, rasters, JupyterLab and maps, specialised tools), the same groups as the Windows installer. The core libraries match [`environment.yml`](../../environment.yml), which the automatic notebook tests use: GeoPandas, Shapely, PyProj, Rasterio, rioxarray, Xarray, OSMnx, Matplotlib, Folium, Contextily, scikit-learn, STAC tools for satellite imagery, and JupyterLab.
+The installer installs exactly the packages in [`environment.yml`](../../environment.yml), the file the automatic notebook tests use, in five groups: core scientific Python, vector data, rasters and remote sensing, maps and interpolation, and JupyterLab. If an environment called `pygile` already exists, the installer asks before replacing it.
+
+To do the same in one command, run this from the PyGILE folder:
+
+```bash
+mamba env create -f environment.yml
+```
