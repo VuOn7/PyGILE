@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use PyGILE in teaching or research, please cite it as below."
+title: "PyGILE - Python GeoInformatics Lab Environment"
+type: software
+authors:
+  - family-names: Awasthi
+    given-names: B.
+  - family-names: Ninsawat
+    given-names: S.
+  - family-names: Raghavan
+    given-names: V.
+  - family-names: Nemoto
+    given-names: T.
+version: "1.0"
+doi: 10.5281/zenodo.16144781
+repository-code: "https://github.com/Geoinformatics-Lab/PyGILE"
+license: GPL-3.0-or-later
+keywords:
+  - geospatial
+  - GIS
+  - remote sensing
+  - Python
+  - Jupyter
+  - education
+  - Nepal

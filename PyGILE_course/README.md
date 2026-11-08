@@ -104,7 +104,7 @@ Sentinel-2 images of the Melamchi valley in Sindhupalchok, before and after the 
 | `data/` | Small datasets used by the lessons, with sources and licences (see `data/README.md`) |
 | `images/` | Concept diagrams used by the lessons (see `images/README.md`) |
 | `outputs/` | Files the lessons write. Created when you run them and ignored by git |
-| `tools/` | For course authors: `qa.py` checks a lesson and all its solutions, `add_nav.py` refreshes the navigation bars, `lessonkit.py` builds lessons in the standard format |
+| `tools/` | For course authors: `qa.py` checks a lesson and all its solutions, `check_repo.py` runs the fast repository checks (outputs cleared, navigation, installers, question counts), `add_nav.py` refreshes the navigation bars, `lessonkit.py` builds lessons in the standard format |
 | `STYLE_GUIDE.md` | How lessons are written |
 
 ## Before you start

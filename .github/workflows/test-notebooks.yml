@@ -1,4 +1,4 @@
-# Runs every PyGILE notebook from top to bottom, so a broken lesson is caught
+# Runs every PyGILE lesson from top to bottom, so a broken lesson is caught
 # before a student finds it. Runs on every push and pull request, and every
 # Monday, because library updates can break notebooks even when nothing changed here.
 name: Test notebooks
@@ -12,13 +12,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  notebooks:
+  checks:
+    name: Repository checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install nbformat pyyaml
+      # Lessons saved without outputs, navigation bars current, installers
+      # matching environment.yml, question counts in the READMEs correct.
+      - run: python PyGILE_course/tools/check_repo.py
+
+  lessons:
+    name: Lessons and solutions (Linux)
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash -el {0}
     env:
       MPLBACKEND: Agg
+      PYTHONUTF8: "1"
     steps:
       - uses: actions/checkout@v4
 
@@ -29,8 +44,11 @@ jobs:
           cache-environment: true
 
       - name: Install the test runner
-        run: pip install nbmake pytest
+        run: pip install nbclient nbformat
 
-      - name: Run all notebooks (original notebooks and the new course)
+      # qa.py runs each lesson twice: as the learner receives it (empty answer
+      # cells), then with every answer cell replaced by its hidden solution.
+      - name: Run every lesson, then every solution
         run: |
-          pytest --nbmake --nbmake-timeout=600 PyGILE_course
+          ls PyGILE_course/[A-E]_*/*.ipynb \
+            | xargs -P 4 -I{} python PyGILE_course/tools/qa.py {} --quiet

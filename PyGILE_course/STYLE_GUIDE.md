@@ -20,7 +20,7 @@ Someone who has never written code and never studied GIS. Assume nothing. Every 
       - **Q2 · two lines** — needs two lines. Combines this step with something earlier.
       - **Q3 · three lines** — needs about three lines. A small real problem.
 
-      Each question is a text cell with the question, then an empty code cell starting with `# Q1 — your answer`, then a text cell with the hidden solution (see below).
+      Each question is a text cell with the question, then an empty code cell starting with `# Q1: your answer`, then a text cell with the hidden solution (see below).
 3. **When it breaks** — at least one cell per lesson that raises a real error on purpose, with the tag `raises-exception`, followed by an explanation of how to read that error.
 4. **Mixed review** — 3 to 5 longer exercises (5 to 10 lines) that combine the whole lesson. Same hidden-solution format.
 5. **Recap** — five bullet points.
@@ -51,8 +51,10 @@ The blank line after `</summary>` is required, or the code will not render in Ju
 - Variable names say what they hold and include units: `height_m`, `rainfall_mm`, `area_km2`.
 - Use only Python's standard library, NumPy, pandas and Matplotlib in Part A. GeoPandas and rasterio start in Part B.
 - Read data with `pathlib` from the course data folder: `DATA = Path("..") / "data"`.
+- Open text files with `encoding="utf-8"` (`open(..., encoding="utf-8")`, `.read_text(encoding="utf-8")`), as taught in A7. Without it, Windows may read the file in another encoding and garble characters such as `²` or `°`.
 - No `!pip install`, no internet access, no absolute paths.
 - Notebooks are saved **without outputs**.
+- Before committing, run `python PyGILE_course/tools/check_repo.py` and `python PyGILE_course/tools/qa.py <lesson>`. The automatic tests run both on every pull request.
 
 ## Writing rules
 
