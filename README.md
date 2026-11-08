@@ -38,21 +38,11 @@ Choose one of three ways. Options 1 and 2 install the same libraries; option 3 u
 
 Learn how a Python environment is built, one group of packages at a time, using **Miniforge Prompt** (Windows) or **Terminal** (macOS/Linux).
 
-#### Windows Users
+- **Windows:** follow the [Windows guide](environments/windows/README.md)
+- **Linux:** follow the [Linux guide](environments/linux/README.md)
+- **macOS:** follow the [macOS guide](environments/mac/README.md)
 
-1. Go to [`environments/windows/`](https://github.com/Geoinformatics-Lab/PyGILE/tree/main/environments/windows) folder
-2. Watch the installation video: [`pyGILE_Installation.mp4`](https://github.com/Geoinformatics-Lab/PyGILE/blob/main/environments/windows/pyGILE_Installation.mp4)
-3. Follow the step-by-step guide: [`environment_install_windows.pdf`](https://github.com/Geoinformatics-Lab/PyGILE/blob/main/environments/windows/environment_install_windows.pdf)
-
-#### Linux Users
-
-1. Go to [`environments/linux/`](https://github.com/Geoinformatics-Lab/PyGILE/tree/main/environments/linux) folder
-2. Follow the README.md instructions
-
-#### Mac Users
-
-1. Go to [`environments/mac/`](https://github.com/Geoinformatics-Lab/PyGILE/tree/main/environments/mac) folder
-2. Follow the README.md instructions
+Each installer asks before replacing an existing `pygile` environment, and is tested every week on a fresh Miniforge.
 
 ### Option 2: One command
 
@@ -103,9 +93,16 @@ Files the lessons create are saved in `PyGILE_course/outputs/`. Git ignores that
 
 ## Contributing
 
-Fork → Make changes → Pull request
+Fork → Make changes → Pull request. All contributions welcome!
 
-All contributions welcome!
+If you change a lesson, run these two checks before you open the pull request (the automatic tests run them too):
+
+```bash
+python PyGILE_course/tools/check_repo.py                   # outputs cleared, navigation, installers, question counts
+python PyGILE_course/tools/qa.py PyGILE_course/A_Python/A01_Python_as_your_calculator.ipynb   # the lesson and all its solutions run
+```
+
+If you add or remove a package, change [`environment.yml`](environment.yml) and the three installers in [`environments/`](environments/) together.
 
 ## Credits
 
@@ -116,3 +113,14 @@ Enhanced from [mmann1123/pyGIS](https://github.com/mmann1123/pyGIS) by Geoinform
 Awasthi, B., Ninsawat, S., Raghavan, V., & Nemoto, T. (2025). PyGILE - Python GeoInformatics Lab Environment (1.0). Zenodo. https://doi.org/10.5281/zenodo.16144781
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16144781.svg)](https://doi.org/10.5281/zenodo.16144781)
+
+The same reference is in [`CITATION.cff`](CITATION.cff), so GitHub's **Cite this repository** button gives it in APA and BibTeX.
+
+## License
+
+PyGILE is free software under the [GNU General Public License, version 3 or later](LICENSE).
+
+- Copyright (C) 2021 Michael Mann and contributors ([pyGIS](https://github.com/mmann1123/pyGIS), from which PyGILE grew)
+- Copyright (C) 2025–2026 Geoinformatics Lab and the PyGILE contributors
+
+The datasets in `PyGILE_course/data/` keep their own licences and credits, listed in [`PyGILE_course/data/README.md`](PyGILE_course/data/README.md).
