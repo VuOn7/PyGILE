@@ -1,0 +1,124 @@
+# PyGILE supports Windows, macOS and Linux. This workflow checks the two parts
+# that differ between systems:
+#   1. the step-by-step installers in environments/, from a fresh Miniforge;
+#   2. every lesson and solution on Windows and macOS.
+# It is slower than test-notebooks.yml, so it runs every Monday, on demand, and
+# when the environment or the installers change.
+name: Test on Windows and macOS
+
+on:
+  schedule:
+    - cron: "41 4 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - environment.yml
+      - "environments/**"
+      - .github/workflows/test-other-systems.yml
+  pull_request:
+    paths:
+      - environment.yml
+      - "environments/**"
+      - .github/workflows/test-other-systems.yml
+
+jobs:
+  installers:
+    name: Installer (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Miniforge, as a learner would
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          auto-activate-base: true
+          activate-environment: ""
+
+      - name: Run the Linux installer
+        if: runner.os == 'Linux'
+        working-directory: environments/linux
+        run: ./install_pygile_linux.sh < /dev/null
+
+      - name: Run the macOS installer
+        if: runner.os == 'macOS'
+        working-directory: environments/mac
+        run: ./install_pygile_macos.sh < /dev/null
+
+      - name: Run the Windows installer
+        if: runner.os == 'Windows'
+        working-directory: environments/windows
+        shell: cmd /C CALL {0}
+        run: call install_pygile_windows.bat < NUL
+
+      - name: Show the installer error log
+        if: always()
+        run: cat environments/*/pygile_errors.log || true
+
+      # Run each installer a second time, answering "no": it must notice that
+      # pygile already exists and stop without touching it.
+      - name: A second run keeps the existing environment (Linux, macOS)
+        if: runner.os != 'Windows'
+        env:
+          PYGILE_REPLACE: "no"
+        run: |
+          script=$(ls environments/${{ runner.os == 'macOS' && 'mac' || 'linux' }}/install_pygile_*.sh)
+          "$script" < /dev/null | tee second_run.txt
+          grep -q "Stopped. Your existing pygile environment was not changed." second_run.txt
+
+      - name: A second run keeps the existing environment (Windows)
+        if: runner.os == 'Windows'
+        working-directory: environments/windows
+        shell: cmd /C CALL {0}
+        env:
+          PYGILE_REPLACE: "no"
+        run: |
+          call install_pygile_windows.bat < NUL > second_run.txt
+          type second_run.txt
+          findstr /C:"Stopped. Your existing pygile environment was not changed." second_run.txt
+
+      - name: Every library the lessons use can be imported
+        run: >
+          conda run -n pygile python -c "import numpy, pandas, scipy, matplotlib, sklearn,
+          geopandas, shapely, pyproj, pyogrio, mapclassify, osmnx, rasterio, rioxarray, xarray,
+          dask, netCDF4, rasterstats, xrspatial, pystac_client, odc.stac, planetary_computer,
+          contextily, folium, matplotlib_scalebar, pykrige, jupyterlab, ipykernel, ipywidgets;
+          print('all libraries import')"
+
+  lessons:
+    name: Lessons and solutions (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -el {0}
+    env:
+      MPLBACKEND: Agg
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create the pygile environment
+        uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: environment.yml
+          cache-environment: true
+
+      - name: Install the test runner
+        run: pip install nbclient nbformat
+
+      - name: Run every lesson, then every solution
+        run: |
+          ls PyGILE_course/[A-E]_*/*.ipynb \
+            | xargs -P 3 -I{} python PyGILE_course/tools/qa.py {} --quiet
