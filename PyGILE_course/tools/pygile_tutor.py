@@ -18,12 +18,17 @@ output, displayed value and variables with answer_key.json, which
 build_answer_key.py makes by running every hidden solution.
 
 An AI tutor can add a few warm, personal sentences of feedback. It is optional
-and off until the learner runs  %tutor setup  and pastes a free API key
-(Google Gemini, Groq or OpenRouter) or points it at Ollama on their own
-computer. The key is stored in ~/.pygile/tutor.json, never in the notebook.
+and off until the learner types  %tutor setup  in a cell, which walks them step
+by step through making a free key (Google Gemini or Groq, or OpenRouter) or a
+very cheap paid one (DeepSeek). Several services can be saved: when one reaches
+its free daily limit, the tutor moves to the next one. Keys are stored in
+~/.pygile/tutor.json on the learner's computer, never in the notebook.
+The beginner's guide is PyGILE_course/AI_TUTOR.md.
 
-Other commands:  %tutor  (status)  ·  %tutor off / on  ·  %tutor ai off / on
-·  %tutor progress  ·  %tutor reset
+Commands:  %tutor (status) · %tutor setup · %tutor help · %tutor remove NAME
+·  %tutor ai off / on · %tutor off / on · %tutor progress · %tutor reset
+Advanced: change a service's "model" (or add a "url" for any OpenAI-style
+server, such as Ollama) by editing ~/.pygile/tutor.json.
 """
 import ast
 import html
@@ -46,37 +51,76 @@ PROGRESS_FILE = HOME / "progress.json"
 
 ANSWER_STARTS = ("# Q1", "# Q2", "# Q3", "# Your answer")
 
-# Free or local AI services that speak the same (OpenAI-style) language.
+# The beginner's guide. When the repository moves to Geoinformatics-Lab,
+# change VuOn7 to Geoinformatics-Lab here (as in the main README).
+GUIDE_URL = "https://github.com/VuOn7/PyGILE/blob/main/PyGILE_course/AI_TUTOR.md"
+
+# AI services that all speak the same (OpenAI-style) language. Facts checked
+# November 2026; services change their limits, so the guide says how to check.
 PROVIDERS = {
     "gemini": {
-        "name": "Google Gemini (free tier)",
+        "name": "Google Gemini",
+        "cost": "Free. About 500 feedback messages a day. No credit card.",
         "url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
         "model": "gemini-3.5-flash-lite",
-        "key_page": "https://aistudio.google.com/apikey",
+        "anchor": "1-google-gemini-free",
+        "reset": "Gemini's free limit starts again every day at midnight in California: "
+                 "about 1:45 pm in Nepal (12:45 pm from mid-March to early November).",
+        "steps": [
+            'Open <a href="https://aistudio.google.com/apikey" target="_blank">'
+            "aistudio.google.com/apikey</a> (it opens in a new tab).",
+            "Sign in with your Google account (the one you use for Gmail or YouTube).",
+            "If it asks you to accept the terms, read them and accept.",
+            "Click the button <b>Create API key</b>.",
+            "A long code appears. That is your key. Click <b>Copy</b> next to it.",
+        ],
     },
     "groq": {
-        "name": "Groq (free plan)",
+        "name": "Groq",
+        "cost": "Free. About 1,000 feedback messages a day. No credit card.",
         "url": "https://api.groq.com/openai/v1/chat/completions",
         "model": "openai/gpt-oss-120b",
-        "key_page": "https://console.groq.com/keys",
+        "anchor": "2-groq-free-a-good-backup",
+        "reset": "Groq's free daily limit starts again the next day.",
+        "steps": [
+            'Open <a href="https://console.groq.com/keys" target="_blank">'
+            "console.groq.com/keys</a> (it opens in a new tab).",
+            "Sign in with Google, GitHub or your email address.",
+            "Click <b>Create API Key</b>. Type the name <code>PyGILE</code> and click <b>Submit</b>.",
+            "Click <b>Copy</b>. Copy it now: Groq shows the key only once.",
+        ],
     },
     "openrouter": {
-        "name": "OpenRouter (models ending in :free)",
+        "name": "OpenRouter",
+        "cost": "Free models. About 50 feedback messages a day. No credit card.",
         "url": "https://openrouter.ai/api/v1/chat/completions",
-        "model": "",
-        "key_page": "https://openrouter.ai/keys",
+        "model": "openrouter/free",
+        "anchor": "3-openrouter-free-a-small-extra-backup",
+        "reset": "OpenRouter's free daily limit starts again the next day.",
+        "steps": [
+            'Open <a href="https://openrouter.ai/keys" target="_blank">'
+            "openrouter.ai/keys</a> (it opens in a new tab).",
+            "Sign in or sign up (Google, GitHub or email).",
+            "Click <b>Create API Key</b>, type the name <code>PyGILE</code> and click <b>Create</b>.",
+            "Click <b>Copy</b>. Copy it now: it is shown only once.",
+        ],
     },
     "deepseek": {
-        "name": "DeepSeek (paid, low cost)",
+        "name": "DeepSeek",
+        "cost": "Paid, very cheap: about US$1 for 1,500 feedback messages. "
+                "You add money first.",
         "url": "https://api.deepseek.com/chat/completions",
         "model": "deepseek-flash",
-        "key_page": "https://platform.deepseek.com/api_keys",
-    },
-    "ollama": {
-        "name": "Ollama (free, runs on your own computer, works offline)",
-        "url": "http://localhost:11434/v1/chat/completions",
-        "model": "",
-        "key_page": "",
+        "anchor": "4-deepseek-paid-very-cheap",
+        "reset": "DeepSeek has no daily limit: it stops when the money you added runs out.",
+        "steps": [
+            'Open <a href="https://platform.deepseek.com" target="_blank">'
+            "platform.deepseek.com</a> and sign up (it opens in a new tab).",
+            "Click <b>Top up</b> and add a small amount. US$2 is enough for months of practice.",
+            "Click <b>API keys</b> in the menu, then <b>Create new API key</b>. Name it "
+            "<code>PyGILE</code>.",
+            "Click <b>Copy</b>. Copy it now: it is shown only once.",
+        ],
     },
 }
 
@@ -241,7 +285,7 @@ NUM = re.compile(r"-?\d[\d,]*\.?\d*(?:[eE]-?\d+)?")
 
 
 def norm_text(s):
-    s = s.replace("\r\n", "\n").strip()
+    s = re.sub(r" at 0x[0-9a-fA-F]+>", ">", s.replace("\r\n", "\n")).strip()
     if len(s) >= 2 and s[0] == s[-1] and s[0] in "'\"" and "\n" not in s:
         s = s[1:-1]                                  # 'abc' (a value) equals abc (printed)
     return re.sub(r"[ \t]+", " ", re.sub(r"\s*\n\s*", "\n", s))
@@ -259,12 +303,12 @@ def numbers(s):
 
 def mark(expected, got):  # noqa: C901
     """Return (verdict, reason). verdict: correct, nearly, not_yet, ran."""
-    exp_out = norm_text(expected.get("output", ""))
+    exp_out = "" if expected.get("unstable") else norm_text(expected.get("output", ""))
     got_out = norm_text(got["output"])
     all_vars = {k: v for k, v in expected.get("vars", {}).items() if comparable(v)}
     required = expected.get("required", [])
     exp_vars = {k: v for k, v in all_vars.items() if k in required}
-    if not exp_vars and not exp_out:
+    if not exp_vars and not exp_out and not expected.get("unstable"):
         # Nothing named in the question and nothing shown: compare whatever the
         # learner created with the same names as the solution.
         exp_vars = {k: v for k, v in all_vars.items() if k in got["vars"]}
@@ -282,7 +326,17 @@ def mark(expected, got):  # noqa: C901
 
     out_exact = bool(exp_out) and exp_out == got_out
     exp_nums, got_nums = numbers(exp_out), numbers(got_out)
-    nums_ok = bool(exp_nums) and all(n in got_nums for n in exp_nums)
+    # Every expected number must appear, and not many more: a sentence may be worded
+    # differently, but showing 10 rows when 3 were asked for is not the same answer.
+    left = list(got_nums)
+    found_all = bool(exp_nums)
+    for n in exp_nums:
+        if n in left:
+            left.remove(n)
+        else:
+            found_all = False
+            break
+    nums_ok = found_all and len(left) <= max(2, len(exp_nums) // 5)
     nums_some = bool(exp_nums) and any(n in got_nums for n in exp_nums)
 
     checks = bool(exp_out) or bool(exp_vars)
@@ -371,12 +425,61 @@ def save_json(path, data):
 # ---------------------------------------------------------------------------
 # The AI tutor (optional)
 # ---------------------------------------------------------------------------
+def services(cfg):
+    """The learner's saved AI services, in the order they are tried."""
+    if "provider" in cfg and "services" not in cfg:          # settings from the first version
+        cfg["services"] = [{k: cfg[k] for k in ("provider", "key", "model", "url") if k in cfg}]
+    return [s for s in cfg.get("services", []) if s.get("provider") in PROVIDERS or s.get("url")]
+
+
+def service_name(svc):
+    return PROVIDERS.get(svc.get("provider"), {}).get("name", svc.get("provider", "AI service"))
+
+
+def call_service(svc, system, user):
+    """One request to one service. Returns (text, problem): problem is None,
+    'limit', 'key', 'network' or 'other'."""
+    prov = PROVIDERS.get(svc.get("provider"), {})
+    url = svc.get("url") or prov.get("url")
+    model = svc.get("model") or prov.get("model")
+    body = json.dumps({
+        "model": model,
+        "messages": [{"role": "system", "content": system},
+                     {"role": "user", "content": user}],
+        "temperature": 0.4,
+        "max_tokens": 1200,
+    }).encode()
+    headers = {"Content-Type": "application/json"}
+    if svc.get("key"):
+        headers["Authorization"] = f"Bearer {svc['key']}"
+    req = urllib.request.Request(url, data=body, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=45) as r:
+            data = json.loads(r.read().decode())
+        text = (data["choices"][0]["message"].get("content") or "").strip()
+    except urllib.error.HTTPError as e:
+        if e.code == 429:
+            return None, "limit"
+        if e.code == 402:                                      # no money left (paid services)
+            return None, "limit"
+        if e.code in (400, 401, 403):
+            detail = e.read().decode(errors="replace").lower()
+            if e.code != 400 or "key" in detail:
+                return None, "key"
+        return None, "other"
+    except (urllib.error.URLError, TimeoutError, OSError):
+        return None, "network"
+    except Exception:
+        return None, "other"
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.S).strip()
+    return (text, None) if text else (None, "other")
+
+
 def ask_ai(cfg, question, solution, code, output, error, verdict, reason):
-    prov = PROVIDERS.get(cfg.get("provider", ""), {})
-    url = cfg.get("url") or prov.get("url")
-    model = cfg.get("model") or prov.get("model")
-    if not url or not model:
-        return None, "The AI tutor is not set up yet. Run  %tutor setup"
+    """Try each saved service in turn. Returns (text, help_html)."""
+    svcs = services(cfg)
+    if not svcs:
+        return None, None
     user = (
         f"QUESTION:\n{question.strip()[:3000]}\n\n"
         f"COURSE SOLUTION (hidden from the learner):\n{solution.strip()[:3000]}\n\n"
@@ -385,32 +488,58 @@ def ask_ai(cfg, question, solution, code, output, error, verdict, reason):
         + (f"ERROR:\n{error[:1500]}\n\n" if error else "")
         + f"AUTOMATIC CHECK: {verdict} ({reason})"
     )
-    body = json.dumps({
-        "model": model,
-        "messages": [{"role": "system", "content": SYSTEM_PROMPT},
-                     {"role": "user", "content": user}],
-        "temperature": 0.4,
-        "max_tokens": 1200,
-    }).encode()
-    headers = {"Content-Type": "application/json"}
-    if cfg.get("key"):
-        headers["Authorization"] = f"Bearer {cfg['key']}"
-    req = urllib.request.Request(url, data=body, headers=headers)
-    try:
-        with urllib.request.urlopen(req, timeout=45) as r:
-            data = json.loads(r.read().decode())
-        text = (data["choices"][0]["message"].get("content") or "").strip()
-    except urllib.error.HTTPError as e:
-        if e.code == 429:
-            return None, ("The free AI limit is used up for now. Your mark above still counts. "
-                          "Try again in a minute, or tomorrow.")
-        if e.code in (401, 403):
-            return None, "The AI service did not accept the key. Run  %tutor setup  again."
-        return None, f"The AI service answered with error {e.code}."
-    except Exception as e:
-        return None, f"Could not reach the AI tutor ({type(e).__name__}). Your mark above still counts."
-    text = re.sub(r"<think>.*?</think>", "", text, flags=re.S).strip()
-    return text, None
+    problems = []
+    for svc in svcs:
+        text, problem = call_service(svc, SYSTEM_PROMPT, user)
+        if text:
+            return text, None
+        problems.append((svc, problem))
+    return None, help_for(problems)
+
+
+def link(text, anchor=""):
+    return (f'<a href="{GUIDE_URL}{"#" + anchor if anchor else ""}" target="_blank">'
+            f"{text}</a>")
+
+
+def help_for(problems):
+    """Plain, step-by-step help when no service could answer."""
+    have = {s.get("provider") for s, _ in problems}
+    first_svc, first = problems[0]
+    kinds = {p for _, p in problems}
+    if kinds == {"network"}:
+        return ("Could not connect to the AI service. Check that your internet is working, "
+                "then run the cell again. Your mark above works without the internet.")
+    lines = []
+    for svc, p in problems:
+        name = service_name(svc)
+        if p == "limit":
+            lines.append(f"<b>{name}</b>: today's limit is used up. "
+                         + PROVIDERS.get(svc.get("provider"), {}).get("reset", ""))
+        elif p == "key":
+            lines.append(f"<b>{name}</b> did not accept your key. Type <code>%tutor setup</code> "
+                         f"in a new cell, choose {name} again and paste the key again. "
+                         + link("Step-by-step help", PROVIDERS.get(svc.get("provider"), {})
+                                .get("anchor", "")))
+        elif p == "network":
+            lines.append(f"<b>{name}</b> could not be reached. Check your internet connection.")
+        else:
+            lines.append(f"<b>{name}</b> had a problem answering. Try again in a minute.")
+    if "limit" in kinds:
+        missing = [n for n in ("groq", "gemini", "openrouter") if n not in have]
+        tips = ["<b>Wait</b>, and keep practising: your ✅ marks work without the AI."]
+        if missing:
+            nm = PROVIDERS[missing[0]]["name"]
+            tips.append(f"<b>Add a free backup</b>: type <code>%tutor setup</code> in a new cell "
+                        f"and choose {nm}. When one service is used up, the tutor moves to "
+                        f"the next. " + link(f"How to get a {nm} key",
+                                              PROVIDERS[missing[0]]["anchor"]))
+        if "deepseek" not in have:
+            tips.append("<b>Never run out</b>: DeepSeek costs about US$1 for 1,500 feedback "
+                        "messages. " + link("How to set it up", PROVIDERS["deepseek"]["anchor"]))
+        lines.append("What you can do:<ul style='margin:4px 0 0 18px;padding:0'>"
+                     + "".join(f"<li>{t}</li>" for t in tips) + "</ul>")
+    return "<br>".join(lines)
 
 
 def split_ai_verdict(text):
@@ -451,7 +580,7 @@ def card(verdict, title_extra, reason, progress, ai_text=None, ai_note=None, wai
     if ai_text:
         lines.append(f"<div style='margin-top:6px'>🤖 {md_inline(ai_text)}</div>")
     if ai_note:
-        lines.append(f"<div style='margin-top:6px;opacity:.7'>🤖 {md_inline(ai_note)}</div>")
+        lines.append(f"<div style='margin-top:6px'>🤖 {ai_note}</div>")
     if progress:
         lines.append(f"<div style='margin-top:6px;opacity:.75;font-size:.9em'>{progress}</div>")
     return (f"<div style='border-left:4px solid {colour};padding:8px 12px;margin:6px 0;"
@@ -482,6 +611,7 @@ class Tutor:
         self.shell = shell
         self.enabled = True
         self.tee = None
+        self.tip_shown = False
 
     # hooks ------------------------------------------------------------------
     def pre_run_cell(self, info):
@@ -521,8 +651,9 @@ class Tutor:
 
         shown = printed
         if result.result is not None and err is None:
-            fmt = self.shell.display_formatter.format(result.result)[0]
-            shown = (shown + "\n" + fmt.get("text/plain", "")).strip()
+            text = self.shell.display_formatter.format(result.result)[0].get("text/plain", "")
+            if not re.search(r" at 0x[0-9a-fA-F]+>", text):    # a map or chart is a picture
+                shown = (shown + "\n" + text).strip()
 
         if error:
             verdict = "error"
@@ -550,10 +681,16 @@ class Tutor:
         reason = f"{random.choice(cheer)} {reason}"
 
         cfg = load_json(CONFIG_FILE, {})
-        use_ai = cfg.get("provider") and cfg.get("ai", True) and (
-            verdict != "correct" or cfg.get("ai_on_correct", False))
-        handle = display(HTML(card(verdict, label, reason, progress, waiting=bool(use_ai))),
-                         display_id=True)
+        has_ai = bool(services(cfg)) and cfg.get("ai", True)
+        use_ai = has_ai and (verdict != "correct" or cfg.get("ai_on_correct", False))
+        tip = None
+        if not services(cfg) and verdict != "correct" and not self.tip_shown:
+            self.tip_shown = True                    # once per session, never nagging
+            tip = ("Want a personal hint as well? You can add a free AI tutor: type "
+                   "<code>%tutor setup</code> in a new cell and follow the steps. "
+                   + link("What is this?"))
+        handle = display(HTML(card(verdict, label, reason, progress, ai_note=tip,
+                                   waiting=bool(use_ai))), display_id=True)
         if not use_ai:
             return
         question, solution = lesson_text(entry["lesson"], info.cell_id)
@@ -577,17 +714,29 @@ class Tutor:
 # ---------------------------------------------------------------------------
 # %tutor magic
 # ---------------------------------------------------------------------------
+BOX = ("<div style='border:1px solid rgba(127,127,127,.35);border-radius:6px;padding:10px 14px;"
+       "margin:6px 0;font-family:var(--jp-ui-font-family, sans-serif);line-height:1.5'>{}</div>")
+
+
+def show(html_text):
+    from IPython.display import HTML, display
+    display(HTML(BOX.format(html_text)))
+
+
 def tutor_magic(line):
     args = line.split()
     t = _TUTOR
     cfg = load_json(CONFIG_FILE, {})
     if not args:
-        prov = PROVIDERS.get(cfg.get("provider", ""), {}).get("name", "not set up")
-        n = len(answer_key()["answers"])
-        print(f"Tutor marking: {'on' if t.enabled else 'off'} ({n} answers in the key)")
-        print(f"AI tutor: {prov}{'' if cfg.get('ai', True) else ' (paused)'}")
-        print("Commands: %tutor setup · %tutor off/on · %tutor ai off/on · "
-              "%tutor progress · %tutor reset")
+        svcs = services(cfg)
+        ai = (", then ".join(service_name(s) for s in svcs) if svcs else "not set up")
+        paused = " (paused: type <code>%tutor ai on</code>)" if svcs and not cfg.get("ai", True) else ""
+        show(f"<b>Marking:</b> {'on' if t.enabled else 'off'}<br>"
+             f"<b>AI tutor:</b> {ai}{paused}<br>"
+             "<b>Commands</b> (type one in a cell and run it):<br>"
+             "<code>%tutor setup</code> add an AI service · <code>%tutor help</code> the guide · "
+             "<code>%tutor progress</code> your progress · <code>%tutor ai off</code> pause the AI · "
+             "<code>%tutor remove gemini</code> remove a service")
     elif args[0] in ("on", "off"):
         t.enabled = args[0] == "on"
         print(f"Marking is {args[0]}.")
@@ -597,48 +746,98 @@ def tutor_magic(line):
         print(f"AI tutor {args[1]}.")
     elif args[0] == "progress":
         prog, key = load_json(PROGRESS_FILE, {}), answer_key()
-        for lesson, total in key["lessons"].items():
-            done = len(prog.get(lesson, []))
-            if done:
-                print(f"{Path(lesson).stem:45s} {done:3d} / {total}")
-        if not prog:
+        rows = [(Path(lesson).stem.replace("_", " "), len(prog.get(lesson, [])), total)
+                for lesson, total in key["lessons"].items() if prog.get(lesson)]
+        if not rows:
             print("No answers marked yet. Run an answer cell to start.")
+        for name, done, total in rows:
+            print(f"{name:48s} {'⭐' if done == total else '  '} {done:3d} / {total}")
     elif args[0] == "reset":
         save_json(PROGRESS_FILE, {})
         print("Progress cleared.")
     elif args[0] == "setup":
         setup(cfg)
+    elif args[0] == "help":
+        show("The full step-by-step guide, with pictures in words: "
+             + link("How to use the PyGILE tutor and get a free AI key"))
+    elif args[0] == "remove" and len(args) == 2:
+        before = services(cfg)
+        cfg["services"] = [s for s in before if s.get("provider") != args[1].lower()]
+        cfg.pop("provider", None)
+        save_json(CONFIG_FILE, cfg)
+        print("Removed." if len(cfg["services"]) < len(before) else f"No service called {args[1]}.")
     else:
-        print("Unknown command. Run  %tutor  to see the commands.")
+        print("Unknown command. Type  %tutor  to see the commands.")
 
 
 def setup(cfg):
     from getpass import getpass
-    print("Choose an AI service for written feedback (marking works without one):")
+    svcs = services(cfg)
+    have = {s.get("provider") for s in svcs}
     names = list(PROVIDERS)
-    for i, n in enumerate(names, 1):
-        print(f"  {i}. {PROVIDERS[n]['name']}")
-    pick = input("Number (or Enter to cancel): ").strip()
+    rows = "".join(
+        f"<tr><td style='padding:2px 10px 2px 0'><b>{i}</b></td>"
+        f"<td style='padding:2px 10px 2px 0'><b>{PROVIDERS[n]['name']}</b>"
+        f"{' ✓ already added' if n in have else ''}</td><td>{PROVIDERS[n]['cost']}</td></tr>"
+        for i, n in enumerate(names, 1))
+    show("<b>🤖 Add an AI tutor</b><br>"
+         "The AI tutor writes a short, personal hint under your answers. "
+         "Your ✅ marks work without it.<br><br>"
+         f"<table style='border-collapse:collapse'>{rows}</table><br>"
+         "<b>New here? Choose 1.</b> You can add more later as backups: when one reaches "
+         "its daily limit, the tutor moves to the next.<br><br>"
+         "<span style='opacity:.8'>Good to know: Google's Gemini service is for people aged "
+         "18 or older. Only the question and your code are sent, never your name, but free "
+         "services may let their staff read what is sent. So never type personal "
+         "information in an answer cell. " + link("Read the full guide") + "</span>")
+    pick = input("Type a number (1 to 4) and press Enter. Press Enter alone to stop: ").strip()
     if not pick.isdigit() or not 1 <= int(pick) <= len(names):
-        print("Cancelled.")
+        print("Stopped. Nothing was changed.")
         return
     name = names[int(pick) - 1]
     prov = PROVIDERS[name]
-    cfg = {"provider": name, "ai": True}
-    if name != "ollama":
-        print(f"Make a free key at {prov['key_page']} and paste it here. "
-              "It is saved on this computer only, never in the notebook.")
-        cfg["key"] = getpass("API key: ").strip()
-    model = input(f"Model [{prov['model'] or 'type a name'}]: ").strip() or prov["model"]
-    if not model:
-        print("A model name is needed (for Ollama, for example  qwen2.5-coder:7b ). Cancelled.")
+    steps = "".join(f"<li>{st}</li>" for st in prov["steps"])
+    show(f"<b>Get your {prov['name']} key</b>"
+         f"<ol style='margin:6px 0 6px 20px;padding:0'>{steps}"
+         "<li>Come back to this page. Click in the box below, paste the key "
+         "(<b>Ctrl+V</b>, or <b>Cmd+V</b> on a Mac) and press <b>Enter</b>. "
+         "The key stays hidden while you paste. That is normal: it keeps it safe.</li></ol>"
+         "<span style='opacity:.8'>A key is like a password. Do not share it or put it in a "
+         "notebook. It is saved only on this computer. "
+         + link("Stuck? Step-by-step help", prov["anchor"]) + "</span>")
+    key = getpass("Paste your key and press Enter: ").strip().strip('"').strip("'")
+    if not key:
+        print("Stopped. Nothing was changed.")
         return
-    cfg["model"] = model
+    svc = {"provider": name, "key": key, "model": prov["model"]}
+    print("Checking the key…")
+    text, problem = call_service(svc, "Reply with the single word OK.", "Say OK.")
+    if problem == "key":
+        show(f"🔴 <b>{prov['name']} did not accept that key.</b> Check that you copied all of it, "
+             "with nothing extra. Then type <code>%tutor setup</code> and try again. "
+             + link("Step-by-step help", prov["anchor"]))
+        return
+    cfg["services"] = [s for s in svcs if s.get("provider") != name] + [svc]
+    cfg.pop("provider", None)
+    cfg.setdefault("ai", True)
     save_json(CONFIG_FILE, cfg)
-    print("Testing…")
-    text, note = ask_ai(cfg, "Print 2 + 2.", "print(2 + 2)", "print(2 + 2)", "4", None,
-                        "correct", "matches")
-    print("✅ The AI tutor is ready." if text else f"⚠️ {note}")
+    if problem is None:
+        msg = (f"✅ <b>{prov['name']} is working!</b> Run any answer cell to get your first hint.")
+    elif problem == "limit":
+        msg = (f"✅ <b>Your key is saved.</b> Today's limit is already used, so hints start "
+               f"again later. {prov['reset']}")
+    elif problem == "network":
+        msg = ("✅ <b>Your key is saved</b>, but it could not be checked, because the internet "
+               "could not be reached. Hints will start when you are online.")
+    else:
+        msg = ("✅ <b>Your key is saved</b>, but the service did not answer the test. "
+               "Try an answer cell in a few minutes.")
+    if len(cfg["services"]) == 1:
+        backup = "groq" if name != "groq" else "gemini"
+        msg += (f"<br><br>💡 Tip: add a second free service as a backup, so your hints do not stop "
+                f"when one reaches its daily limit. Type <code>%tutor setup</code> again and "
+                f"choose {PROVIDERS[backup]['name']}.")
+    show(msg)
 
 
 _TUTOR = None

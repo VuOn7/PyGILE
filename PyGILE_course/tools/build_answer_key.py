@@ -31,6 +31,11 @@ from pygile_tutor import ANSWER_STARTS, KEY_FILE, names_in  # noqa: E402
 
 SOL = re.compile(r"```python\n(.*?)\n```", re.S)
 MARK = "<<PYGILE-VARS>>"
+ADDRESS = re.compile(r" at 0x[0-9a-fA-F]+>")
+# Solutions whose printed result changes from run to run (timings, unseeded random
+# numbers): their output is not compared, only their variables.
+UNSTABLE = re.compile(r"perf_counter|time\.time\(|datetime\.now|date\.today|(?<![\w.])random\.(?!seed)"
+                      r"|np\.random\.(?!seed|default_rng\(\d)")
 
 
 def label_of(question_md):
@@ -85,8 +90,12 @@ def build(path):
             if o.output_type == "stream" and o.name == "stdout":
                 printed.append(o.text)
             elif o.output_type == "execute_result":
-                shown.append(o.data.get("text/plain", ""))
-            elif o.output_type == "display_data" and "image/png" in o.get("data", {}):
+                txt = o.data.get("text/plain", "")
+                if ADDRESS.search(txt):          # a map or other rich object: a picture
+                    image = True
+                else:
+                    shown.append(txt)
+            elif o.output_type == "display_data" and ({"image/png", "text/html"} & set(o.get("data", {}))):
                 image = True
             elif o.output_type == "error":
                 error = f"{o.ename}: {o.evalue}"
@@ -99,6 +108,8 @@ def build(path):
         output = ("".join(printed) + ("\n" + "\n".join(shown) if shown else "")).strip()
         out[a["id"]] = {"lesson": rel, "label": a["label"], "output": output,
                         "vars": variables, "required": a["required"], "image": image}
+        if UNSTABLE.search(a["sol"].source):
+            out[a["id"]]["unstable"] = True
     return rel, out
 
 

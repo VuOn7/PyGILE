@@ -13,4 +13,4 @@ from IPython import get_ipython  # noqa: E402
 
 get_ipython().extension_manager.load_extension("pygile_tutor")
 print("✅ Answer checking is on. Run an answer cell to see your mark. "
-      "Type  %tutor  for options.")
+      "Type %tutor for options.")

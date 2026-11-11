@@ -5,6 +5,7 @@
 3. The three step-by-step installers install exactly the packages in
    environment.yml, with the same versions.
 4. The question counts in the READMEs match the lessons.
+5. The tutor's answer key (tools/answer_key.json) has every answer cell.
 
 Usage, from anywhere:  python PyGILE_course/tools/check_repo.py
 Exit code 1 if anything fails. Needs only nbformat and PyYAML.
@@ -120,6 +121,21 @@ for readme in (ROOT / "README.md", COURSE / "README.md"):
         real = sum(1 for rel in counts if rel.startswith(part + "_"))
         if int(claim) != real:
             fail(f"{readme.relative_to(ROOT)} says Part {part} has {claim} lessons; it has {real}")
+
+# 5. Tutor answer key ------------------------------------------------------
+import json  # noqa: E402
+
+key_file = COURSE / "tools" / "answer_key.json"
+key = json.loads(key_file.read_text(encoding="utf-8"))["answers"] if key_file.exists() else {}
+for path in lessons:
+    rel = path.relative_to(COURSE).as_posix()
+    nb = nbformat.read(path, as_version=4)
+    ids = {c.id for c in nb.cells if c.cell_type == "code"
+           and (c.source.startswith("# Q") or c.source.startswith("# Your answer"))}
+    keyed = {i for i, v in key.items() if v["lesson"] == rel}
+    if ids != keyed:
+        fail(f"{rel}: the tutor's answer key is out of date ({len(ids - keyed)} answer cells missing, "
+             f"{len(keyed - ids)} extra). Run: python PyGILE_course/tools/build_answer_key.py {rel}")
 
 print(f"{'PASS' if not problems else 'FAIL'}: {len(lessons)} lessons, {grand:,} questions, "
       f"{len(installers)} installers checked, {len(problems)} problems")

@@ -55,6 +55,7 @@ The blank line after `</summary>` is required, or the code will not render in Ju
 - No `!pip install`, no internet access, no absolute paths.
 - Notebooks are saved **without outputs**.
 - Before committing, run `python PyGILE_course/tools/check_repo.py` and `python PyGILE_course/tools/qa.py <lesson>`. The automatic tests run both on every pull request.
+- After changing a lesson's questions or solutions, rebuild the tutor's answer key in the `pygile` environment: `python PyGILE_course/tools/build_answer_key.py <lesson>` (paths relative to `PyGILE_course/`). `check_repo.py` fails if the key is out of date. See [AI_TUTOR.md](AI_TUTOR.md#for-teachers).
 
 ## Writing rules
 
