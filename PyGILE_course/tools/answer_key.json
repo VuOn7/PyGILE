@@ -1,0 +1,5481 @@
+{
+"answers": {
+"000a0c98": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+},
+"station_c_mm": {
+"len": 12,
+"name": "Station C",
+"type": "Series"
+}
+}
+},
+"001e6954": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Year 2023, month 8",
+"required": [],
+"vars": {
+"date": "2023-08-18",
+"month": 8,
+"year": 2023
+}
+},
+"00a76892": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "True",
+"required": [
+"province"
+],
+"vars": {
+"province": "Bagmati"
+}
+},
+"00b3aea3": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[[4.21 4.35 4.48 4.52 4.4  4.29]\n [4.38 4.62 4.89 4.95 4.7  4.46]\n [4.51 4.87 5.23 5.41 5.02 4.63]\n [4.47 4.79 5.15 5.29 4.98 4.59]\n [4.3  4.52 4.76 4.81 4.65 4.41]]",
+"required": [],
+"vars": {}
+},
+"013f5d6b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "16.0",
+"required": [],
+"vars": {}
+},
+"01a2e149": {
+"image": false,
+"label": "Review 4 · A safe file reader",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "nepal_peaks.csv 8\npractice_rainfall.csv 6\npractice_landslides.csv 40\nMissing file: ../data/districts.csv\ndistricts.csv 0",
+"required": [],
+"vars": {
+"f": {
+"type": "TextIOWrapper"
+},
+"records": {
+"items": [],
+"type": "list"
+}
+}
+},
+"01ad8215": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"02584a8a": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[35.8 35.8 19.8 38.  38. ]",
+"required": [],
+"vars": {
+"angle_deg": {
+"dtype": "f",
+"nan": 0,
+"shape": [
+5
+],
+"sum": 167.215,
+"type": "ndarray"
+},
+"rise_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+5
+],
+"sum": 1680.0,
+"type": "ndarray"
+}
+}
+},
+"030369d6": {
+"image": false,
+"label": "Review 1 · The eight peaks from the data file",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "8380.6\nEverest\n3",
+"required": [],
+"vars": {
+"DATA": {
+"type": "PosixPath"
+},
+"f": {
+"type": "TextIOWrapper"
+},
+"peak_heights": {
+"items": [
+8849,
+8586,
+8516,
+8485,
+8188,
+8167,
+8163,
+8091
+],
+"type": "list"
+},
+"peak_names": {
+"items": [
+"Everest",
+"Kanchenjunga",
+"Lhotse",
+"Makalu",
+"Cho Oyu",
+"Dhaulagiri I",
+"Manaslu",
+"Annapurna I"
+],
+"type": "list"
+},
+"peaks_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+8
+],
+"sum": 67045.0,
+"type": "ndarray"
+},
+"records": {
+"items": [
+{
+"items": {
+"first_ascent": "1953",
+"height_m": "8849",
+"lat": "27.9881",
+"lon": "86.9250",
+"name": "Everest",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1955",
+"height_m": "8586",
+"lat": "27.7025",
+"lon": "88.1475",
+"name": "Kanchenjunga",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1956",
+"height_m": "8516",
+"lat": "27.9617",
+"lon": "86.9333",
+"name": "Lhotse",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1955",
+"height_m": "8485",
+"lat": "27.8897",
+"lon": "87.0889",
+"name": "Makalu",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1954",
+"height_m": "8188",
+"lat": "28.0942",
+"lon": "86.6608",
+"name": "Cho Oyu",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1960",
+"height_m": "8167",
+"lat": "28.6967",
+"lon": "83.4875",
+"name": "Dhaulagiri I",
+"province": "Gandaki"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1956",
+"height_m": "8163",
+"lat": "28.5497",
+"lon": "84.5597",
+"name": "Manaslu",
+"province": "Gandaki"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1950",
+"height_m": "8091",
+"lat": "28.5961",
+"lon": "83.8203",
+"name": "Annapurna I",
+"province": "Gandaki"
+},
+"type": "dict"
+}
+],
+"type": "list"
+}
+}
+},
+"0389adba": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "'Everest: 29,032 ft'",
+"required": [],
+"vars": {}
+},
+"045ad09a": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "Nepal has 7 provinces\nNepal has 77 districts\nNepal has 753 local levels",
+"required": [],
+"vars": {}
+},
+"04c7978d": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "Sita Sharma",
+"required": [],
+"vars": {}
+},
+"052398b5": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"071de33c": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "date\n1     13.2\n2     15.6\n3     19.1\n4     22.5\n5     24.1\n6     26.1\n7     26.4\n8     26.4\n9     25.6\n10    22.5\n11    18.2\n12    14.8\nName: temp_mean_c, dtype: float64",
+"required": [],
+"vars": {
+"clim_temp_c": {
+"len": 12,
+"name": "temp_mean_c",
+"sum": 254.533,
+"type": "Series"
+}
+}
+},
+"075a43fa": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "1953 Everest\n1955 Kanchenjunga\n1956 Lhotse\n1955 Makalu\n1954 Cho Oyu\n1960 Dhaulagiri I\n1956 Manaslu\n1950 Annapurna I",
+"required": [],
+"vars": {}
+},
+"07a799a0": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "15000",
+"required": [],
+"vars": {
+"areas_m2": {
+"items": [
+9800,
+9800,
+9800,
+9800,
+1500,
+120,
+800,
+120,
+400,
+250,
+15000,
+250,
+1500,
+400,
+250,
+120,
+15000,
+5200,
+9800,
+15000,
+2600,
+15000,
+800,
+5200,
+250,
+1500,
+800,
+2600,
+5200,
+2600,
+120,
+250,
+120,
+1500,
+5200,
+15000,
+5200,
+15000,
+800,
+2600
+],
+"type": "list"
+}
+}
+},
+"08bbdb2b": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "date\n2021-01-31      0.2\n2021-02-28      9.2\n2021-03-31      3.1\n2021-04-30      7.1\n2021-05-31     90.7\n2021-06-30     58.8\n2021-07-31    176.3\n2021-08-31    133.6\n2021-09-30     35.4\n2021-10-31     76.1\n2021-11-30      1.8\n2021-12-31     40.0\nFreq: ME, Name: rain_mm, dtype: float64\n2021-07-02",
+"required": [],
+"vars": {
+"max_2021_mm": {
+"len": 12,
+"name": "rain_mm",
+"sum": 632.3,
+"type": "Series"
+}
+}
+},
+"0996521b": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "0 0 4210",
+"required": [],
+"vars": {
+"col": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 0.0,
+"type": "ndarray"
+},
+"position": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 0.0,
+"type": "ndarray"
+},
+"row": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 0.0,
+"type": "ndarray"
+}
+}
+},
+"09d66524": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "float",
+"required": [],
+"vars": {}
+},
+"0a635717": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "{'name': 'Everest', 'height_m': 8849, 'first_ascent': 1953, 'province': 'Koshi', 'height_ft': 29032}",
+"required": [],
+"vars": {}
+},
+"0ad79d0d": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "name  height_ft\n0       Everest    29032.0\n1  Kanchenjunga    28169.0\n2        Lhotse    27940.0\n3        Makalu    27838.0\n4       Cho Oyu    26864.0\n5  Dhaulagiri I    26795.0\n6       Manaslu    26781.0\n7   Annapurna I    26545.0",
+"required": [],
+"vars": {}
+},
+"0b289223": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[4374. 4630. 4902. 4996. 4750. 4476.]",
+"required": [],
+"vars": {}
+},
+"0b5fee04": {
+"image": false,
+"label": "Review 4 · How much rain falls in the monsoon?",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [
+"rain",
+"ax"
+],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"by_share": {
+"columns": [
+"station",
+"district",
+"province",
+"elevation_m",
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm",
+"annual_mm",
+"monsoon_pct"
+],
+"shape": [
+6,
+18
+],
+"sum": 31583.215,
+"type": "DataFrame"
+},
+"fig": {
+"type": "Figure"
+},
+"monsoon_mm": {
+"len": 6,
+"name": "None",
+"sum": 8808.0,
+"type": "Series"
+},
+"rain": {
+"columns": [
+"station",
+"district",
+"province",
+"elevation_m",
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm",
+"annual_mm",
+"monsoon_pct"
+],
+"shape": [
+6,
+18
+],
+"sum": 31583.215,
+"type": "DataFrame"
+}
+}
+},
+"0be040df": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+},
+"station_b_mm": {
+"len": 12,
+"name": "Station B",
+"type": "Series"
+}
+}
+},
+"0c1c8970": {
+"image": false,
+"label": "Review 3 · A landslide map by trigger",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [
+"ax"
+],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+},
+"subset": {
+"columns": [
+"id",
+"date",
+"district",
+"province",
+"lat",
+"lon",
+"area_m2",
+"trigger"
+],
+"shape": [
+3,
+8
+],
+"sum": 16939.203,
+"type": "DataFrame"
+}
+}
+},
+"0fbcf7f6": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Everest is 29,032 ft high",
+"required": [],
+"vars": {
+"everest_ft": 29032.1532
+}
+},
+"1120b9ff": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "Index(['station', 'district', 'province', 'elevation_m', 'jan_mm', 'feb_mm',\n       'mar_mm', 'apr_mm', 'may_mm', 'jun_mm', 'jul_mm', 'aug_mm', 'sep_mm',\n       'oct_mm', 'nov_mm', 'dec_mm'],\n      dtype='str')",
+"required": [],
+"vars": {}
+},
+"11dd17e5": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "20.0\n10.0\n5.0",
+"required": [],
+"vars": {}
+},
+"12ea7d74": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "2504",
+"required": [],
+"vars": {
+"end_m": 5364,
+"start_m": 2860
+}
+},
+"136caf9c": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "True",
+"required": [],
+"vars": {}
+},
+"13de0b0d": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "jun_mm    37\njul_mm    69\naug_mm    68\nsep_mm    37\nName: Station C, dtype: object\n211",
+"required": [],
+"vars": {
+"monsoon_mm": {
+"len": 4,
+"name": "Station C",
+"type": "Series"
+}
+}
+},
+"1451e335": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "9.1°",
+"required": [],
+"vars": {
+"angle_deg": 9.0903
+}
+},
+"17ce56e3": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "id        date district province      lat      lon  area_m2     trigger\n37  LS038  2020-06-27  Dolakha  Bagmati  27.7230  86.0114    15000    rainfall\n38  LS039  2015-05-12  Dolakha  Bagmati  27.8818  86.1884      800  earthquake\n39  LS040  2015-07-24   Rasuwa  Bagmati  28.1975  85.2697     2600    rainfall\nid              str\ndate            str\ndistrict        str\nprovince        str\nlat         float64\nlon         float64\narea_m2       int64\ntrigger         str\ndtype: object",
+"required": [],
+"vars": {}
+},
+"18f11bf3": {
+"image": false,
+"label": "Review 4 · Rain on a roof",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "16 mm -> 800 litres\n23 mm -> 1,150 litres\n28 mm -> 1,400 litres\n54 mm -> 2,700 litres\nTotal: 6,050 litres",
+"required": [],
+"vars": {
+"total_l": 6050,
+"water_l": 2700
+}
+},
+"1a6846b6": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "7.5",
+"required": [],
+"vars": {}
+},
+"1c849483": {
+"image": false,
+"label": "Review 3 · Checking typed names",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "['Everest', 'Lhotse', 'Makalu', 'Kathmandu']\nEverest is an eight-thousander: True\nLhotse is an eight-thousander: True\nMakalu is an eight-thousander: True\nKathmandu is an eight-thousander: False",
+"required": [],
+"vars": {
+"clean": {
+"items": [
+"Everest",
+"Lhotse",
+"Makalu",
+"Kathmandu"
+],
+"type": "list"
+},
+"typed": {
+"items": [
+"  everest",
+"LHOTSE ",
+"makalu",
+"kathmandu"
+],
+"type": "list"
+}
+}
+},
+"1ccc2575": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Climb: 2,504 m",
+"required": [],
+"vars": {}
+},
+"1e02a6ec": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "3",
+"required": [],
+"vars": {}
+},
+"1e0b2214": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "['everest_trek', 'nepal_peaks', 'practice_landslides', 'practice_landslides_melamchi', 'practice_rain_gauges', 'practice_rainfall', 'province_names', 'rain_daily_melamchi_kathmandu', 's2_melamchi_scenes']",
+"required": [],
+"vars": {
+"stems": {
+"items": [
+"everest_trek",
+"nepal_peaks",
+"practice_landslides",
+"practice_landslides_melamchi",
+"practice_rain_gauges",
+"practice_rainfall",
+"province_names",
+"rain_daily_melamchi_kathmandu",
+"s2_melamchi_scenes"
+],
+"type": "list"
+}
+}
+},
+"1e116d27": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {}
+},
+"1e41e2b0": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "<class 'str'> <class 'int'> <class 'bool'>",
+"required": [],
+"vars": {
+"above_3000_m": true,
+"elevation_m": 3440,
+"place": "Namche Bazaar"
+}
+},
+"1e8f3c1c": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "Climb: 2504 m",
+"required": [],
+"vars": {
+"base_camp_m": 5364,
+"lukla_m": 2860
+}
+},
+"1f800d51": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"by_rain": {
+"columns": [
+"station",
+"district",
+"province",
+"elevation_m",
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm",
+"annual_mm"
+],
+"shape": [
+6,
+17
+],
+"sum": 31110.0,
+"type": "DataFrame"
+},
+"fig": {
+"type": "Figure"
+},
+"rain": {
+"columns": [
+"station",
+"district",
+"province",
+"elevation_m",
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm",
+"annual_mm"
+],
+"shape": [
+6,
+17
+],
+"sum": 31110.0,
+"type": "DataFrame"
+}
+}
+},
+"1fb40bdd": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"axes": {
+"dtype": "O",
+"shape": [
+3
+],
+"type": "ndarray"
+},
+"fig": {
+"type": "Figure"
+},
+"names": {
+"items": [
+"Station D",
+"Station E",
+"Station F"
+],
+"type": "list"
+}
+}
+},
+"1fed993e": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "16.0%: steep",
+"required": [],
+"vars": {
+"gradient_percent": 16.0
+}
+},
+"2013a085": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "'nepal_peaks'",
+"required": [],
+"vars": {}
+},
+"211617d7": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "5364",
+"required": [
+"altitude_m"
+],
+"vars": {
+"altitude_m": 3440
+}
+},
+"21e58429": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "Help on method_descriptor:\n\nstartswith(self, prefix[, start[, end]], /) unbound builtins.str method\n    Return True if the string starts with the specified prefix, False otherwise.\n\n    prefix\n      A string or a tuple of strings to try.\n    start\n      Optional start position. Default: start of the string.\n    end\n      Optional stop position. Default: end of the string.",
+"required": [],
+"vars": {}
+},
+"223b0e48": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "3045",
+"required": [],
+"vars": {
+"above_8000_m": {
+"items": [
+849,
+586,
+516,
+485,
+188,
+167,
+163,
+91
+],
+"type": "list"
+}
+}
+},
+"2314e7a4": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "",
+"required": [
+"altitude_m"
+],
+"vars": {
+"altitude_m": 2860
+}
+},
+"232a3cbe": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "29,032 ft",
+"required": [],
+"vars": {}
+},
+"233dc26c": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "25951\n8650.333333333334\n198.66666666666606",
+"required": [],
+"vars": {}
+},
+"23595b28": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "DOL",
+"required": [],
+"vars": {
+"code": "Dol",
+"district": "Dolakha"
+}
+},
+"24e018be": {
+"image": false,
+"label": "Review 3 · First ascents by decade",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "decade\n1950    7\n1960    1\nName: name, dtype: int64\n5    Dhaulagiri I\nName: name, dtype: str",
+"required": [
+"peaks"
+],
+"vars": {
+"peaks": {
+"columns": [
+"name",
+"height_m",
+"first_ascent",
+"province",
+"lat",
+"lon",
+"height_ft",
+"decade"
+],
+"shape": [
+8,
+8
+],
+"sum": 319171.102,
+"type": "DataFrame"
+},
+"per_decade": {
+"len": 2,
+"name": "name",
+"sum": 8.0,
+"type": "Series"
+},
+"sixties": {
+"len": 8,
+"name": "decade",
+"sum": 1.0,
+"type": "Series"
+}
+}
+},
+"270f0dbf": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "35 <class 'str'>\n59 <class 'int'>\n78.0 <class 'float'>",
+"required": [],
+"vars": {}
+},
+"27445530": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"2804b7ca": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "2697",
+"required": [],
+"vars": {}
+},
+"299a7d28": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "'Saturday'",
+"required": [],
+"vars": {}
+},
+"29f0a4d2": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "EVEREST\nKANCHENJUNGA\nLHOTSE\nMAKALU\nCHO OYU\nDHAULAGIRI I\nMANASLU\nANNAPURNA I",
+"required": [],
+"vars": {}
+},
+"2ac41368": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "[1950, 1953, 1954, 1955, 1955, 1956, 1956, 1960]\nAll eight were first climbed within 10 years.",
+"required": [],
+"vars": {
+"span_years": 10
+}
+},
+"2b47b5bc": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "peaks: 8 rows, 6 columns\nrain: 6 rows, 16 columns\nlandslides: 40 rows, 8 columns",
+"required": [],
+"vars": {
+"tables": {
+"items": {
+"landslides": {
+"columns": [
+"id",
+"date",
+"district",
+"province",
+"lat",
+"lon",
+"area_m2",
+"trigger"
+],
+"shape": [
+40,
+8
+],
+"sum": 191779.691,
+"type": "DataFrame"
+},
+"peaks": {
+"columns": [
+"name",
+"height_m",
+"first_ascent",
+"province",
+"lat",
+"lon"
+],
+"shape": [
+8,
+6
+],
+"sum": 83597.102,
+"type": "DataFrame"
+},
+"rain": {
+"columns": [
+"station",
+"district",
+"province",
+"elevation_m",
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm"
+],
+"shape": [
+6,
+16
+],
+"sum": 20000.0,
+"type": "DataFrame"
+}
+},
+"type": "dict"
+}
+}
+},
+"2b9594e6": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[ 430  460 -120 -480]",
+"required": [],
+"vars": {}
+},
+"2c06167c": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "station  monsoon_pct\n0  Station A         79.4\n1  Station B         80.2\n2  Station C         77.3\n3  Station D         79.0\n4  Station E         78.0\n5  Station F         79.4",
+"required": [
+"rain"
+],
+"vars": {
+"rain": {
+"columns": [
+"station",
+"district",
+"province",
+"elevation_m",
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm",
+"annual_mm",
+"monsoon_mm",
+"monsoon_pct"
+],
+"shape": [
+6,
+19
+],
+"sum": 40391.3,
+"type": "DataFrame"
+}
+}
+},
+"2cbf402b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "",
+"required": [
+"elevation_m"
+],
+"vars": {
+"elevation_m": 5364
+}
+},
+"2ce2aa99": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "8849",
+"required": [
+"name"
+],
+"vars": {
+"name": "everest"
+}
+},
+"2d8086f2": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "1553",
+"required": [],
+"vars": {
+"station_b_total_mm": 1553
+}
+},
+"303c930b": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"quakes": {
+"columns": [
+"id",
+"date",
+"district",
+"area_m2"
+],
+"shape": [
+3,
+4
+],
+"sum": 16600.0,
+"type": "DataFrame"
+}
+}
+},
+"3071d924": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "4.3",
+"required": [],
+"vars": {}
+},
+"30a8ba88": {
+"image": false,
+"label": "Review 1 · How far below Everest?",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Everest: 0 m below the highest\nKanchenjunga: 263 m below the highest\nLhotse: 333 m below the highest\nMakalu: 364 m below the highest\nCho Oyu: 661 m below the highest\nDhaulagiri I: 682 m below the highest\nManaslu: 686 m below the highest\nAnnapurna I: 758 m below the highest\nAverage gap: 468.4 m",
+"required": [],
+"vars": {
+"gap_m": 758,
+"gaps_m": {
+"items": [
+0,
+263,
+333,
+364,
+661,
+682,
+686,
+758
+],
+"type": "list"
+},
+"tallest_m": 8849
+}
+},
+"31718e51": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Kanchenjunga",
+"required": [],
+"vars": {}
+},
+"32e522a8": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[[ 5.4  4.5  3.8  3.5  4.2  4.9]\n [ 4.4  2.9  1.3  0.9  2.4  3.9]\n [ 3.6  1.4 -0.7 -1.8  0.5  2.9]\n [ 3.8  1.9 -0.3 -1.1  0.8  3.1]\n [ 4.8  3.5  2.1  1.8  2.7  4.2]]",
+"required": [],
+"vars": {
+"drop_per_m": 0.006,
+"temp_c": {
+"dtype": "f",
+"nan": 0,
+"shape": [
+5,
+6
+],
+"sum": 75.36,
+"type": "ndarray"
+}
+}
+},
+"331e3052": {
+"image": false,
+"label": "Review 4 · Brightening an image safely",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[[180   4  54]\n [150  90 240]]\n[[180 255 255]\n [150  90 240]]",
+"required": [],
+"vars": {
+"brighter": {
+"dtype": "f",
+"nan": 0,
+"shape": [
+2,
+3
+],
+"sum": 1170.0,
+"type": "ndarray"
+},
+"image": {
+"dtype": "u",
+"nan": 0,
+"shape": [
+2,
+3
+],
+"sum": 870.0,
+"type": "ndarray"
+},
+"safe": {
+"dtype": "u",
+"nan": 0,
+"shape": [
+2,
+3
+],
+"sum": 1170.0,
+"type": "ndarray"
+}
+}
+},
+"33caf20b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "3",
+"required": [],
+"vars": {}
+},
+"3574ff29": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "Average per district: 378,761 people",
+"required": [],
+"vars": {
+"districts": 77,
+"population": 29164578
+}
+},
+"3674c066": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Help on built-in function round in module builtins:\n\nround(number, ndigits=None)\n    Round a number to a given precision in decimal digits.\n\n    The return value is an integer if ndigits is omitted or None.\n    Otherwise the return value has the same type as the number.  ndigits\n    may be negative.",
+"required": [],
+"vars": {}
+},
+"3677e325": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Everest: 8,849 m (29,032 ft)\nKanchenjunga: 8,586 m (28,169 ft)\nLhotse: 8,516 m (27,940 ft)",
+"required": [],
+"vars": {}
+},
+"36c2bb69": {
+"image": false,
+"label": "Review 4 · A monthly table for a report",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "(288, 2)\n<class 'pandas.Timestamp'>\n            Kathmandu  Melamchi\ndate                           \n2021-06-01      636.3     519.8\n2021-07-01     1159.1    1061.6\n2021-08-01      993.2     933.2\n2021-09-01      365.7     353.9",
+"required": [],
+"vars": {
+"check": {
+"columns": [
+"Kathmandu",
+"Melamchi"
+],
+"shape": [
+288,
+2
+],
+"sum": 132817.0,
+"type": "DataFrame"
+},
+"monthly_both_mm": {
+"columns": [
+"Kathmandu",
+"Melamchi"
+],
+"shape": [
+288,
+2
+],
+"sum": 132817.0,
+"type": "DataFrame"
+}
+}
+},
+"395c2d62": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "over 8,800 m",
+"required": [],
+"vars": {
+"height_m": 8849
+}
+},
+"3a496b40": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Koshi True\nMadhesh False\nBagmati False\nGandaki True\nLumbini False\nKarnali False\nSudurpashchim False",
+"required": [
+"provinces",
+"peak_provinces"
+],
+"vars": {
+"peak_provinces": {
+"items": [
+"Koshi",
+"Gandaki"
+],
+"type": "list"
+},
+"provinces": {
+"items": [
+"Koshi",
+"Madhesh",
+"Bagmati",
+"Gandaki",
+"Lumbini",
+"Karnali",
+"Sudurpashchim"
+],
+"type": "list"
+}
+}
+},
+"3a63dd3f": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "date\n2017-08-12    270.1\n2019-07-12    245.0\n2009-08-19    209.7\n2012-06-24    202.2\n2002-07-22    202.1\nName: Kathmandu, dtype: float64",
+"required": [],
+"vars": {}
+},
+"3ad707d2": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "Gradient: 7.9%",
+"required": [],
+"vars": {
+"gradient_percent": 7.9167
+}
+},
+"3c3244cf": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "7.5",
+"required": [],
+"vars": {
+"extra": "\n\ndef gradient_percent(rise_m, run_m):\n    \"\"\"Return a gradient in percent.\"\"\"\n    return rise_m / run_m * 100\n"
+}
+},
+"3cdf4089": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "10",
+"required": [],
+"vars": {}
+},
+"3da9bf97": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "Makalu is not in the dictionary",
+"required": [],
+"vars": {
+"name": "Makalu"
+}
+},
+"3e4a65b2": {
+"image": false,
+"label": "Review 2 · A trek summary",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Lukla to Everest Base Camp: 2,504 m in 8 days, about 313 m per day\nPokhara to Jomsom: 1,898 m in 4 days, about 474 m per day",
+"required": [],
+"vars": {}
+},
+"3ed4ad5a": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "{'Everest': 849, 'Kanchenjunga': 586, 'Lhotse': 516, 'Makalu': 485}\n{'Everest': 849, 'Kanchenjunga': 586, 'Lhotse': 516}",
+"required": [],
+"vars": {
+"above_8000": {
+"items": {
+"Everest": 849,
+"Kanchenjunga": 586,
+"Lhotse": 516,
+"Makalu": 485
+},
+"type": "dict"
+}
+}
+},
+"3f6c8871": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[4350 4620 4870 4790 4520]\n520",
+"required": [
+"path_m"
+],
+"vars": {
+"path_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+5
+],
+"sum": 23150.0,
+"type": "ndarray"
+}
+}
+},
+"4207293a": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "0.9765625",
+"required": [
+"step_m"
+],
+"vars": {
+"step_m": 0.9766
+}
+},
+"44a8a474": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "True",
+"required": [],
+"vars": {}
+},
+"44ae90fd": {
+"image": false,
+"label": "Review 3 · A snow cover map",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[['.' '.' '.' '.' '.' '.']\n ['.' '.' '.' '*' '.' '.']\n ['.' '.' '*' '*' '*' '.']\n ['.' '.' '*' '*' '*' '.']\n ['.' '.' '.' '.' '.' '.']]\nSnow covers 1.75 km².\n5147",
+"required": [],
+"vars": {
+"n_snow": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 7.0,
+"type": "ndarray"
+},
+"snow": {
+"dtype": "b",
+"nan": 0,
+"shape": [
+5,
+6
+],
+"sum": 7.0,
+"type": "ndarray"
+},
+"snow_km2": 1.75
+}
+},
+"45da23dc": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"colours": {
+"items": [
+"grey",
+"grey",
+"grey",
+"grey",
+"grey",
+"grey",
+"grey",
+"tab:red"
+],
+"type": "list"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"461117af": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "1.25",
+"required": [],
+"vars": {
+"n_high": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 5.0,
+"type": "ndarray"
+}
+}
+},
+"46999cc4": {
+"image": false,
+"label": "Review 1 · Years to half, as a tested function",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "{0.01: 69, 0.02: 35, 0.05: 14, 0.1: 7}",
+"required": [],
+"vars": {
+"years": 35
+}
+},
+"48477fd5": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "Index(['Station A', 'Station B', 'Station C', 'Station D', 'Station E',\n       'Station F'],\n      dtype='str', name='station')",
+"required": [],
+"vars": {}
+},
+"485e37d7": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "8849",
+"required": [],
+"vars": {}
+},
+"497fdbba": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "8.849\n8.516",
+"required": [],
+"vars": {}
+},
+"4993462e": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Average height in Gandaki: 8,140.3 m",
+"required": [],
+"vars": {
+"count": 3,
+"total_m": 24421
+}
+},
+"4a6629b0": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "False",
+"required": [],
+"vars": {
+"wrong_file": {
+"type": "PosixPath"
+}
+}
+},
+"4c6abb92": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "['cumsum', 'sum']\nHelp on function cumsum in module pandas.core.series:\n\ncumsum(self, axis: 'Axis' = 0, skipna: 'bool' = True, *args, **kwargs) -> 'Self'\n    Return cumulative sum over a Series.\n\n    Returns a Series of the same size containing the cumulative sum.\n\n    Parameters\n    ----------\n    axis : {0 or 'index'}, default 0\n        This parameter is unused and defaults to 0.\n    skipna : bool, default True\n        Exclude NA/null values. If entire series is NA, the result will be NA.\n    *args, **kwargs\n        Additional keywords have no effect but might be accepted for\n        compatibility with NumPy.\n\n    Returns\n    -------\n    Series\n        Return cumulative sum of Series.\n\n    See Also\n    --------\n    core.window.expanding.Expanding.sum : Similar functionality\n        but ignores ``NaN`` values.\n    Series.sum : Return the sum over Series.\n    Series.cummax : Return cumulative maximum.\n    Series.cummin : Return cumulative minimum.\n    Series.cumprod : Return cumulative product.\n\n    Examples\n    --------\n    >>> s = pd.Series([2, np.nan, 5, -1, 0])\n    >>> s\n    0    2.0\n    1    NaN\n    2    5.0\n    3   -1.0\n    4    0.0\n    dtype: float64\n\n    By default, NA values are ignored.\n\n    >>> s.cumsum()\n    0    2.0\n    1    NaN\n    2    7.0\n    3    6.0\n    4    6.0\n    dtype: float64\n\n    To include NA values in the operation, use ``skipna=False``\n\n    >>> s.cumsum(skipna=False)\n    0    2.0\n    1    NaN\n    2    NaN\n    3    NaN\n    4    NaN\n    dtype: float64",
+"required": [],
+"vars": {
+"sum_names": {
+"items": [
+"cumsum",
+"sum"
+],
+"type": "list"
+}
+}
+},
+"4d0448a3": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [
+"ax"
+],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"counts": {
+"len": 8,
+"name": "count",
+"sum": 40.0,
+"type": "Series"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"4daf28ae": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "Namaste\nI live in Pokhara",
+"required": [],
+"vars": {}
+},
+"4f2f62f4": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "2000\n3000\n4000\n5000",
+"required": [],
+"vars": {}
+},
+"50506ba4": {
+"image": false,
+"label": "Review 4 · The wettest station",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Station A (Kaski): 3,936 mm\nStation C (Mustang): 273 mm\nStation F (Sindhupalchok): 2,669 mm\nWettest: Station A, 3,936 mm",
+"required": [
+"wettest_mm"
+],
+"vars": {
+"annual_mm": 2669,
+"stations": {
+"items": [
+{
+"items": {
+"district": "Kaski",
+"monthly_mm": {
+"items": [
+35,
+59,
+78,
+151,
+206,
+536,
+1045,
+952,
+592,
+198,
+42,
+42
+],
+"type": "list"
+},
+"name": "Station A"
+},
+"type": "dict"
+},
+{
+"items": {
+"district": "Mustang",
+"monthly_mm": {
+"items": [
+3,
+5,
+6,
+11,
+17,
+37,
+69,
+68,
+37,
+14,
+3,
+3
+],
+"type": "list"
+},
+"name": "Station C"
+},
+"type": "dict"
+},
+{
+"items": {
+"district": "Sindhupalchok",
+"monthly_mm": {
+"items": [
+29,
+34,
+54,
+90,
+155,
+358,
+754,
+648,
+359,
+129,
+29,
+30
+],
+"type": "list"
+},
+"name": "Station F"
+},
+"type": "dict"
+}
+],
+"type": "list"
+},
+"wettest_mm": 3936,
+"wettest_name": "Station A"
+}
+},
+"508129cf": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "True",
+"required": [],
+"vars": {}
+},
+"53c4d293": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "4000000",
+"required": [],
+"vars": {}
+},
+"53f735ce": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "27.1",
+"required": [],
+"vars": {
+"jan_mean_mm": 18.3333,
+"jul_mean_mm": 496.8333
+}
+},
+"5423dc36": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "211.8 2014-08-15",
+"required": [],
+"vars": {}
+},
+"56fc9508": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "True",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"57a9b3b5": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[[4210 4350 4480 4520 4400 4290]\n [4380 4620 4890 4950 4700 4460]] (2, 6)",
+"required": [
+"north_part"
+],
+"vars": {
+"north_part": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+2,
+6
+],
+"sum": 54250.0,
+"type": "ndarray"
+}
+}
+},
+"59e5406e": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax1": {
+"type": "Axes"
+},
+"ax2": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"5aa48ba8": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"5b3d4364": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "2015-07-13\n2021-06-30",
+"required": [],
+"vars": {
+"run_2015": {
+"len": 365,
+"name": "rain_mm",
+"sum": 381054.6,
+"type": "Series"
+}
+}
+},
+"5b4848d9": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "6.04 5.92",
+"required": [],
+"vars": {}
+},
+"5ba51c96": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "nepal_peaks.csv True\nREADME.md False",
+"required": [],
+"vars": {}
+},
+"5bb3b092": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "1045",
+"required": [],
+"vars": {}
+},
+"5cae096a": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "set()",
+"required": [],
+"vars": {
+"fixed_names": {
+"items": [
+"'Chitawan'",
+"'Dolakha'",
+"'Gorkha'",
+"'Kaski'",
+"'Myagdi'",
+"'Rasuwa'",
+"'Sindhupalchok'",
+"'Taplejung'"
+],
+"len": 8,
+"type": "set"
+}
+}
+},
+"5d43631e": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Height: 8,516 m, or 8.516 km",
+"required": [],
+"vars": {}
+},
+"5d60ee56": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "Peaks of Gandaki Province\n=========================",
+"required": [],
+"vars": {
+"title": "Peaks of Gandaki Province"
+}
+},
+"5ee8fc8c": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[4290 4460 4630 4590 4410]",
+"required": [],
+"vars": {}
+},
+"5f3ef5bc": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "2001 398.1\n2007 1200.5",
+"required": [],
+"vars": {
+"july_mm": {
+"len": 24,
+"name": "rain_mm",
+"sum": 18583.9,
+"type": "Series"
+}
+}
+},
+"5fab5d87": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "place  elevation_m\n0  Kathmandu         1400\n1    Pokhara          822",
+"required": [],
+"vars": {
+"towns": {
+"columns": [
+"place",
+"elevation_m"
+],
+"shape": [
+2,
+2
+],
+"sum": 2222.0,
+"type": "DataFrame"
+}
+}
+},
+"5ffa7538": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "['EVEREST',\n 'KANCHENJUNGA',\n 'LHOTSE',\n 'MAKALU',\n 'CHO OYU',\n 'DHAULAGIRI I',\n 'MANASLU',\n 'ANNAPURNA I']",
+"required": [],
+"vars": {}
+},
+"654d42d9": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "True",
+"required": [],
+"vars": {}
+},
+"66e047a7": {
+"image": false,
+"label": "Review 4 · Will the map label fit?",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "NAMCHE BAZAAR (3,440 m)\nCharacters: 23\nFits in 15 characters: False",
+"required": [],
+"vars": {
+"elevation_m": 3440,
+"label": "NAMCHE BAZAAR (3,440 m)",
+"town": "namche bazaar"
+}
+},
+"66e51aeb": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Gandaki",
+"required": [],
+"vars": {}
+},
+"6b53c75b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "station  elevation_m  annual_mm\n0  Station A          830       3936\n1  Station B         1340       1553\n2  Station C         2740        273\n3  Station D           80       1867\n4  Station E         2300        812\n5  Station F         1600       2669",
+"required": [],
+"vars": {}
+},
+"6bb31cb2": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "",
+"required": [
+"town_elevations_m"
+],
+"vars": {
+"town_elevations_m": {
+"items": [
+1400,
+822,
+2860,
+2720
+],
+"type": "list"
+}
+}
+},
+"6bf692d6": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "Everest Koshi\nKanchenjunga Koshi\nLhotse Koshi\nMakalu Koshi\nCho Oyu Koshi\nDhaulagiri I Gandaki\nManaslu Gandaki\nAnnapurna I Gandaki",
+"required": [
+"peaks"
+],
+"vars": {
+"f": {
+"type": "TextIOWrapper"
+},
+"peaks": {
+"items": [
+{
+"items": {
+"first_ascent": "1953",
+"height_m": "8849",
+"lat": "27.9881",
+"lon": "86.9250",
+"name": "Everest",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1955",
+"height_m": "8586",
+"lat": "27.7025",
+"lon": "88.1475",
+"name": "Kanchenjunga",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1956",
+"height_m": "8516",
+"lat": "27.9617",
+"lon": "86.9333",
+"name": "Lhotse",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1955",
+"height_m": "8485",
+"lat": "27.8897",
+"lon": "87.0889",
+"name": "Makalu",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1954",
+"height_m": "8188",
+"lat": "28.0942",
+"lon": "86.6608",
+"name": "Cho Oyu",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1960",
+"height_m": "8167",
+"lat": "28.6967",
+"lon": "83.4875",
+"name": "Dhaulagiri I",
+"province": "Gandaki"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1956",
+"height_m": "8163",
+"lat": "28.5497",
+"lon": "84.5597",
+"name": "Manaslu",
+"province": "Gandaki"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1950",
+"height_m": "8091",
+"lat": "28.5961",
+"lon": "83.8203",
+"name": "Annapurna I",
+"province": "Gandaki"
+},
+"type": "dict"
+}
+],
+"type": "list"
+}
+}
+},
+"6c5c5268": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "province\nBagmati    2111.0\nGandaki    2104.5\nKarnali     812.0\nKoshi      1867.0\nName: annual_mm, dtype: float64\nprovince\nBagmati    2\nGandaki    2\nKarnali    1\nKoshi      1\nName: annual_mm, dtype: int64",
+"required": [],
+"vars": {
+"by_province": {
+"type": "SeriesGroupBy"
+}
+}
+},
+"6d85bbe0": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "2504 5.0",
+"required": [],
+"vars": {
+"climb_m": 2504,
+"days": 5.008
+}
+},
+"6e75976e": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "True",
+"required": [],
+"vars": {
+"dhaulagiri_m": 8167,
+"manaslu_m": 8163
+}
+},
+"6e80cb18": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "The lists have 4 names and 4 elevations.",
+"required": [
+"towns",
+"town_elevations_m"
+],
+"vars": {
+"town_elevations_m": {
+"items": [
+1400,
+822,
+2860,
+2720
+],
+"type": "list"
+},
+"towns": {
+"items": [
+"Kathmandu",
+"Pokhara",
+"Lukla",
+"Jomsom"
+],
+"type": "list"
+}
+}
+},
+"702ff12c": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Cho Oyu 8188\nDhaulagiri I 8167\nManaslu 8163",
+"required": [],
+"vars": {}
+},
+"70eec4ca": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "2009-07-01 place\nKathmandu    24.9\nMelamchi     91.9\nName: 2009-07-01 00:00:00, dtype: float64",
+"required": [
+"diff_mm"
+],
+"vars": {
+"biggest_day": {
+"type": "Timestamp"
+},
+"diff_mm": {
+"len": 8766,
+"name": "None",
+"sum": -5307.2,
+"type": "Series"
+}
+}
+},
+"71d0a5e1": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "27.99",
+"required": [],
+"vars": {
+"latitude": 27.9881
+}
+},
+"7212d377": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "['02/07/2021', '15/06/2021', '28/05/2021']\nDatetimeIndex(['2021-05-28', '2021-06-15', '2021-07-02'], dtype='datetime64[us]', freq=None)",
+"required": [],
+"vars": {
+"visits": {
+"items": [
+"02/07/2021",
+"15/06/2021",
+"28/05/2021"
+],
+"type": "list"
+}
+}
+},
+"7240e77e": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+},
+"trek_alt_ft": {
+"items": [
+9383.2024,
+11286.0896,
+17598.4258
+],
+"type": "list"
+}
+}
+},
+"724d9cc6": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "[8849, 8586, 8516, 8485]",
+"required": [],
+"vars": {
+"top_heights_m": {
+"items": [
+8849,
+8586,
+8516,
+8485
+],
+"type": "list"
+}
+}
+},
+"7336013c": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "16",
+"required": [],
+"vars": {
+"count_large": 16
+}
+},
+"73f1e381": {
+"image": false,
+"label": "Review 4 · A reproducible practice table",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "3445 mm in total (made-up data)",
+"required": [],
+"vars": {
+"check": {
+"columns": [
+"month",
+"rain_mm"
+],
+"shape": [
+12,
+2
+],
+"sum": 3445.0,
+"type": "DataFrame"
+},
+"made_up": {
+"columns": [
+"month",
+"rain_mm"
+],
+"shape": [
+12,
+2
+],
+"sum": 3445.0,
+"type": "DataFrame"
+},
+"rng": {
+"type": "Generator"
+}
+}
+},
+"74508ca6": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "nepal_peaks.csv True\npractice_rainfall.csv True\npractice_landslides.csv True\ndistricts.csv False",
+"required": [],
+"vars": {
+"path": {
+"type": "PosixPath"
+}
+}
+},
+"751f0f47": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Kanchenjunga: 8,586 m (28,169 ft)",
+"required": [],
+"vars": {}
+},
+"755d8a51": {
+"image": false,
+"label": "Review 3 · Peaks in feet, saved to a file",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "name,height_m,height_ft\nEverest,8849,29032\nKanchenjunga,8586,28169\nLhotse,8516,27940\nMakalu,8485,27838\nCho Oyu,8188,26864\nDhaulagiri I,8167,26795\nManaslu,8163,26781\nAnnapurna I,8091,26545",
+"required": [
+"height_m"
+],
+"vars": {
+"f": {
+"type": "TextIOWrapper"
+},
+"feet_file": {
+"type": "PosixPath"
+},
+"height_m": 8091,
+"peaks": {
+"items": [
+{
+"items": {
+"first_ascent": "1953",
+"height_m": "8849",
+"lat": "27.9881",
+"lon": "86.9250",
+"name": "Everest",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1955",
+"height_m": "8586",
+"lat": "27.7025",
+"lon": "88.1475",
+"name": "Kanchenjunga",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1956",
+"height_m": "8516",
+"lat": "27.9617",
+"lon": "86.9333",
+"name": "Lhotse",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1955",
+"height_m": "8485",
+"lat": "27.8897",
+"lon": "87.0889",
+"name": "Makalu",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1954",
+"height_m": "8188",
+"lat": "28.0942",
+"lon": "86.6608",
+"name": "Cho Oyu",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1960",
+"height_m": "8167",
+"lat": "28.6967",
+"lon": "83.4875",
+"name": "Dhaulagiri I",
+"province": "Gandaki"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1956",
+"height_m": "8163",
+"lat": "28.5497",
+"lon": "84.5597",
+"name": "Manaslu",
+"province": "Gandaki"
+},
+"type": "dict"
+},
+{
+"items": {
+"first_ascent": "1950",
+"height_m": "8091",
+"lat": "28.5961",
+"lon": "83.8203",
+"name": "Annapurna I",
+"province": "Gandaki"
+},
+"type": "dict"
+}
+],
+"type": "list"
+},
+"writer": {
+"type": "writer"
+}
+}
+},
+"759822d3": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[[0 0 0 1 0 0]\n [0 1 1 1 1 0]\n [1 1 0 0 0 1]\n [0 1 0 0 1 1]\n [0 1 1 1 1 0]]\n15",
+"required": [],
+"vars": {
+"middle": {
+"dtype": "b",
+"nan": 0,
+"shape": [
+5,
+6
+],
+"sum": 15.0,
+"type": "ndarray"
+}
+}
+},
+"75c1576a": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "9600\n0.96\n400",
+"required": [],
+"vars": {}
+},
+"774d77a4": {
+"image": false,
+"label": "Review 2 · Landslide counts with a name check",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "missing from map: {'Chitwan'}\n{'Dolakha': 9, 'Gorkha': 4, 'Kaski': 1, 'Myagdi': 5, 'Rasuwa': 5, 'Sindhupalchok': 3, 'Taplejung': 4, 'Chitawan': 9}",
+"required": [],
+"vars": {
+"counts": {
+"items": {
+"Chitawan": 9,
+"Dolakha": 9,
+"Gorkha": 4,
+"Kaski": 1,
+"Myagdi": 5,
+"Rasuwa": 5,
+"Sindhupalchok": 3,
+"Taplejung": 4
+},
+"type": "dict"
+},
+"names": {
+"items": [
+"'Chitwan'",
+"'Dolakha'",
+"'Gorkha'",
+"'Kaski'",
+"'Myagdi'",
+"'Rasuwa'",
+"'Sindhupalchok'",
+"'Taplejung'"
+],
+"len": 8,
+"type": "set"
+},
+"slides": {
+"columns": [
+"id",
+"date",
+"district",
+"province",
+"lat",
+"lon",
+"area_m2",
+"trigger"
+],
+"shape": [
+40,
+8
+],
+"sum": 191779.691,
+"type": "DataFrame"
+}
+}
+},
+"776b12a9": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "2095.9 3697.1",
+"required": [],
+"vars": {
+"total_2015_mm": 2095.9,
+"total_2021_mm": 3697.1
+}
+},
+"7797e607": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "",
+"required": [],
+"vars": {}
+},
+"77a633ac": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "True",
+"required": [],
+"vars": {}
+},
+"78c68940": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "8849",
+"required": [],
+"vars": {}
+},
+"7939f597": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "Everest is 8,849 m high",
+"required": [],
+"vars": {}
+},
+"79ac8f10": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "8\n104",
+"required": [],
+"vars": {
+"climb_m": 2504
+}
+},
+"7bbfa015": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "True",
+"required": [],
+"vars": {
+"quake": {
+"type": "Timestamp"
+}
+}
+},
+"7c95408c": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "31",
+"required": [],
+"vars": {
+"lhotse_m": 8516,
+"makalu_m": 8485
+}
+},
+"7ce6bd40": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "578",
+"required": [],
+"vars": {
+"kathmandu": 1400,
+"pokhara": 822
+}
+},
+"7d2df784": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "333",
+"required": [
+"lhotse"
+],
+"vars": {
+"lhotse": 8516
+}
+},
+"7d72a2ac": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"everest_m": 8849,
+"metres_to_feet": 3.2808
+}
+},
+"7e25bb72": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"7ec8b5e1": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "2",
+"required": [],
+"vars": {}
+},
+"7ee2c099": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "195.25",
+"required": [],
+"vars": {
+"average_mm": 195.25
+}
+},
+"7f4660c3": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "100.4 2021-06-16",
+"required": [],
+"vars": {
+"june_3d_mm": {
+"len": 30,
+"name": "rain_mm",
+"sum": 1520.4,
+"type": "Series"
+}
+}
+},
+"7f50b988": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "['practice_landslides.csv',\n 'practice_landslides_melamchi.csv',\n 'practice_rain_gauges.csv',\n 'practice_rainfall.csv']",
+"required": [],
+"vars": {}
+},
+"8050b922": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "Help on built-in function sorted in module builtins:\n\nsorted(iterable, /, *, key=None, reverse=False)\n    Return a new list containing all items from the iterable in ascending order.\n\n    A custom key function can be supplied to customize the sort order, and the\n    reverse flag can be set to request the result in descending order.\n\n[8849, 8516, 8188]",
+"required": [],
+"vars": {}
+},
+"813377d5": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "8849",
+"required": [],
+"vars": {}
+},
+"824eeba4": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "Lukla is at 2,860 m",
+"required": [],
+"vars": {
+"elevation_m": 2860,
+"lat": 27.6866,
+"lon": 86.7299
+}
+},
+"83484512": {
+"image": false,
+"label": "Review 3 · A trek module",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "[('Phakding', -250), ('Namche Bazaar', 830), ('Tengboche', 427), ('Dingboche', 543), ('Lobuche', 530), ('Gorak Shep', 224), ('Everest Base Camp', 200)]",
+"required": [],
+"vars": {
+"elevations_m": {
+"items": [
+2860,
+2610,
+3440,
+3867,
+4410,
+4940,
+5164,
+5364
+],
+"type": "list"
+},
+"legs_m": {
+"items": [
+-250,
+830,
+427,
+543,
+530,
+224,
+200
+],
+"type": "list"
+},
+"trek": {
+"columns": [
+"order",
+"place",
+"lat",
+"lon",
+"elevation_m"
+],
+"shape": [
+8,
+5
+],
+"sum": 33608.137,
+"type": "DataFrame"
+},
+"trek_text": "\"\"\"Tools for trek planning.\"\"\"\n\ndef climb_m(start_m, end_m):\n    \"\"\"Return the height gained from start to end.\"\"\"\n    return end_m - start_m\n"
+}
+},
+"83885946": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "(14, 394)",
+"required": [],
+"vars": {}
+},
+"84ea15d6": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "None 8.0",
+"required": [],
+"vars": {}
+},
+"85cdc243": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "",
+"required": [
+"ascent_years"
+],
+"vars": {
+"ascent_years": {
+"items": {
+"Cho Oyu": 1954,
+"Everest": 1953,
+"Lhotse": 1956,
+"Makalu": 1955
+},
+"type": "dict"
+}
+}
+},
+"86684858": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "8380.625",
+"required": [],
+"vars": {
+"total_m": 67045
+}
+},
+"86dcad1d": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Namche Bazaar is 2,040 m higher than Kathmandu.",
+"required": [
+"town_elevations_m"
+],
+"vars": {
+"climb_m": 2040,
+"town_elevations_m": {
+"items": {
+"Kathmandu": 1400,
+"Lukla": 2860,
+"Namche Bazaar": 3440,
+"Pokhara": 822
+},
+"type": "dict"
+}
+}
+},
+"87308a9a": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "Annapurna I",
+"required": [],
+"vars": {
+"position": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 7.0,
+"type": "ndarray"
+}
+}
+},
+"890ffc23": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "<class 'int'> <class 'float'>",
+"required": [
+"pokhara_m"
+],
+"vars": {
+"pokhara_m": 822
+}
+},
+"89177635": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "['Everest', 'Kanchenjunga', 'Lhotse']",
+"required": [],
+"vars": {
+"high_names": {
+"items": [
+"Everest",
+"Kanchenjunga",
+"Lhotse"
+],
+"type": "list"
+}
+}
+},
+"89973dfa": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Everest was first climbed in 1953.\nKanchenjunga was first climbed in 1955.\nLhotse was first climbed in 1956.\nMakalu was first climbed in 1955.\nCho Oyu was first climbed in 1954.\nDhaulagiri I was first climbed in 1960.\nManaslu was first climbed in 1956.\nAnnapurna I was first climbed in 1950.",
+"required": [],
+"vars": {}
+},
+"89cdbf39": {
+"image": false,
+"label": "Review 1 · The wettest and the driest station",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "Station A Kaski 3936\nStation C Mustang 273\n14.4",
+"required": [],
+"vars": {
+"driest": {
+"len": 17,
+"name": "2",
+"type": "Series"
+},
+"rainfall": {
+"columns": [
+"station",
+"district",
+"province",
+"elevation_m",
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm",
+"annual_mm"
+],
+"shape": [
+6,
+17
+],
+"sum": 31110.0,
+"type": "DataFrame"
+},
+"ranked": {
+"columns": [
+"station",
+"district",
+"province",
+"elevation_m",
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm",
+"annual_mm"
+],
+"shape": [
+6,
+17
+],
+"sum": 31110.0,
+"type": "DataFrame"
+},
+"wettest": {
+"len": 17,
+"name": "0",
+"type": "Series"
+}
+}
+},
+"8abc73cb": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "district\nChitwan          79970\nDolakha          35390\nRasuwa           27920\nMyagdi           21500\nTaplejung         9700\nSindhupalchok     9300\nGorkha            3220\nKaski              250\nName: area_m2, dtype: int64",
+"required": [
+"area_by_district"
+],
+"vars": {
+"area_by_district": {
+"len": 8,
+"name": "area_m2",
+"sum": 187250.0,
+"type": "Series"
+}
+}
+},
+"8b60f538": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "1950",
+"required": [],
+"vars": {}
+},
+"8ba1a3d4": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "<class 'str'>\n2504",
+"required": [
+"end_m",
+"climb_m"
+],
+"vars": {
+"climb_m": 2504,
+"end_m": "5364"
+}
+},
+"8cce0ea3": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "12 9",
+"required": [
+"city"
+],
+"vars": {
+"city": "  Kathmandu "
+}
+},
+"8d186e7c": {
+"image": false,
+"label": "Review 1 · How many Pokharas?",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "578\n10.8",
+"required": [],
+"vars": {
+"everest_m": 8849,
+"kathmandu_m": 1400,
+"pokhara_m": 822
+}
+},
+"8d7dfa09": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "7",
+"required": [
+"provinces"
+],
+"vars": {
+"provinces": {
+"items": [
+"Koshi",
+"Madhesh",
+"Bagmati",
+"Gandaki",
+"Lumbini",
+"Karnali",
+"Sudurpashchim"
+],
+"type": "list"
+}
+}
+},
+"8de68a3a": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "{5: 8.7, 10: 17.6, 20: 36.4, 30: 57.7, 45: 100.0}",
+"required": [],
+"vars": {
+"percent_by_deg": {
+"items": {
+"10": 17.6,
+"20": 36.4,
+"30": 57.7,
+"45": 100.0,
+"5": 8.7
+},
+"type": "dict"
+}
+}
+},
+"8e284d07": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "Annapurna I,8091,1950,Gandaki,28.5961,83.8203",
+"required": [],
+"vars": {}
+},
+"8edc040e": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "187,250 m² = 0.18725 km²",
+"required": [
+"total_m2"
+],
+"vars": {
+"total_m2": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 187250.0,
+"type": "ndarray"
+}
+}
+},
+"9088fe2c": {
+"image": false,
+"label": "Review 2 · Clean a messy list of heights",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "Could not read 'unknown'\n[8849, 8586, 8516, 8485] 8849",
+"required": [],
+"vars": {
+"clean_heights_m": {
+"items": [
+8849,
+8586,
+8516,
+8485
+],
+"type": "list"
+},
+"cleaned": "8485",
+"messy": {
+"items": [
+"8849",
+"8,586",
+"8516 m",
+"unknown",
+"8485"
+],
+"type": "list"
+}
+}
+},
+"910fe3a8": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "station       district province  elevation_m  jan_mm  feb_mm  mar_mm  \\\n0  Station A          Kaski  Gandaki          830      35      59      78   \n1  Station B      Kathmandu  Bagmati         1340      16      23      28   \n2  Station C        Mustang  Gandaki         2740       3       5       6   \n3  Station D         Morang    Koshi           80      19      24      40   \n4  Station E          Jumla  Karnali         2300       8      14      16   \n5  Station F  Sindhupalchok  Bagmati         1600      29      34      54   \n\n   apr_mm  may_mm  jun_mm  jul_mm  aug_mm  sep_mm  oct_mm  nov_mm  dec_mm  \n0     151     206     536    1045     952     592     198      42      42  \n1      54      79     246     384     394     222      79      14      14  \n2      11      17      37      69      68      37      14       3       3  \n3      64     111     276     507     456     235      95      20      20  \n4      29      58     127     222     175     109      38       7       9  \n5      90     155     358     754     648     359     129      29      30",
+"required": [],
+"vars": {}
+},
+"911e44c5": {
+"image": false,
+"label": "Review 2 · What triggers the landslides?",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "trigger\nrainfall      29\nroad cut       8\nearthquake     3\nName: count, dtype: int64\ntrigger\nearthquake     800.0\nrainfall      2600.0\nroad cut      1150.0\nName: area_m2, dtype: float64\n6      Gorkha\n19    Chitwan\n38    Dolakha\nName: district, dtype: str",
+"required": [],
+"vars": {
+"landslides": {
+"columns": [
+"id",
+"date",
+"district",
+"province",
+"lat",
+"lon",
+"area_m2",
+"trigger"
+],
+"shape": [
+40,
+8
+],
+"sum": 191779.691,
+"type": "DataFrame"
+},
+"quake": {
+"len": 40,
+"name": "trigger",
+"sum": 3.0,
+"type": "Series"
+}
+}
+},
+"92ebbcb4": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "5.0 8.3",
+"required": [],
+"vars": {}
+},
+"9331ed84": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "28169",
+"required": [],
+"vars": {
+"kanchenjunga_ft": 28169.2922
+}
+},
+"936ae2df": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[849 586 516 485 188 167 163  91]\n3045",
+"required": [],
+"vars": {
+"above_8000_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+8
+],
+"sum": 3045.0,
+"type": "ndarray"
+}
+}
+},
+"942d348d": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "1200",
+"required": [],
+"vars": {
+"corner_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 4210.0,
+"type": "ndarray"
+},
+"summit_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 5410.0,
+"type": "ndarray"
+}
+}
+},
+"946bc57d": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "place      Kathmandu  Melamchi\nplace                         \nKathmandu      1.000     0.994\nMelamchi       0.994     1.000",
+"required": [],
+"vars": {}
+},
+"962e2317": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "The grid has 5 rows, 6 columns and covers 7.5 km².",
+"required": [],
+"vars": {
+"area_km2": 7.5,
+"area_m2": 7500000
+}
+},
+"978a23cc": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "jun 246",
+"required": [
+"i"
+],
+"vars": {
+"i": 5
+}
+},
+"9983db21": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "1.1666666666666667\n24.978360215053765",
+"required": [],
+"vars": {}
+},
+"9a0c0954": {
+"image": false,
+"label": "Review 3 · Gradients with a missing distance",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "150 m over 2000 m: 7.5 %\n90 m over 0 m: no run recorded\n240 m over 1500 m: 16.0 %",
+"required": [],
+"vars": {
+"gradient": 16.0,
+"rise_m": 240,
+"run_m": 1500,
+"sections": {
+"items": [
+{
+"items": {
+"rise_m": 150,
+"run_m": 2000
+},
+"type": "dict"
+},
+{
+"items": {
+"rise_m": 90,
+"run_m": 0
+},
+"type": "dict"
+},
+{
+"items": {
+"rise_m": 240,
+"run_m": 1500
+},
+"type": "dict"
+}
+],
+"type": "list"
+}
+}
+},
+"9c3a716e": {
+"image": false,
+"label": "Review 1 · A label card for Makalu",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "MAKALU\n======\nHeight: 8,485 m (27,838 ft)\nThat is 8 km and 485 m\nFirst climbed in 1955, 2 years after Everest",
+"required": [],
+"vars": {
+"first_ascent": 1955,
+"height_m": 8485,
+"name": "makalu"
+}
+},
+"9ce341bd": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "1.09",
+"required": [],
+"vars": {
+"tallest_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 8849.0,
+"type": "ndarray"
+}
+}
+},
+"9d77e848": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "{'name': 'Station B', 'district': 'Kathmandu', 'elevation_m': 1340, 'annual_mm': 1553}",
+"required": [
+"station"
+],
+"vars": {
+"station": {
+"items": {
+"annual_mm": 1553,
+"district": "Kathmandu",
+"elevation_m": 1340,
+"name": "Station B"
+},
+"type": "dict"
+}
+}
+},
+"9db353e0": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "float64",
+"required": [],
+"vars": {}
+},
+"9dd6509e": {
+"image": false,
+"label": "Review 2 · A trek diary",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Day 1: 3,440 m\nDay 2: 3,440 m\nDay 3: 3,840 m\nDay 4: 4,290 m\nDay 5: 4,290 m\nDay 6: 4,810 m\nDay 7: 5,364 m\nHighest point: 5,364 m\nTotal gained: 2,504 m",
+"required": [],
+"vars": {
+"altitude_m": 5364,
+"altitudes_m": {
+"items": [
+3440,
+3440,
+3840,
+4290,
+4290,
+4810,
+5364
+],
+"type": "list"
+}
+}
+},
+"9edf142e": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "\"\"\"Print the annual rainfall of the practice stations (made-up data).\"\"\"\nimport pandas as pd\n\nrain = pd.read_csv(\"../data/practice_rainfall.csv\")\nrain[\"annual_mm\"] = rain.loc[:, \"jan_mm\":\"dec_mm\"].sum(axis=1)\nranked = rain.sort_values(\"annual_mm\", ascending=False)\n\nprint(\"Annual rainfall, practice stations (made-up data)\")\nprint(ranked[[\"station\", \"district\", \"annual_mm\"]])\nprint(\"Wettest:\", ranked.iloc[0][\"station\"])",
+"required": [],
+"vars": {}
+},
+"9f232962": {
+"image": false,
+"label": "Review 3 · Peaks per province",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "['Everest', 'Makalu']\n['Manaslu', 'Annapurna I']",
+"required": [
+"peaks"
+],
+"vars": {
+"peaks": {
+"items": [
+{
+"items": {
+"height_m": 8849,
+"name": "Everest",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"height_m": 8485,
+"name": "Makalu",
+"province": "Koshi"
+},
+"type": "dict"
+},
+{
+"items": {
+"height_m": 8163,
+"name": "Manaslu",
+"province": "Gandaki"
+},
+"type": "dict"
+},
+{
+"items": {
+"height_m": 8091,
+"name": "Annapurna I",
+"province": "Gandaki"
+},
+"type": "dict"
+}
+],
+"type": "list"
+}
+}
+},
+"9f9f64e3": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "5006.5\n313.0",
+"required": [],
+"vars": {}
+},
+"9fb624c0": {
+"image": false,
+"label": "Review 2 · How much of each year falls in the monsoon?",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "lowest: 2004 69.5 %\nhighest: 2010 86.0 %",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+},
+"monsoon_mm": {
+"len": 24,
+"name": "rain_mm",
+"sum": 50244.5,
+"type": "Series"
+},
+"monsoon_pct": {
+"len": 24,
+"name": "rain_mm",
+"sum": 1888.099,
+"type": "Series"
+},
+"month_no": {
+"type": "Index"
+}
+}
+},
+"a09bd3d9": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[ 54.  50. -16. -54.]",
+"required": [],
+"vars": {
+"steps_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+4
+],
+"sum": 170.0,
+"type": "ndarray"
+}
+}
+},
+"a18fa775": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "5",
+"required": [],
+"vars": {
+"big_dolakha": {
+"len": 40,
+"name": "None",
+"sum": 5.0,
+"type": "Series"
+}
+}
+},
+"a2182dd0": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Everest is 758 m higher than Annapurna I.",
+"required": [],
+"vars": {
+"highest_m": 8849,
+"lowest_m": 8091
+}
+},
+"a2d7afd6": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "5.364",
+"required": [],
+"vars": {}
+},
+"a5133557": {
+"image": false,
+"label": "Review 1 · Three mistakes in one function",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "Average: 8650.3 m",
+"required": [],
+"vars": {}
+},
+"a54129bb": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "3936",
+"required": [],
+"vars": {}
+},
+"a601ec0c": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "822.0",
+"required": [],
+"vars": {
+"elevation_text": "822 m"
+}
+},
+"a62be5af": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "Everest\nLhotse\nMakalu",
+"required": [],
+"vars": {}
+},
+"a6308c8b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "['Everest', 'Kanchenjunga', 'Lhotse', 'Makalu', 'Cho Oyu']",
+"required": [],
+"vars": {}
+},
+"a66a527d": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "576 38",
+"required": [],
+"vars": {
+"daily_mm": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+30
+],
+"sum": 576.0,
+"type": "ndarray"
+},
+"rng": {
+"type": "Generator"
+}
+}
+},
+"a674da32": {
+"image": false,
+"label": "Review 1 · The wettest station",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "Station A 3936\nStation B 1553\nStation C 273\nStation D 1867\nStation E 812\nStation F 2669\nWettest: Station A, 3,936 mm",
+"required": [],
+"vars": {
+"f": {
+"type": "TextIOWrapper"
+},
+"month_columns": {
+"items": [
+"jan_mm",
+"feb_mm",
+"mar_mm",
+"apr_mm",
+"may_mm",
+"jun_mm",
+"jul_mm",
+"aug_mm",
+"sep_mm",
+"oct_mm",
+"nov_mm",
+"dec_mm"
+],
+"type": "list"
+},
+"stations": {
+"items": [
+{
+"items": {
+"apr_mm": "151",
+"aug_mm": "952",
+"dec_mm": "42",
+"district": "Kaski",
+"elevation_m": "830",
+"feb_mm": "59",
+"jan_mm": "35",
+"jul_mm": "1045",
+"jun_mm": "536",
+"mar_mm": "78",
+"may_mm": "206",
+"nov_mm": "42",
+"oct_mm": "198",
+"province": "Gandaki",
+"sep_mm": "592",
+"station": "Station A"
+},
+"type": "dict"
+},
+{
+"items": {
+"apr_mm": "54",
+"aug_mm": "394",
+"dec_mm": "14",
+"district": "Kathmandu",
+"elevation_m": "1340",
+"feb_mm": "23",
+"jan_mm": "16",
+"jul_mm": "384",
+"jun_mm": "246",
+"mar_mm": "28",
+"may_mm": "79",
+"nov_mm": "14",
+"oct_mm": "79",
+"province": "Bagmati",
+"sep_mm": "222",
+"station": "Station B"
+},
+"type": "dict"
+},
+{
+"items": {
+"apr_mm": "11",
+"aug_mm": "68",
+"dec_mm": "3",
+"district": "Mustang",
+"elevation_m": "2740",
+"feb_mm": "5",
+"jan_mm": "3",
+"jul_mm": "69",
+"jun_mm": "37",
+"mar_mm": "6",
+"may_mm": "17",
+"nov_mm": "3",
+"oct_mm": "14",
+"province": "Gandaki",
+"sep_mm": "37",
+"station": "Station C"
+},
+"type": "dict"
+},
+{
+"items": {
+"apr_mm": "64",
+"aug_mm": "456",
+"dec_mm": "20",
+"district": "Morang",
+"elevation_m": "80",
+"feb_mm": "24",
+"jan_mm": "19",
+"jul_mm": "507",
+"jun_mm": "276",
+"mar_mm": "40",
+"may_mm": "111",
+"nov_mm": "20",
+"oct_mm": "95",
+"province": "Koshi",
+"sep_mm": "235",
+"station": "Station D"
+},
+"type": "dict"
+},
+{
+"items": {
+"apr_mm": "29",
+"aug_mm": "175",
+"dec_mm": "9",
+"district": "Jumla",
+"elevation_m": "2300",
+"feb_mm": "14",
+"jan_mm": "8",
+"jul_mm": "222",
+"jun_mm": "127",
+"mar_mm": "16",
+"may_mm": "58",
+"nov_mm": "7",
+"oct_mm": "38",
+"province": "Karnali",
+"sep_mm": "109",
+"station": "Station E"
+},
+"type": "dict"
+},
+{
+"items": {
+"apr_mm": "90",
+"aug_mm": "648",
+"dec_mm": "30",
+"district": "Sindhupalchok",
+"elevation_m": "1600",
+"feb_mm": "34",
+"jan_mm": "29",
+"jul_mm": "754",
+"jun_mm": "358",
+"mar_mm": "54",
+"may_mm": "155",
+"nov_mm": "29",
+"oct_mm": "129",
+"province": "Bagmati",
+"sep_mm": "359",
+"station": "Station F"
+},
+"type": "dict"
+}
+],
+"type": "list"
+},
+"total_mm": 2669,
+"wettest_mm": 3936,
+"wettest_name": "Station A"
+}
+},
+"a678eef9": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Manaslu: 8,163 m\nAnnapurna I: 8,091 m",
+"required": [],
+"vars": {}
+},
+"a6bf6261": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "KOSHI\nGANDAKI\nBAGMATI",
+"required": [],
+"vars": {}
+},
+"a7140f52": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "False",
+"required": [
+"peaks_per_province"
+],
+"vars": {
+"peaks_per_province": {
+"items": {
+"Gandaki": 3,
+"Koshi": 5
+},
+"type": "dict"
+}
+}
+},
+"a8bd73e4": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[[ 770  910 1040 1080  960  850]\n [ 940 1180 1450 1510 1260 1020]\n [1070 1430 1790 1970 1580 1190]\n [1030 1350 1710 1850 1540 1150]\n [ 860 1080 1320 1370 1210  970]]",
+"required": [
+"above_namche_m"
+],
+"vars": {
+"above_namche_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+5,
+6
+],
+"sum": 37440.0,
+"type": "ndarray"
+}
+}
+},
+"a98b1271": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "'Dolakha'",
+"required": [],
+"vars": {}
+},
+"aaeb5bdf": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "7.143",
+"required": [],
+"vars": {}
+},
+"ac14e367": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "[94 62 68 89 57] True",
+"required": [],
+"vars": {
+"first": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+5
+],
+"sum": 370.0,
+"type": "ndarray"
+}
+}
+},
+"ac529715": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[29032.15316 28169.29224 27939.63344 27837.9274  26863.51792 26794.62028\n 26781.49692 26545.27644]",
+"required": [],
+"vars": {}
+},
+"acccffc5": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "date\n2015-12-31   -21.1\nFreq: YE-DEC, Name: rain_mm, dtype: float64\ndate\n2021-12-31    39.2\nFreq: YE-DEC, Name: rain_mm, dtype: float64",
+"required": [],
+"vars": {
+"anomaly_pct": {
+"len": 24,
+"name": "rain_mm",
+"sum": -0.0,
+"type": "Series"
+}
+}
+},
+"aedb847c": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"b08a4635": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "A01_Python_as_your_calculator.ipynb\nA02_Numbers_and_text.ipynb\nA03_Lists_and_loops.ipynb\nA04_Dictionaries_and_decisions.ipynb\nA05_Functions.ipynb\nA06_Errors_are_friends.ipynb\nA07_Files_folders_and_paths.ipynb\nA08_NumPy_arrays.ipynb\nA09_Pandas_tables.ipynb\nA10_Plotting_with_Matplotlib.ipynb\nA11_Dates_and_time_series.ipynb\nA12_Scripts_modules_and_good_habits.ipynb",
+"required": [],
+"vars": {}
+},
+"b19fe90a": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "4 [2007, 2017, 2021]",
+"required": [],
+"vars": {
+"most": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 4.0,
+"type": "ndarray"
+}
+}
+},
+"b2615682": {
+"image": false,
+"label": "Review 2 · Elevation zones for towns",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Kathmandu (1,400 m): hill\nPokhara (822 m): lowland\nLukla (2,860 m): mountain\nEverest Base Camp (5,364 m): high mountain",
+"required": [],
+"vars": {
+"town_elevations_m": {
+"items": {
+"Everest Base Camp": 5364,
+"Kathmandu": 1400,
+"Lukla": 2860,
+"Pokhara": 822
+},
+"type": "dict"
+},
+"zone": "high mountain"
+}
+},
+"b2ba7adf": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "True",
+"required": [],
+"vars": {}
+},
+"b2c15a9b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Gradient: 16.0 %",
+"required": [],
+"vars": {}
+},
+"b2f32158": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "G",
+"required": [],
+"vars": {}
+},
+"b3060936": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "{'Everest': 8.849, 'Kanchenjunga': 8.586, 'Lhotse': 8.516, 'Makalu': 8.485, 'Cho Oyu': 8.188, 'Dhaulagiri I': 8.167, 'Manaslu': 8.163, 'Annapurna I': 8.091}",
+"required": [
+"heights_km"
+],
+"vars": {
+"heights_km": {
+"items": {
+"Annapurna I": 8.091,
+"Cho Oyu": 8.188,
+"Dhaulagiri I": 8.167,
+"Everest": 8.849,
+"Kanchenjunga": 8.586,
+"Lhotse": 8.516,
+"Makalu": 8.485,
+"Manaslu": 8.163
+},
+"type": "dict"
+}
+}
+},
+"b434bae5": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "60 31.0",
+"required": [],
+"vars": {
+"angle_deg": 30.9638,
+"slope_percent": 60.0
+}
+},
+"b567f811": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "[1460 2040 3964]",
+"required": [
+"trek_m"
+],
+"vars": {
+"trek_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+3
+],
+"sum": 11664.0,
+"type": "ndarray"
+}
+}
+},
+"b58c17af": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "[2.9, 5.7, 14.0, 26.6]",
+"required": [],
+"vars": {}
+},
+"b60cfcf0": {
+"image": false,
+"label": "Review 3 · The wettest week of every year",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "date\n2007-12-31    618.4\n2019-12-31    610.6\n2017-12-31    606.1\nName: rain_mm, dtype: float64\n2021: 444.8 mm",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"colours": {
+"dtype": "U",
+"shape": [
+24
+],
+"type": "ndarray"
+},
+"fig": {
+"type": "Figure"
+},
+"week_max_mm": {
+"len": 24,
+"name": "rain_mm",
+"sum": 8803.0,
+"type": "Series"
+}
+}
+},
+"b733e38b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "27.872",
+"required": [],
+"vars": {}
+},
+"b7a43b81": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "Lhotse: 8516 m",
+"required": [
+"height_m"
+],
+"vars": {
+"height_m": 8516
+}
+},
+"b96e59ee": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"ba1e4326": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Height: 8,188 m, or 8.188 km\nHeight: 8,167 m, or 8.167 km",
+"required": [],
+"vars": {}
+},
+"bb034c6f": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "EVEREST\nKANCHENJUNGA\nLHOTSE\nMAKALU\nCHO OYU\nDHAULAGIRI I\nMANASLU\nANNAPURNA I",
+"required": [],
+"vars": {}
+},
+"bb8709c8": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "8586",
+"required": [],
+"vars": {}
+},
+"bbd4e134": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"kanchenjunga_m": 8586
+}
+},
+"bc8d216b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "'Annapurna I'",
+"required": [],
+"vars": {}
+},
+"bcbd302c": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "practice_landslides_summary.txt",
+"required": [],
+"vars": {
+"summary_name": "practice_landslides_summary.txt"
+}
+},
+"bd16695f": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "8163",
+"required": [],
+"vars": {}
+},
+"bdf6d207": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Average: 8,380.6 m",
+"required": [
+"average_m"
+],
+"vars": {
+"average_m": 8380.625
+}
+},
+"be1b7d3b": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Makalu: 8485 m",
+"required": [],
+"vars": {}
+},
+"be26f4f0": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "78.8",
+"required": [],
+"vars": {}
+},
+"c08c21df": {
+"image": false,
+"label": "Review 3 · Two conditions at once",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Kanchenjunga 1955\nLhotse 1956\nMakalu 1955\nTotal: 3",
+"required": [],
+"vars": {
+"count": 3
+}
+},
+"c1217e92": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "column 0: 4510 m\ncolumn 1: 4870 m\ncolumn 2: 5230 m\ncolumn 3: 5410 m\ncolumn 4: 5020 m\ncolumn 5: 4630 m",
+"required": [],
+"vars": {
+"n_cols": 6
+}
+},
+"c12a76e8": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "618.4 2007-07-30",
+"required": [],
+"vars": {}
+},
+"c2164d2d": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "3936",
+"required": [],
+"vars": {}
+},
+"c370c356": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "0    Station A\n2    Station C\n4    Station E\n5    Station F\nName: station, dtype: str\n4",
+"required": [],
+"vars": {
+"mask": {
+"len": 6,
+"name": "None",
+"sum": 4.0,
+"type": "Series"
+}
+}
+},
+"c3b7f20d": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "Annapurna I",
+"required": [],
+"vars": {}
+},
+"c48b1ec9": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "849\n586\n516\n485\n188\n167\n163\n91",
+"required": [],
+"vars": {}
+},
+"c4d6f314": {
+"image": false,
+"label": "Review 4 · Large landslides in Bagmati, saved for a report",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "13\n       id district  area_m2     trigger\n10  LS011  Chitwan    15000    rainfall\n37  LS038  Dolakha    15000    rainfall\n21  LS022  Chitwan    15000    rainfall\n19  LS020  Chitwan    15000  earthquake\n16  LS017   Rasuwa    15000    rainfall\nTrue",
+"required": [],
+"vars": {
+"large_bagmati": {
+"len": 40,
+"name": "None",
+"sum": 13.0,
+"type": "Series"
+},
+"path": {
+"type": "PosixPath"
+},
+"selection": {
+"columns": [
+"id",
+"district",
+"area_m2",
+"trigger"
+],
+"shape": [
+13,
+4
+],
+"sum": 139600.0,
+"type": "DataFrame"
+}
+}
+},
+"c4f25029": {
+"image": false,
+"label": "Review 3 · Three peaks in feet",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "Everest 29032\nKanchenjunga 28169\nLhotse 27940",
+"required": [],
+"vars": {
+"metres_to_feet": 3.2808
+}
+},
+"c5f3e957": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "district\nDolakha          9\nChitwan          9\nRasuwa           5\nMyagdi           5\nGorkha           4\nTaplejung        4\nSindhupalchok    3\nKaski            1\nName: count, dtype: int64",
+"required": [],
+"vars": {}
+},
+"c6293554": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "1898",
+"required": [],
+"vars": {
+"jomsom_m": 2720,
+"pokhara_m": 822
+}
+},
+"c6b9e165": {
+"image": false,
+"label": "Review 2 · A safe climbing rate",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "313.0",
+"required": [],
+"vars": {
+"base_camp_m": 5364,
+"days": 8,
+"gain_per_day_m": 313.0,
+"lukla_m": 2860
+}
+},
+"c7322c2d": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "LS038 Dolakha\nLS039 Dolakha\nLS040 Rasuwa",
+"required": [],
+"vars": {}
+},
+"c78e0ed5": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "['Lukla', '2860']",
+"required": [],
+"vars": {}
+},
+"c7ce18d3": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "4300",
+"required": [],
+"vars": {}
+},
+"c7d0fe62": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Kanchenjunga is 70 m higher than Lhotse.",
+"required": [
+"difference_m"
+],
+"vars": {
+"difference_m": 70
+}
+},
+"c7ec71a9": {
+"image": false,
+"label": "Review 1 · A one-station report",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [
+"ax"
+],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+},
+"mean_mm": 222.4167,
+"station_f_mm": {
+"len": 12,
+"name": "Station F",
+"type": "Series"
+}
+}
+},
+"c7f1466b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "Kanchenjunga is 8,586 m high.",
+"required": [],
+"vars": {}
+},
+"c93674de": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "40 records\n['LS001', '2023-08-18', 'Dolakha', 'Bagmati', '27.872', '86.1506', '9800', 'rainfall']",
+"required": [],
+"vars": {
+"landslide_lines": {
+"items": [
+"id,date,district,province,lat,lon,area_m2,trigger",
+"LS001,2023-08-18,Dolakha,Bagmati,27.872,86.1506,9800,rainfall",
+"LS002,2021-08-27,Chitwan,Bagmati,27.4871,84.5877,9800,rainfall",
+"LS003,2020-08-23,Rasuwa,Bagmati,28.0965,85.3034,9800,rainfall",
+"LS004,2023-08-11,Chitwan,Bagmati,27.7398,84.5436,9800,rainfall",
+"LS005,2021-09-27,Dolakha,Bagmati,27.8547,86.282,1500,rainfall",
+"LS006,2020-07-24,Rasuwa,Bagmati,28.0882,85.3432,120,rainfall",
+"LS007,2015-04-27,Gorkha,Gandaki,28.1499,84.7881,800,earthquake",
+"LS008,2023-08-22,Gorkha,Gandaki,28.3118,84.6572,120,rainfall",
+"LS009,2024-08-25,Taplejung,Koshi,27.5523,87.8582,400,road cut",
+"LS010,2021-05-20,Myagdi,Gandaki,28.6402,83.4514,250,road cut",
+"LS011,2024-07-26,Chitwan,Bagmati,27.8178,84.4758,15000,rainfall",
+"LS012,2021-07-13,Chitwan,Bagmati,27.6334,84.3318,250,rainfall",
+"LS013,2020-06-01,Sindhupalchok,Bagmati,27.9525,85.6483,1500,rainfall",
+"LS014,2020-09-15,Rasuwa,Bagmati,28.1172,85.3915,400,rainfall",
+"LS015,2021-06-15,Myagdi,Gandaki,28.5736,83.5035,250,road cut",
+"LS016,2015-07-02,Chitwan,Bagmati,27.7856,84.5793,120,rainfall",
+"LS017,2024-09-23,Rasuwa,Bagmati,28.1469,85.3144,15000,rainfall",
+"LS018,2023-07-22,Myagdi,Gandaki,28.6326,83.417,5200,rainfall",
+"LS019,2015-08-06,Chitwan,Bagmati,27.643,84.3691,9800,rainfall",
+"LS020,2015-04-26,Chitwan,Bagmati,27.7367,84.4582,15000,earthquake",
+"LS021,2015-07-01,Dolakha,Bagmati,27.9089,86.2636,2600,rainfall",
+"LS022,2023-06-12,Chitwan,Bagmati,27.401,84.4562,15000,rainfall",
+"LS023,2015-09-09,Myagdi,Gandaki,28.5634,83.4704,800,road cut",
+"LS024,2023-07-04,Dolakha,Bagmati,27.8238,86.3079,5200,rainfall",
+"LS025,2015-08-24,Kaski,Gandaki,28.3726,83.9938,250,rainfall",
+"LS026,2020-04-10,Taplejung,Koshi,27.5536,87.6484,1500,road cut",
+"LS027,2015-08-14,Gorkha,Gandaki,28.6185,84.6416,800,rainfall",
+"LS028,2020-06-22,Sindhupalchok,Bagmati,27.9647,85.8464,2600,rainfall",
+"LS029,2021-09-21,Taplejung,Koshi,27.5014,87.6114,5200,road cut",
+"LS030,2023-09-14,Taplejung,Koshi,27.565,87.8635,2600,rainfall",
+"LS031,2021-08-02,Dolakha,Bagmati,27.8565,86.131,120,rainfall",
+"LS032,2024-08-24,Dolakha,Bagmati,27.91,86.24,250,rainfall",
+"LS033,2021-06-18,Dolakha,Bagmati,27.8757,86.1447,120,rainfall",
+"LS034,2018-04-04,Gorkha,Gandaki,28.139,84.7068,1500,road cut",
+"LS035,2021-05-12,Sindhupalchok,Bagmati,27.9297,85.6632,5200,road cut",
+"LS036,2018-06-22,Myagdi,Gandaki,28.6021,83.4624,15000,rainfall",
+"LS037,2020-07-01,Chitwan,Bagmati,27.634,84.4623,5200,rainfall",
+"LS038,2020-06-27,Dolakha,Bagmati,27.723,86.0114,15000,rainfall",
+"LS039,2015-05-12,Dolakha,Bagmati,27.8818,86.1884,800,earthquake",
+"LS040,2015-07-24,Rasuwa,Bagmati,28.1975,85.2697,2600,rainfall"
+],
+"type": "list"
+}
+}
+},
+"c9a59e30": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "['Kanchenjunga', 'Lhotse', 'Makalu'] 3",
+"required": [
+"middle"
+],
+"vars": {
+"middle": {
+"items": [
+"Kanchenjunga",
+"Lhotse",
+"Makalu"
+],
+"type": "list"
+}
+}
+},
+"ca3f5c15": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "['name', 'height_m', 'first_ascent', 'province', 'lat', 'lon']",
+"required": [],
+"vars": {
+"columns": {
+"items": [
+"name",
+"height_m",
+"first_ascent",
+"province",
+"lat",
+"lon"
+],
+"type": "list"
+}
+}
+},
+"cc3e5052": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "",
+"required": [
+"trek"
+],
+"vars": {
+"trek": {
+"items": [
+"Lukla",
+"Namche Bazaar",
+"Everest Base Camp",
+"Lukla"
+],
+"type": "list"
+}
+}
+},
+"ccad92a7": {
+"image": false,
+"label": "Review 1 · Kathmandu in numbers",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "mean: 2877.6 mm\ndriest: 2015 2000.1\nwettest: 2021 4159.6",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+},
+"ktm_annual_mm": {
+"len": 24,
+"name": "Kathmandu",
+"sum": 69062.1,
+"type": "Series"
+},
+"ktm_anomaly_mm": {
+"len": 24,
+"name": "Kathmandu",
+"sum": -0.0,
+"type": "Series"
+},
+"ktm_mm": {
+"len": 8766,
+"name": "Kathmandu",
+"sum": 69062.1,
+"type": "Series"
+}
+}
+},
+"cd13dcb4": {
+"image": false,
+"label": "Review 1 · Peaks per province",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Koshi: 5 peaks\nGandaki: 3 peaks",
+"required": [
+"counts"
+],
+"vars": {
+"counts": {
+"items": {
+"Gandaki": 3,
+"Koshi": 5
+},
+"type": "dict"
+}
+}
+},
+"cd260325": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "[9383, 11286, 17598]",
+"required": [],
+"vars": {}
+},
+"d03e15c6": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "9.3",
+"required": [],
+"vars": {}
+},
+"d15a085a": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "4681 18.725",
+"required": [],
+"vars": {
+"areas_m2": {
+"items": [
+9800,
+9800,
+9800,
+9800,
+1500,
+120,
+800,
+120,
+400,
+250,
+15000,
+250,
+1500,
+400,
+250,
+120,
+15000,
+5200,
+9800,
+15000,
+2600,
+15000,
+800,
+5200,
+250,
+1500,
+800,
+2600,
+5200,
+2600,
+120,
+250,
+120,
+1500,
+5200,
+15000,
+5200,
+15000,
+800,
+2600
+],
+"type": "list"
+},
+"average_m2": 4681.25
+}
+},
+"d1cdd91f": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "11.7\n143.8",
+"required": [],
+"vars": {}
+},
+"d42dceca": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "name  height_m  first_ascent province      lat      lon  height_ft\n7   Annapurna I      8091          1950  Gandaki  28.5961  83.8203    26545.0\n0       Everest      8849          1953    Koshi  27.9881  86.9250    29032.0\n4       Cho Oyu      8188          1954    Koshi  28.0942  86.6608    26864.0\n1  Kanchenjunga      8586          1955    Koshi  27.7025  88.1475    28169.0\n3        Makalu      8485          1955    Koshi  27.8897  87.0889    27838.0\n2        Lhotse      8516          1956    Koshi  27.9617  86.9333    27940.0\n6       Manaslu      8163          1956  Gandaki  28.5497  84.5597    26781.0\n5  Dhaulagiri I      8167          1960  Gandaki  28.6967  83.4875    26795.0",
+"required": [],
+"vars": {}
+},
+"d4c0a5de": {
+"image": false,
+"label": "Review 5 · The steepest step on the mountain",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "2 3 390\nSteepest east-west gradient: 78%",
+"required": [],
+"vars": {
+"biggest_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 390.0,
+"type": "ndarray"
+},
+"col": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 3.0,
+"type": "ndarray"
+},
+"position": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 13.0,
+"type": "ndarray"
+},
+"row": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 2.0,
+"type": "ndarray"
+},
+"steps_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+5,
+5
+],
+"sum": 5710.0,
+"type": "ndarray"
+}
+}
+},
+"d7d3485e": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "3538 days 00:00:00",
+"required": [],
+"vars": {}
+},
+"d81b6ed7": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "1200.5\n2007-07-31",
+"required": [],
+"vars": {}
+},
+"dba11c82": {
+"image": false,
+"label": "Review 4 · A year of rain",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Year: 3,936 mm\nJune to September: 3,125 mm\nShare of the year: 79.4%\nWettest month: 1,045 mm",
+"required": [],
+"vars": {
+"monsoon_mm": 3125,
+"rain_mm": {
+"items": [
+35,
+59,
+78,
+151,
+206,
+536,
+1045,
+952,
+592,
+198,
+42,
+42
+],
+"type": "list"
+},
+"total_mm": 3936
+}
+},
+"dd09c8c5": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "8027",
+"required": [],
+"vars": {}
+},
+"dd17d9a6": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "1045",
+"required": [],
+"vars": {}
+},
+"df3f0414": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "id        date district province      lat      lon  area_m2     trigger\n6   LS007  2015-04-27   Gorkha  Gandaki  28.1499  84.7881      800  earthquake\n19  LS020  2015-04-26  Chitwan  Bagmati  27.7367  84.4582    15000  earthquake\n38  LS039  2015-05-12  Dolakha  Bagmati  27.8818  86.1884      800  earthquake",
+"required": [],
+"vars": {}
+},
+"e256e880": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "Station F 754",
+"required": [],
+"vars": {
+"last_row": {
+"len": 16,
+"name": "5",
+"type": "Series"
+}
+}
+},
+"e4731b9c": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "province,height_m\nGandaki,8167\nKoshi,8849",
+"required": [],
+"vars": {
+"highest": {
+"len": 2,
+"name": "height_m",
+"sum": 17016.0,
+"type": "Series"
+}
+}
+},
+"e495c2f5": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "Variable     Type    Data/Info\n------------------------------\nabove_8000   dict    n=4\nabove_8500   dict    n=3\nheights_ft   dict    n=4\nheights_m    dict    n=4",
+"required": [],
+"vars": {}
+},
+"e49846c4": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "42",
+"required": [],
+"vars": {
+"note_file": {
+"type": "PosixPath"
+}
+}
+},
+"e5200a5f": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "Namaste",
+"required": [],
+"vars": {}
+},
+"e6abdd04": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "",
+"required": [],
+"vars": {}
+},
+"e72c17c5": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "'Kanchenjunga: 28,169 ft'",
+"required": [],
+"vars": {
+"height_text": "8586"
+}
+},
+"e7562ebf": {
+"image": false,
+"label": "Review 1 · Classify slopes",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "10 %: 5.7°, gentle\n40 %: 21.8°, moderate\n80 %: 38.7°, steep\n150 %: 56.3°, steep",
+"required": [],
+"vars": {
+"slope_deg": 56.3099
+}
+},
+"e7babbb5": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "2 15",
+"required": [
+"walk_min"
+],
+"vars": {
+"walk_min": 135
+}
+},
+"e898a111": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "1956",
+"required": [],
+"vars": {}
+},
+"e8ab2315": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "EBC",
+"required": [
+"place"
+],
+"vars": {
+"place": "Everest Base Camp"
+}
+},
+"ea509dc4": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "Station C 273",
+"required": [],
+"vars": {
+"driest": {
+"len": 17,
+"name": "2",
+"type": "Series"
+}
+}
+},
+"ea624ec3": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "758",
+"required": [],
+"vars": {}
+},
+"eaa770c8": {
+"image": false,
+"label": "Review 2 · Peaks by province",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [],
+"vars": {
+"ax1": {
+"type": "Axes"
+},
+"ax2": {
+"type": "Axes"
+},
+"counts": {
+"len": 2,
+"name": "height_m",
+"sum": 8.0,
+"type": "Series"
+},
+"fig": {
+"type": "Figure"
+},
+"mean_height_m": {
+"len": 2,
+"name": "height_m",
+"sum": 16665.133,
+"type": "Series"
+}
+}
+},
+"eba54193": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "8188 26864\n8167 26795\n8163 26781",
+"required": [],
+"vars": {}
+},
+"ec7e07cd": {
+"image": false,
+"label": "Review 3 · Timing a trek",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "Walking time: 6 h 40 min\nHeight gained: 580 m\nAverage climb: 87.0 m per hour",
+"required": [],
+"vars": {
+"climb_m": 580,
+"lukla_m": 2860,
+"namche_m": 3440,
+"walk_min": 400
+}
+},
+"ec930a5b": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "8\n9",
+"required": [
+"table"
+],
+"vars": {
+"table": {
+"columns": [
+"name",
+"height_m",
+"first_ascent",
+"province",
+"lat",
+"lon"
+],
+"shape": [
+8,
+6
+],
+"sum": 83597.102,
+"type": "DataFrame"
+}
+}
+},
+"eca70e3f": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A09_Pandas_tables.ipynb",
+"output": "0.012 1.5",
+"required": [
+"area_ha"
+],
+"vars": {
+"area_ha": {
+"len": 40,
+"name": "area_m2",
+"sum": 18.725,
+"type": "Series"
+}
+}
+},
+"eea4eccd": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "2021-07-23 2021-01-30",
+"required": [],
+"vars": {
+"ax": {
+"type": "Axes"
+},
+"fig": {
+"type": "Figure"
+},
+"temp_2021_c": {
+"len": 365,
+"name": "temp_mean_c",
+"sum": 7826.7,
+"type": "Series"
+}
+}
+},
+"eeb8e5e9": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "LS001 9800\nLS005 1500\nLS021 2600\nLS024 5200\nLS031 120\nLS032 250\nLS033 120\nLS038 15000\nLS039 800",
+"required": [],
+"vars": {}
+},
+"ef47bf15": {
+"image": false,
+"label": "Review 2 · Landslides per year",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "2015 10\n2018 2\n2020 8\n2021 9\n2023 7\n2024 4",
+"required": [],
+"vars": {
+"count_by_year": {
+"items": {
+"2015": 10,
+"2018": 2,
+"2020": 8,
+"2021": 9,
+"2023": 7,
+"2024": 4
+},
+"type": "dict"
+}
+}
+},
+"f2e939d4": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "Peaks in Koshi: 5",
+"required": [],
+"vars": {
+"count": 5
+}
+},
+"f386c245": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A11_Dates_and_time_series.ipynb",
+"output": "date\n2001-12-31    20.90\n2002-12-31    20.87\n2003-12-31    20.83\n2004-12-31    20.94\n2005-12-31    21.22\nFreq: YE-DEC, Name: temp_mean_c, dtype: float64",
+"required": [],
+"vars": {}
+},
+"f3d89f7d": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
+"output": "id,date,area_m2\nLS001,2023-08-18,9800\nLS005,2021-09-27,1500\nLS021,2015-07-01,2600\nLS024,2023-07-04,5200\nLS031,2021-08-02,120\nLS032,2024-08-24,250\nLS033,2021-06-18,120\nLS038,2020-06-27,15000\nLS039,2015-05-12,800",
+"required": [],
+"vars": {
+"f": {
+"type": "TextIOWrapper"
+},
+"writer": {
+"type": "writer"
+}
+}
+},
+"f48e565d": {
+"image": false,
+"label": "Review 2 · A summit report",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "The summit is 5410 m at row 2, column 3, 722 m above the mean.\n2",
+"required": [],
+"vars": {
+"col": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 3.0,
+"type": "ndarray"
+},
+"position": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 15.0,
+"type": "ndarray"
+},
+"rise_m": 722.0,
+"row": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 2.0,
+"type": "ndarray"
+},
+"row_means": {
+"dtype": "f",
+"nan": 0,
+"shape": [
+5
+],
+"sum": 23440.0,
+"type": "ndarray"
+},
+"summit_m": {
+"dtype": "i",
+"nan": 0,
+"shape": [],
+"sum": 5410.0,
+"type": "ndarray"
+}
+}
+},
+"f48f12ee": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "Manaslu: 8,163 m",
+"required": [
+"i"
+],
+"vars": {
+"i": 6
+}
+},
+"f48f8fe9": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "7.5",
+"required": [],
+"vars": {
+"rise_m": 900,
+"run_m": 12000
+}
+},
+"f50d3960": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "781.0",
+"required": [],
+"vars": {}
+},
+"f5d7a01f": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "Area: 10.0 ha",
+"required": [],
+"vars": {
+"field_ha": 10.0
+}
+},
+"f5db0205": {
+"image": false,
+"label": "Review 4 · A bug with no error message",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "0.7853981633974483\n45.0",
+"required": [],
+"vars": {}
+},
+"f670a30b": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A05_Functions.ipynb",
+"output": "45.0",
+"required": [],
+"vars": {}
+},
+"f820ad70": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A08_NumPy_arrays.ipynb",
+"output": "(2, 3) 6",
+"required": [
+"rain_mm"
+],
+"vars": {
+"rain_mm": {
+"dtype": "i",
+"nan": 0,
+"shape": [
+2,
+3
+],
+"sum": 80.0,
+"type": "ndarray"
+}
+}
+},
+"f87979ac": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "1. Everest (8,849 m)\n2. Kanchenjunga (8,586 m)\n3. Lhotse (8,516 m)\n4. Makalu (8,485 m)\n5. Cho Oyu (8,188 m)\n6. Dhaulagiri I (8,167 m)\n7. Manaslu (8,163 m)\n8. Annapurna I (8,091 m)",
+"required": [],
+"vars": {
+"height_m": 8091
+}
+},
+"f9787a36": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
+"output": "",
+"required": [
+"axes"
+],
+"vars": {
+"axes": {
+"dtype": "O",
+"shape": [
+3
+],
+"type": "ndarray"
+},
+"fig": {
+"type": "Figure"
+}
+}
+},
+"f9a95768": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "True",
+"required": [],
+"vars": {
+"namche_m": 3440
+}
+},
+"f9f730e9": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
+"output": "dry",
+"required": [],
+"vars": {
+"annual_mm": 273
+}
+},
+"fa113eaa": {
+"image": false,
+"label": "Q1",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "",
+"required": [
+"makalu"
+],
+"vars": {
+"makalu": 8485
+}
+},
+"fa6cf294": {
+"image": false,
+"label": "Q2",
+"lesson": "A_Python/A03_Lists_and_loops.ipynb",
+"output": "['Dhaulagiri I', 'Manaslu', 'Annapurna I']",
+"required": [
+"gandaki_peaks"
+],
+"vars": {
+"gandaki_peaks": {
+"items": [
+"Dhaulagiri I",
+"Manaslu",
+"Annapurna I"
+],
+"type": "list"
+}
+}
+},
+"facf84d5": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "8.849",
+"required": [],
+"vars": {}
+},
+"fb823e88": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
+"output": "328.0",
+"required": [],
+"vars": {}
+},
+"fd8dcff9": {
+"image": false,
+"label": "Review 2 · Cleaning a messy record",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "Cho Oyu: 8,188 m, first climbed 1954\nAbove 8,000 m: True",
+"required": [],
+"vars": {
+"height_m": 8188,
+"height_text": "8188",
+"name": "Cho Oyu",
+"name_text": "  cho oyu ",
+"year": 1954,
+"year_text": "1954"
+}
+},
+"fe8a1b2a": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A02_Numbers_and_text.ipynb",
+"output": "District: Sindhupalchok",
+"required": [
+"district"
+],
+"vars": {
+"district": "Sindhupalchok",
+"raw": "  SINDHUPALCHOK "
+}
+},
+"fe937b6e": {
+"image": false,
+"label": "Q3",
+"lesson": "A_Python/A06_Errors_are_friends.ipynb",
+"output": "8849.0 None",
+"required": [],
+"vars": {}
+},
+"fed50f41": {
+"image": false,
+"label": "Review 4 · Reading a map scale",
+"lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"output": "2.0",
+"required": [],
+"vars": {
+"ground_cm": 200000,
+"ground_km": 2.0,
+"map_distance_cm": 4,
+"scale": 50000
+}
+}
+},
+"lessons": {
+"A_Python/A01_Python_as_your_calculator.ipynb": 25,
+"A_Python/A02_Numbers_and_text.ipynb": 28,
+"A_Python/A03_Lists_and_loops.ipynb": 28,
+"A_Python/A04_Dictionaries_and_decisions.ipynb": 28,
+"A_Python/A05_Functions.ipynb": 28,
+"A_Python/A06_Errors_are_friends.ipynb": 25,
+"A_Python/A07_Files_folders_and_paths.ipynb": 28,
+"A_Python/A08_NumPy_arrays.ipynb": 29,
+"A_Python/A09_Pandas_tables.ipynb": 28,
+"A_Python/A10_Plotting_with_Matplotlib.ipynb": 28,
+"A_Python/A11_Dates_and_time_series.ipynb": 28,
+"A_Python/A12_Scripts_modules_and_good_habits.ipynb": 28
+}
+}
