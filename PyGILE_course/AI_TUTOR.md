@@ -50,7 +50,7 @@ Under each box you also see your progress, for example **⭐ 6 of 28 questions d
 
 Some things to know:
 
-- **There is more than one right answer.** The checker looks at your *result*, not at your exact code. If the question asks you to print a sentence, your own wording is fine when the numbers are right.
+- **There is more than one right answer.** The checker looks at your *result*, not at your exact code. You can choose your own variable names, unless the question gives one. If the question asks you to print a sentence, your own wording is fine when the numbers are right.
 - **"Not yet" is not failure.** Read the message, change one thing, and run the cell again. That is how everyone learns to program.
 - **Still stuck?** Open **Show solution** under the question. Then close it and try to write the answer yourself.
 - The marking works **without internet and without any account**. Nothing leaves your computer.
@@ -175,12 +175,11 @@ Type a command in any cell of a lesson, after you have run the first code cell, 
 
 **No box appears under my answer.**
 - Run the first code cell of the lesson (`%run ../tools/tutor_on.py`) again.
-- Your answer cell must still start with its first line, for example `# Q1: your answer`. If you deleted that line, type it back.
 - Use **JupyterLab**, which PyGILE installs. Other notebook programs may not tell the tutor which question you are answering.
 
 **It says "Not yet", but I think my answer is right.**
 - Open **Show solution** and compare the *result*, not the code.
-- Check the variable name: if the question says to store something in `town_elevations_m`, use exactly that name.
+- Check the variable name. You may choose your own name when the question does not give one. But if the question says to store something in `town_elevations_m`, use exactly that name.
 - If you ran some cells twice, the values may have changed. Click **Kernel → Restart Kernel and Run All Cells**, then run your answer again.
 - With the AI tutor on, it can recognise a different correct method and change the mark to ✅.
 

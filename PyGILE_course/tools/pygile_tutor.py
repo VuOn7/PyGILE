@@ -308,10 +308,25 @@ def mark(expected, got):  # noqa: C901
     all_vars = {k: v for k, v in expected.get("vars", {}).items() if comparable(v)}
     required = expected.get("required", [])
     exp_vars = {k: v for k, v in all_vars.items() if k in required}
-    if not exp_vars and not exp_out and not expected.get("unstable"):
-        # Nothing named in the question and nothing shown: compare whatever the
-        # learner created with the same names as the solution.
-        exp_vars = {k: v for k, v in all_vars.items() if k in got["vars"]}
+    free = {k: v for k, v in all_vars.items() if k not in required}
+    if not exp_vars and not exp_out and not expected.get("unstable") and free:
+        # The question does not say what to call the result, so the learner may
+        # choose any name: compare the values they created with the solution's.
+        new_vals = list(got.get("new", {}).values())
+        same = sum(1 for k, fp in free.items() if got["vars"].get(k) == fp)
+        hits = sum(1 for k, fp in free.items() if got["vars"].get(k) == fp or fp in new_vals)
+        if same == len(free):
+            return "correct", "Your result matches the course solution exactly."
+        if hits == len(free):
+            return "correct", (("Your values match" if len(free) > 1 else "Your value matches")
+                               + " the solution. Your own names are fine: a clear name is "
+                               "what matters.")
+        if hits:
+            return "nearly", "Part of your result matches. Compare the other values with the question."
+        if got.get("new") or any(k in got["vars"] for k in free):
+            return "not_yet", "Your value is different from the solution's. Check the number again."
+        return "not_yet", ("I could not find your result. Store it in a variable, "
+                           "for example  my_name = …")
 
     var_ok = var_bad = var_close = 0
     missing = []
@@ -341,9 +356,19 @@ def mark(expected, got):  # noqa: C901
 
     checks = bool(exp_out) or bool(exp_vars)
     if not checks:
-        return "ran", "This answer is a picture or a map, so compare it with the solution."
+        if expected.get("image"):
+            return "ran", "This answer is a picture or a map, so compare it with the solution."
+        return "ran", "This one cannot be checked automatically, so compare it with the solution."
     vars_all_ok = var_ok == len(exp_vars)
 
+    # A name the learner set in this cell that the solution also uses, with a
+    # different value: the printed result may only look right after rounding.
+    new = got.get("new", {})
+    clash = [k for k, fp in free.items() if k in new and new[k] != fp
+             and not (isinstance(fp, str) and len(fp) > 200)]   # long texts (web pages) vary
+    if vars_all_ok and (not exp_out or out_exact or nums_ok) and clash:
+        return "nearly", (f"Your result looks right, but {', '.join(f'`{k}`' for k in clash[:3])} "
+                          "is different from the solution's. Check it against the question.")
     if vars_all_ok and (not exp_out or out_exact):
         return "correct", "Your result matches the course solution exactly."
     if vars_all_ok and nums_ok:
@@ -612,11 +637,16 @@ class Tutor:
         self.enabled = True
         self.tee = None
         self.tip_shown = False
+        self.before = {}
 
     # hooks ------------------------------------------------------------------
     def pre_run_cell(self, info):
         self.tee = None
-        if self.enabled and info.raw_cell.lstrip().startswith(ANSWER_STARTS):
+        cell_id = getattr(info, "cell_id", None) or ""
+        if self.enabled and cell_id in answer_key()["answers"]:
+            # Found by the cell's id, so it works even if the learner deleted
+            # the "# Q1: your answer" line.
+            self.before = {k: id(v) for k, v in self.shell.user_ns.items() if not k.startswith("_")}
             self.tee = _Tee(sys.stdout)
             sys.stdout = self.tee
 
@@ -658,11 +688,17 @@ class Tutor:
         if error:
             verdict = "error"
             hint = ERROR_HINTS.get(type(err).__name__, "Read the last line of the error first.")
+            if "invalid decimal literal" in str(err):
+                hint = "A name cannot start with a digit. Start it with a letter, for example  peak_2 ."
             reason = f"`{error[:200]}`\n{hint} Errors are normal: every programmer sees them every day."
         else:
             ns = self.shell.user_ns
             got_vars = {n: fingerprint(ns[n]) for n in entry.get("vars", {}) if n in ns}
-            verdict, reason = mark(entry, {"output": shown, "vars": got_vars})
+            created = [n for n, v in ns.items() if not n.startswith("_")
+                       and self.before.get(n) != id(v) and not callable(v)
+                       and type(v).__name__ != "module"][:30]
+            new_vars = {n: fingerprint(ns[n]) for n in created}
+            verdict, reason = mark(entry, {"output": shown, "vars": got_vars, "new": new_vars})
 
         # progress
         prog = load_json(PROGRESS_FILE, {})
