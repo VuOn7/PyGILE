@@ -1,12 +1,20 @@
 #!/bin/bash
 # ============================================================
 #   PYGILE ENVIRONMENT INSTALLER (Linux and macOS)
-#   Installs the pygile environment step by step, in the same
-#   groups as the Windows installer, so you can see what each
-#   group of packages is for.
+#   Builds the pygile environment step by step, one group of
+#   packages at a time, so you can see what each group is for.
 #
-#   Prefer one command instead? From the PyGILE folder run:
+#   It installs exactly the packages in environment.yml, the
+#   file the automatic notebook tests use. Prefer one command?
+#   From the PyGILE folder run:
 #       mamba env create -f environment.yml
+#
+#   If "pygile" already exists, it asks before replacing it. To answer
+#   in advance (for automatic tests): PYGILE_REPLACE=yes (or no).
+#
+#   Maintainers: if you change a package here, change it in
+#   environment.yml and the other installers too. The check in
+#   PyGILE_course/tools/check_repo.py fails if they differ.
 # ============================================================
 
 LOGFILE="pygile_install.log"
@@ -50,39 +58,58 @@ install_group() {
 # ------------------------------------------------------------
 # [2/7] Fresh environment with Python 3.12
 # ------------------------------------------------------------
+# The JSON list looks the same in conda and in every version of mamba
+if $INSTALLER env list --json 2>/dev/null | grep -qE 'envs[/\\]+pygile"'; then
+    echo ""
+    echo "An environment called 'pygile' already exists on this computer."
+    echo "Continuing will DELETE it and build a new one."
+    ANSWER="${PYGILE_REPLACE:-}"           # answer in advance, for automatic tests
+    if [ -z "$ANSWER" ]; then
+        read -r -p "Replace it? Type y and press Enter to continue, anything else to stop: " ANSWER
+    else
+        echo "Answer taken from PYGILE_REPLACE: $ANSWER"
+    fi
+    if [[ ! "$ANSWER" =~ ^[Yy] ]]; then
+        echo "Stopped. Your existing pygile environment was not changed."
+        echo "(To update it instead: $INSTALLER env update -n pygile -f ../../environment.yml --prune)"
+        exit 0
+    fi
+    $INSTALLER env remove -n pygile -y >> "$LOGFILE" 2>&1
+fi
+
 echo "[2/7] Creating a fresh pygile environment with Python 3.12..."
-$INSTALLER env remove -n pygile -y &> /dev/null
-if ! $INSTALLER create -n pygile --override-channels -c conda-forge python=3.12 -y >> "$LOGFILE" 2>&1; then
+if ! $INSTALLER create -n pygile --override-channels -c conda-forge "python=3.12" -y >> "$LOGFILE" 2>&1; then
     echo "CRITICAL: could not create the environment. See $LOGFILE."
     exit 1
 fi
 echo "      Done: environment created"
 
 # ------------------------------------------------------------
-# [3/7] to [7/7] Package groups (same groups as the Windows installer)
+# [3/7] to [7/7] Package groups (the same groups as environment.yml
+# and the Windows installer)
 # ------------------------------------------------------------
-install_group "3/7" "foundation stack (NumPy, Pandas, SciPy, Matplotlib, scikit-learn)" \
+install_group "3/7" "core scientific Python (NumPy, pandas, SciPy, Matplotlib, scikit-learn)" \
     numpy pandas scipy matplotlib scikit-learn
 
-install_group "4/7" "geospatial core (GDAL, PROJ, GEOS, Shapely, PyProj, GeoPandas)" \
-    gdal proj geos libspatialindex fiona pyogrio shapely pyproj geopandas
+install_group "4/7" "vector data (GeoPandas, Shapely, PyProj, pyogrio, mapclassify, OSMnx)" \
+    "geopandas>=1.0" "shapely>=2.0" pyproj pyogrio mapclassify "osmnx>=2.0"
 
-install_group "5/7" "raster and data stack (Rasterio, Xarray, rioxarray, Dask, NetCDF)" \
-    rasterio xarray rioxarray dask dask-geopandas netcdf4 h5py zarr tifffile
+install_group "5/7" "rasters and remote sensing (Rasterio, rioxarray, Xarray, Dask, STAC tools)" \
+    rasterio rioxarray xarray dask netcdf4 rasterstats xarray-spatial \
+    pystac-client odc-stac planetary-computer
 
-install_group "6/7" "JupyterLab and maps (Folium, Contextily, mapclassify, scale bars)" \
-    jupyterlab ipykernel ipywidgets plotly folium contextily mapclassify matplotlib-scalebar
+install_group "6/7" "maps and interpolation (Contextily, Folium, scale bars, PyKrige)" \
+    contextily folium matplotlib-scalebar pykrige
 
-install_group "7/7" "specialised tools (OSMnx, rasterstats, STAC, kriging)" \
-    osmnx rasterstats xarray-spatial pystac pystac-client stackstac odc-stac planetary-computer \
-    pykrige
+install_group "7/7" "JupyterLab" \
+    jupyterlab ipykernel ipywidgets
 
 # ------------------------------------------------------------
 # Verification
 # ------------------------------------------------------------
 echo ""
 echo "Checking that the main libraries work..."
-if $INSTALLER run -n pygile python -c "import numpy, pandas, geopandas, rasterio, rioxarray, xarray, matplotlib, osmnx; print('ok')" 2>> "$LOGFILE" | grep -q ok; then
+if $INSTALLER run -n pygile python -c "import numpy, pandas, geopandas, rasterio, rioxarray, xarray, matplotlib, osmnx, folium; print('ok')" 2>> "$LOGFILE" | grep -q ok; then
     echo "SUCCESS: the pygile environment is ready ($STEP_COUNT groups installed, $ERROR_COUNT problems)."
 else
     echo "WARNING: a core library failed to import. See $LOGFILE and $ERRORLOG."

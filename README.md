@@ -28,7 +28,9 @@ PyGILE is an educational/application toolkit that includes:
 
 ## New: the PyGILE Course
 
-A step-by-step course for absolute beginners, in [`PyGILE_course/`](PyGILE_course/README.md). Every step has theory, a worked example on Nepal data, and practice questions with worked solutions; the lessons are linked in order like a book. **Ready now: Part A · Python (10 lessons) and Part B · Vector GIS (11 lessons), with 564 practice questions.** Parts C (rasters), D (satellite imagery) and E (a landslide capstone) are in progress.
+A step-by-step course for absolute beginners, in [`PyGILE_course/`](PyGILE_course/README.md). Every step has theory, a worked example on Nepal data, and practice questions with worked solutions; the lessons are linked in order like a book. **Complete: Part A · Python (12 lessons), Part B · Vector GIS (12 lessons), Part C · Rasters (9 lessons) and Part D · Satellite imagery (6 lessons), with 1,061 practice questions.** PyGILE-Plus continues from there, with landslide susceptibility modelling and deep learning.
+
+Every answer is **marked automatically** as you run it, offline and with no account, and an optional **free AI tutor** can add a personal hint. See [the tutor guide](PyGILE_course/AI_TUTOR.md).
 
 ## Getting Started
 
@@ -38,21 +40,11 @@ Choose one of three ways. Options 1 and 2 install the same libraries; option 3 u
 
 Learn how a Python environment is built, one group of packages at a time, using **Miniforge Prompt** (Windows) or **Terminal** (macOS/Linux).
 
-#### Windows Users
+- **Windows:** follow the [Windows guide](environments/windows/README.md)
+- **Linux:** follow the [Linux guide](environments/linux/README.md)
+- **macOS:** follow the [macOS guide](environments/mac/README.md)
 
-1. Go to [`environments/windows/`](https://github.com/Geoinformatics-Lab/PyGILE/tree/main/environments/windows) folder
-2. Watch the installation video: [`pyGILE_Installation.mp4`](https://github.com/Geoinformatics-Lab/PyGILE/blob/main/environments/windows/pyGILE_Installation.mp4)
-3. Follow the step-by-step guide: [`environment_install_windows.pdf`](https://github.com/Geoinformatics-Lab/PyGILE/blob/main/environments/windows/environment_install_windows.pdf)
-
-#### Linux Users
-
-1. Go to [`environments/linux/`](https://github.com/Geoinformatics-Lab/PyGILE/tree/main/environments/linux) folder
-2. Follow the README.md instructions
-
-#### Mac Users
-
-1. Go to [`environments/mac/`](https://github.com/Geoinformatics-Lab/PyGILE/tree/main/environments/mac) folder
-2. Follow the README.md instructions
+Each installer asks before replacing an existing `pygile` environment, and is tested every week on a fresh Miniforge.
 
 ### Option 2: One command
 
@@ -77,6 +69,12 @@ docker run -it --name pygile -p 127.0.0.1:8888:8888 -v "${PWD}:/workspace/PyGILE
 
 (Windows Command Prompt: replace `${PWD}` with `%cd%`.) Then open http://localhost:8888 and go to the `PyGILE` folder. Your work is saved in your own PyGILE folder.
 
+One small library is missing from the image: `matplotlib-scalebar`, which draws the scale bars in Lessons B11 and D3. Add it once, from a terminal in JupyterLab (**File → New → Terminal**):
+
+```bash
+pip install matplotlib-scalebar
+```
+
 Note: the image is large, because PyGILE-Plus also includes SAGA, GRASS, Orfeo ToolBox and deep-learning libraries. On a slow connection, Option 1 or 2 is quicker. The `127.0.0.1` part keeps Jupyter visible only on your own computer, which matters on shared Wi-Fi.
 
 ## How to Use PyGILE
@@ -85,9 +83,9 @@ Once you've completed the installation:
 
 1. **Start Jupyter Lab** - This opens your web-based coding environment
 2. **Open the course** - Go to [`PyGILE_course/`](PyGILE_course/README.md) and start with Lesson A1
-3. **Start learning!** - Each lesson links to the next. The older raster and remote-sensing notebooks are in [`pyGILE_notebooks/`](pyGILE_notebooks) until the course replaces them
+3. **Start learning!** - Each lesson links to the next
 
-Files the lessons create are saved in `PyGILE_course/outputs/` (older notebooks use `pygis/temp/`). Git ignores both folders, so your outputs never get mixed into the course files.
+Files the lessons create are saved in `PyGILE_course/outputs/`. Git ignores that folder, so your outputs never get mixed into the course files.
 
 ## Need Help?
 
@@ -97,9 +95,16 @@ Files the lessons create are saved in `PyGILE_course/outputs/` (older notebooks 
 
 ## Contributing
 
-Fork → Make changes → Pull request
+Fork → Make changes → Pull request. All contributions welcome!
 
-All contributions welcome!
+If you change a lesson, run these two checks before you open the pull request (the automatic tests run them too):
+
+```bash
+python PyGILE_course/tools/check_repo.py                   # outputs cleared, navigation, installers, question counts
+python PyGILE_course/tools/qa.py PyGILE_course/A_Python/A01_Python_as_your_calculator.ipynb   # the lesson and all its solutions run
+```
+
+If you add or remove a package, change [`environment.yml`](environment.yml) and the three installers in [`environments/`](environments/) together.
 
 ## Credits
 
@@ -110,3 +115,14 @@ Enhanced from [mmann1123/pyGIS](https://github.com/mmann1123/pyGIS) by Geoinform
 Awasthi, B., Ninsawat, S., Raghavan, V., & Nemoto, T. (2025). PyGILE - Python GeoInformatics Lab Environment (1.0). Zenodo. https://doi.org/10.5281/zenodo.16144781
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16144781.svg)](https://doi.org/10.5281/zenodo.16144781)
+
+The same reference is in [`CITATION.cff`](CITATION.cff), so GitHub's **Cite this repository** button gives it in APA and BibTeX.
+
+## License
+
+PyGILE is free software under the [GNU General Public License, version 3 or later](LICENSE).
+
+- Copyright (C) 2021 Michael Mann and contributors ([pyGIS](https://github.com/mmann1123/pyGIS), from which PyGILE grew)
+- Copyright (C) 2025–2026 Geoinformatics Lab and the PyGILE contributors
+
+The datasets in `PyGILE_course/data/` keep their own licences and credits, listed in [`PyGILE_course/data/README.md`](PyGILE_course/data/README.md).

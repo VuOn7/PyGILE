@@ -5,7 +5,7 @@
 # Update it later:
 #     mamba env update -f environment.yml --prune
 #
-# Every notebook in pyGILE_notebooks is tested against this file
+# Every notebook in PyGILE_course is tested against this file
 # (see .github/workflows/test-notebooks.yml).
 name: pygile
 channels:

@@ -13,6 +13,11 @@ A lesson script does:
     L.review("Exercise title", "question", "solution code", "why")
     L.recap([...], glossary=[("word", "meaning"), ...], next_text="...")
     L.save("A01_Python_as_your_calculator.ipynb")
+
+The scripts that first built the 39 lessons are not kept in this repository,
+so the notebooks themselves are the source: edit them directly.
+Use this module to start a new lesson in the standard format, then run
+add_nav.py, check_repo.py and qa.py.
 """
 import nbformat as nbf
 

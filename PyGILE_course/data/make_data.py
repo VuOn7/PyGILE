@@ -65,6 +65,28 @@ w = w[["NAME", "ISO_A3", "CONTINENT", "POP_EST", "geometry"]].rename(
     columns={"NAME": "name", "ISO_A3": "iso_a3", "CONTINENT": "continent", "POP_EST": "pop_est"})
 w.to_file(HERE / "world_countries.geojson", driver="GeoJSON")
 
+# --- Part C: clip the Copernicus DEM tile ---------------------------------------
+# Download the tile once in a browser and save it in _raw/ :
+# https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N27_00_E085_00_DEM/Copernicus_DSM_COG_10_N27_00_E085_00_DEM.tif
+tile = RAW / "Copernicus_DSM_COG_10_N27_00_E085_00_DEM.tif"
+if tile.exists():
+    import numpy as np
+    import rasterio
+    from rasterio.windows import from_bounds
+    with rasterio.open(tile) as src:
+        win = from_bounds(85.20, 27.55, 85.80, 28.00, transform=src.transform)
+        win = win.round_offsets().round_lengths()
+        dem = np.round(src.read(1, window=win)).astype("int16")
+        profile = src.profile.copy()
+        profile.pop("interleave", None)
+        profile.update(dtype="int16", nodata=-32768, width=dem.shape[1], height=dem.shape[0],
+                       transform=src.window_transform(win), compress="deflate", predictor=2,
+                       tiled=True, blockxsize=256, blockysize=256)
+    with rasterio.open(HERE / "dem_kathmandu_melamchi.tif", "w", **profile) as dst:
+        dst.write(dem, 1)
+else:
+    print("DEM tile not found in _raw/: skipping the Part C DEM")
+
 for f in ["nepal_districts.geojson", "nepal_provinces.geojson", "district_headquarters.geojson",
           "world_countries.geojson", "province_names.csv"]:
     print(f"{f}: {(HERE / f).stat().st_size / 1e3:.0f} kB")
