@@ -657,6 +657,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"open": true,
 "output": "Sita Sharma",
 "required": [],
 "vars": {}
@@ -5506,6 +5507,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "A_Python/A01_Python_as_your_calculator.ipynb",
+"open": true,
 "output": "Namaste\nI live in Pokhara",
 "required": [],
 "vars": {}

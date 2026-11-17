@@ -31,6 +31,9 @@ from pygile_tutor import ANSWER_STARTS, KEY_FILE, names_in  # noqa: E402
 
 SOL = re.compile(r"```python\n(.*?)\n```", re.S)
 MARK = "<<PYGILE-VARS>>"
+# Questions with a personal answer ("print your own name"): any text is right,
+# so the tutor checks only that the right number of lines is printed.
+OPEN = re.compile(r"\byour (own )?name\b|\byour (town|village|city|home|school)\b", re.I)
 ADDRESS = re.compile(r" at 0x[0-9a-fA-F]+>")
 # Solutions whose printed result changes from run to run (timings, unseeded random
 # numbers): their output is not compared, only their variables.
@@ -74,6 +77,7 @@ def build(path):
                 f"if n in globals() and not callable(globals()[n]) "
                 f"and type(globals()[n]).__name__ != 'module'}}))")
             answers.append({"id": c.id, "label": label_of(question), "required": required,
+                            "open": bool(OPEN.search(question)),
                             "sol": sol, "probe": probe})
             cells += [sol, probe]
         else:
@@ -108,6 +112,8 @@ def build(path):
         output = ("".join(printed) + ("\n" + "\n".join(shown) if shown else "")).strip()
         out[a["id"]] = {"lesson": rel, "label": a["label"], "output": output,
                         "vars": variables, "required": a["required"], "image": image}
+        if a["open"]:
+            out[a["id"]]["open"] = True
         if UNSTABLE.search(a["sol"].source):
             out[a["id"]]["unstable"] = True
     return rel, out

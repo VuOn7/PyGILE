@@ -11,6 +11,10 @@ if _tools not in sys.path:
 
 from IPython import get_ipython  # noqa: E402
 
-get_ipython().extension_manager.load_extension("pygile_tutor")
+_manager = get_ipython().extension_manager
+if "pygile_tutor" in _manager.loaded:
+    _manager.reload_extension("pygile_tutor")   # picks up a newer version, no restart needed
+else:
+    _manager.load_extension("pygile_tutor")
 print("✅ Answer checking is on. Run an answer cell to see your mark. "
       "Type %tutor for options.")

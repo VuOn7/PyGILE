@@ -305,6 +305,19 @@ def mark(expected, got):  # noqa: C901
     """Return (verdict, reason). verdict: correct, nearly, not_yet, ran."""
     exp_out = "" if expected.get("unstable") else norm_text(expected.get("output", ""))
     got_out = norm_text(got["output"])
+    if expected.get("open"):
+        # A personal answer, such as your own name: any text works, if it is printed.
+        printed = norm_text(got.get("printed", got["output"]))
+        want, have = len(exp_out.splitlines()), len(printed.splitlines()) if printed else 0
+        if have == 0 and got_out:
+            return "nearly", ("Python showed your text, but with quote marks. Put it inside "
+                              "`print()`, as the question asks.")
+        if have == want:
+            return "correct", "Any answer works here, and yours is printed exactly as asked."
+        lines = f"{want} line{'s' if want > 1 else ''}"
+        if have == 0:
+            return "not_yet", f"Nothing was printed yet. Use `print()` to show {lines}."
+        return "nearly", f"The question asks for {lines}, and yours printed {have}."
     all_vars = {k: v for k, v in expected.get("vars", {}).items() if comparable(v)}
     required = expected.get("required", [])
     exp_vars = {k: v for k, v in all_vars.items() if k in required}
@@ -688,6 +701,11 @@ class Tutor:
         if error:
             verdict = "error"
             hint = ERROR_HINTS.get(type(err).__name__, "Read the last line of the error first.")
+            missing_name = re.search(r"name '(\w+)' is not defined", str(err))
+            if missing_name and missing_name.group(1) != missing_name.group(1).lower() and \
+                    hasattr(__import__("builtins"), missing_name.group(1).lower()):
+                hint = (f"Python cares about capital letters: write `{missing_name.group(1).lower()}`, "
+                        "all in small letters.")
             if "invalid decimal literal" in str(err):
                 hint = "A name cannot start with a digit. Start it with a letter, for example  peak_2 ."
             reason = f"`{error[:200]}`\n{hint} Errors are normal: every programmer sees them every day."
@@ -698,7 +716,8 @@ class Tutor:
                        and self.before.get(n) != id(v) and not callable(v)
                        and type(v).__name__ != "module"][:30]
             new_vars = {n: fingerprint(ns[n]) for n in created}
-            verdict, reason = mark(entry, {"output": shown, "vars": got_vars, "new": new_vars})
+            verdict, reason = mark(entry, {"output": shown, "printed": printed, "vars": got_vars,
+                                           "new": new_vars})
 
         # progress
         prog = load_json(PROGRESS_FILE, {})
