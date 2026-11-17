@@ -1,8 +1,8 @@
 # Course images
 
-Concept diagrams used in the lessons. All of them come from the [pyGIS project](https://github.com/mmann1123/pyGIS) by Michael Mann and contributors, which PyGILE is forked from and which is licensed under the GNU GPL-3.0 (see `../../LICENSE`).
+Concept diagrams used in the lessons. All of them come from the [pyGIS project](https://github.com/mmann1123/pyGIS) by Michael Mann and contributors, from which PyGILE grew, licensed under the GNU GPL-3.0 (see `../../LICENSE`).
 
-| File | Used in | Original file in this repository |
+| File | Used in | Original file in pyGIS |
 | --- | --- | --- |
 | `lat_vs_lon.png` | B1 | `pygis/_static/img/lat_vs_lon.png` |
 | `vector_vs_raster.jpg` | B1, C1 | `pygis/_static/img/vector_vs_raster.jpg` |

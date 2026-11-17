@@ -8,7 +8,8 @@ Sources
   https://github.com/mesaugat/geoJSON-Nepal . Its attributes (P-codes, dates)
   show it is derived from the OCHA common operational boundaries, produced by
   the Survey Department of Nepal.
-- World countries: Natural Earth 1:110m (public domain), from ../../pygis/data/110m_cultural.zip
+- World countries: Natural Earth 1:110m admin-0 countries (public domain),
+  https://www.naturalearthdata.com/ , downloaded from its CDN into _raw/.
 
 Run from this folder:  python make_data.py
 """
@@ -59,7 +60,10 @@ hq = hq.sort_values("name").reset_index(drop=True)
 hq.to_file(HERE / "district_headquarters.geojson", driver="GeoJSON")
 
 # --- world countries (Natural Earth, public domain) -----------------------------
-zip_path = HERE.parents[1] / "pygis" / "data" / "110m_cultural.zip"
+zip_path = RAW / "ne_110m_admin_0_countries.zip"
+if not zip_path.exists():
+    urllib.request.urlretrieve(
+        "https://naciscdn.org/naturalearth/110m/cultural/ne_110m_admin_0_countries.zip", zip_path)
 w = gpd.read_file(f"zip://{zip_path}!ne_110m_admin_0_countries.shp")
 w = w[["NAME", "ISO_A3", "CONTINENT", "POP_EST", "geometry"]].rename(
     columns={"NAME": "name", "ISO_A3": "iso_a3", "CONTINENT": "continent", "POP_EST": "pop_est"})

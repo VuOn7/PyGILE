@@ -1,7 +1,4 @@
 # Files the notebooks write while you work (never commit these)
-pygis/temp/*
-!pygis/temp/.gitkeep
-pygis/data/temp/
 outputs/
 
 # GDAL side files created when rasters are opened
