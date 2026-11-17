@@ -31,8 +31,10 @@ Advanced: change a service's "model" (or add a "url" for any OpenAI-style
 server, such as Ollama) by editing ~/.pygile/tutor.json.
 """
 import ast
+import difflib
 import html
 import json
+import linecache
 import math
 import os
 import random
@@ -156,31 +158,223 @@ ERROR_HINTS = {
                            "name is misspelled.",
 }
 
-def error_hint(err):
-    """A short, specific explanation of an error, for a beginner. The full error is
-    already shown in red above the box, so it is not repeated."""
-    kind, msg = type(err).__name__, getattr(err, "msg", None) or str(err)
-    missing = re.search(r"name '(\w+)' is not defined", msg)
-    if missing:
-        name = missing.group(1)
-        if name != name.lower() and hasattr(__import__("builtins"), name.lower()):
-            return (f"Python cares about capital letters: write `{name.lower()}`, "
-                    "all in small letters.")
-        return (f"Python does not know the name `{name}`. Check its spelling and capital "
-                "letters, and make sure you ran the cells above this one.")
-    if "Missing parentheses in call to" in msg:
-        return "`print` needs round brackets around what it shows, like this: `print(\"Namaste\")`."
-    if "invalid decimal literal" in msg:
-        return "A name cannot start with a digit. Start it with a letter, for example `peak_2`."
-    if "unterminated string" in msg or "EOL while scanning" in msg:
-        return "A quote mark is missing: text needs a quote mark at the start and at the end."
-    if "was never closed" in msg or "unexpected EOF" in msg:
-        return "A bracket was opened but never closed. Count the `(` and `)` in your line."
-    hint = ERROR_HINTS.get(kind, "Read the last line of the red message first.")
-    suggestion = re.search(r"Did you mean[^?]*\?", msg)
-    if suggestion and kind not in ("NameError",):
-        hint = f"Python suggests a fix in the red message: \"{suggestion.group(0)}\" " + hint
-    return f"**{kind}.** " + hint
+BUILTIN_FUNCS = {n for n in dir(__import__("builtins")) if n.islower() and not n.startswith("_")
+                 and callable(getattr(__import__("builtins"), n))}
+
+
+def _capital_fix(line):
+    """Print(...) -> print(...), LEN(...) -> len(...); also print (x) -> print(x)."""
+    def low(m):
+        w = m.group(1)
+        return w.lower() if w != w.lower() and w.lower() in BUILTIN_FUNCS else w
+    line = re.sub(r"\b([A-Za-z_]\w*)(?=\s*\()", low, line)
+    return re.sub(r"\b(" + "|".join(sorted(BUILTIN_FUNCS)) + r")\s+\(", r"\1(", line)
+
+
+def _capitals_in(code):
+    """Built-in functions written with capitals anywhere in the code, e.g. ['Print']."""
+    found = []
+    for w in re.findall(r"\b([A-Za-z_]\w*)\s*\(", code):
+        if w != w.lower() and w.lower() in BUILTIN_FUNCS and w not in found:
+            found.append(w)
+    return found
+
+
+def _close_brackets(line):
+    """Add the closing brackets a line is missing, ignoring brackets inside text."""
+    stack, quote = [], None
+    for ch in line:
+        if quote:
+            if ch == quote:
+                quote = None
+        elif ch in "'\"":
+            quote = ch
+        elif ch in "([{":
+            stack.append({"(": ")", "[": "]", "{": "}"}[ch])
+        elif ch in ")]}" and stack and stack[-1] == ch:
+            stack.pop()
+    return line.rstrip() + "".join(reversed(stack))
+
+
+def _cell_line(err, code):
+    """(line number, line text) in the learner's cell where the error happened."""
+    lines = code.splitlines()
+    if isinstance(err, SyntaxError) and err.lineno and 0 < err.lineno <= len(lines):
+        return err.lineno, lines[err.lineno - 1]
+    tb, where = err.__traceback__, None
+    while tb is not None:                        # the last step that ran in this cell
+        text = linecache.getline(tb.tb_frame.f_code.co_filename, tb.tb_lineno).rstrip("\n")
+        if text.strip() and text in lines:
+            where = (lines.index(text) + 1, text)
+        tb = tb.tb_next
+    return where or (None, None)
+
+
+def explain_error(err, code, names=()):
+    """Say exactly which line is wrong, what is wrong in it, and how to fix it.
+    names: the variables that exist, to suggest a misspelt one."""
+    kind = type(err).__name__
+    msg = (getattr(err, "msg", None) if isinstance(err, SyntaxError) else None) or str(err)
+    n, line = _cell_line(err, code)
+    what, fix = None, None
+    src = line.strip() if line else ""
+
+    if isinstance(err, SyntaxError):
+        if "unterminated string" in msg or "EOL while scanning" in msg:
+            off = (err.offset or 1) - 1
+            if line and off < len(line) and line[off] in "'\"":
+                q = line[off]
+                body = re.match(r"^(.*?)(\s*[)\]}]*\s*)$", line[off + 1:])
+                text, tail = body.group(1), body.group(2)
+                what = (f"The text `{q}{text}` starts with a quote mark `{q}` but has none at "
+                        f"the end. Text needs a quote mark at both ends.")
+                fix = line[:off + 1] + text + q + tail
+            else:
+                what = "A piece of text has a quote mark at the start but none at the end."
+        elif "Missing parentheses in call to" in msg:
+            what = "`print` needs round brackets around what it shows."
+            fix = re.sub(r"^(\s*)print\s*(.*?)\s*$", r"\1print(\2)", line or "")
+        elif "invalid decimal literal" in msg:
+            bad = re.search(r"\b(\d+)([A-Za-z_]\w*)", line or "")
+            if bad:
+                digits, rest = bad.group(1), bad.group(2)
+                words = [w for w in rest.split("_") if w and w not in ("st", "nd", "rd", "th")]
+                better = "_".join(words + [digits]) if words else f"value_{digits}"
+                what = (f"The name `{bad.group(0)}` starts with a digit. A name must start with "
+                        f"a letter, for example `{better}`.")
+                fix = line.replace(bad.group(0), better)
+            else:
+                what = "A name starts with a digit. A name must start with a letter."
+        elif "was never closed" in msg:
+            br = re.search(r"'(.)' was never closed", msg)
+            what = f"A bracket `{br.group(1) if br else '('}` is opened but never closed."
+            fix = _close_brackets(line) if line else None
+        elif "unmatched" in msg:
+            br = re.search(r"unmatched '(.)'", msg)
+            what = f"There is a closing `{br.group(1) if br else ')'}` with no opening bracket before it."
+        elif "expected ':'" in msg:
+            what = "This line needs a colon `:` at the end (lines with `if`, `for`, `def`, `else` do)."
+            fix = (line or "").rstrip() + ":"
+        elif "expected an indented block" in msg:
+            after = re.search(r"after '(\w+)' statement on line (\d+)", msg)
+            what = (f"Put 4 spaces before `{(line or '').strip()}`"
+                    + (f", because it belongs to the `{after.group(1)}` on line {after.group(2)}."
+                       if after else "."))
+        elif "unexpected indent" in msg:
+            what = "This line starts with spaces, but nothing above it asks for them."
+            fix = (line or "").lstrip()
+        elif "unindent does not match" in msg:
+            what = "The spaces at the start of this line do not line up with the lines above."
+        elif "Maybe you meant '==' or ':=' instead of '='" in msg:
+            what = "To compare two values, use `==`. A single `=` stores a value in a name."
+            fix = re.sub(r"(?<![=!<>])=(?!=)", "==", line or "", count=1)
+        elif "forgot a comma" in msg:
+            what = "Python thinks a comma `,` is missing between two items."
+        else:
+            what = "Python could not read this line. The `^` in the red message points to the spot."
+    elif kind == "NameError":
+        name = re.search(r"name '(\w+)' is not defined", msg)
+        name = name.group(1) if name else "?"
+        if name != name.lower() and name.lower() in BUILTIN_FUNCS:
+            what = (f"`{name}` is written with capital letters. Python only knows "
+                    f"`{name.lower()}`, all in small letters.")
+            fix = _capital_fix(line) if line else None
+        else:
+            close = re.search(r"Did you mean: '(\w+)'", msg)
+            close = close.group(1) if close else next(iter(
+                difflib.get_close_matches(name, [x for x in names if not x.startswith("_")], 1, 0.75)),
+                None)
+            if close:
+                what = f"Python does not know `{name}`. Did you mean `{close}`?"
+                fix = re.sub(rf"\b{re.escape(name)}\b", close, line) if line else None
+            else:
+                what = (f"Python does not know the name `{name}`. Either it is misspelt, or it is "
+                        "made in a cell above that has not been run yet (run the cells above first). "
+                        "If it is text, it needs quote marks: `\"" + name + "\"`.")
+    elif kind == "TypeError" and ("concatenate str" in msg or ("'str' and 'int'" in msg)
+                                  or ("'int' and 'str'" in msg) or ("'str' and 'float'" in msg)
+                                  or ("'float' and 'str'" in msg)):
+        what = "Text and a number were joined with `+`. Turn the number into text with `str(...)`."
+        if line:
+            num = re.search(r"\+\s*([A-Za-z_]\w*)(?!\s*\()", line) or re.search(r"([A-Za-z_]\w*)\s*\+", line)
+            if num and isinstance(names.get(num.group(1)) if hasattr(names, "get") else None,
+                                  (int, float)):
+                fix = re.sub(rf"\b{num.group(1)}\b", f"str({num.group(1)})", line, count=1)
+    elif kind == "TypeError" and "object is not callable" in msg:
+        obj = re.search(r"'(\w+)' object is not callable", msg)
+        art = "an" if obj and obj.group(1)[0] in "aeiou" else "a"
+        what = (f"Round brackets `( )` were put after {art} {obj.group(1) if obj else 'value'}, "
+                "as if it were a function. Is a `*` missing (write `2 * (3 + 4)`, not `2(3 + 4)`)? "
+                "Or did an earlier cell store a value in a function's name, such as `sum = 5`?")
+    elif kind == "TypeError" and "positional argument" in msg:
+        what = f"The function got a different number of values than it needs. Python says: {msg}."
+    elif kind == "IndexError":
+        what = ("This line asks for a position that does not exist. Positions start at 0, and "
+                "`[-1]` is the last item.")
+        ask = re.search(r"\b([A-Za-z_]\w*)\[(-?\d+)\]", line or "")
+        obj = names.get(ask.group(1)) if ask and hasattr(names, "get") else None
+        if ask and hasattr(obj, "__len__") and not hasattr(obj, "shape"):
+            k = len(obj)
+            pos = ("0" if k == 1 else ", ".join(str(i) for i in range(k - 1)) + f" and {k - 1}"
+                   if k <= 6 else f"0 to {k - 1}")
+            what = (f"`{ask.group(1)}` has {k} item{'s' if k != 1 else ''}, so its positions are "
+                    f"{pos}. Position {ask.group(2)} does not exist. Remember: counting starts at 0.")
+    elif kind == "KeyError":
+        what = (f"There is no key or column called `{msg.strip(chr(39))}`. Check its exact "
+                "spelling, capitals and spaces.")
+    elif kind == "ValueError" and "invalid literal for int()" in msg:
+        val = re.search(r": (.*)$", msg)
+        what = (f"`int()` can only turn text made of digits into a number, and {val.group(1) if val else 'this text'} "
+                "has other characters. Remove them first, for example `.replace(\",\", \"\")`, "
+                "or use `float()` for a number with a decimal point.")
+    elif kind == "AttributeError":
+        obj = re.search(r"'(\w+)' object has no attribute '(\w+)'", msg)
+        close = re.search(r"Did you mean: '(\w+)'", msg)
+        if obj:
+            what = f"A {obj.group(1)} has no `.{obj.group(2)}`."
+            var = re.search(rf"\b([A-Za-z_]\w*)\.{obj.group(2)}\b", line or "")
+            if not close and var and hasattr(names, "get") and var.group(1) in names:
+                near = difflib.get_close_matches(obj.group(2), [a for a in dir(names[var.group(1)])
+                                                                if not a.startswith("_")], 1, 0.7)
+                close = re.search(r"(\w+)", f"Did you mean: '{near[0]}'") if near else None
+                if close:
+                    close = re.search(r"'(\w+)'", f"'{near[0]}'")
+            if obj.group(2).lower() in ("length", "lenght", "len", "size", "count_items") and var:
+                what += f" To count the items, use `len({var.group(1)})`."
+                fix = line.replace(f"{var.group(1)}.{obj.group(2)}", f"len({var.group(1)})")
+                close = None
+            if close:
+                what += f" Did you mean `.{close.group(1)}`?"
+                fix = line.replace(f".{obj.group(2)}", f".{close.group(1)}") if line else None
+        else:
+            what = f"Python says: {msg.rstrip('.')}."
+    elif kind == "ZeroDivisionError":
+        what = "This line divides by zero. Check the number after `/`."
+    elif kind in ("ModuleNotFoundError", "ImportError"):
+        mod = re.search(r"No module named '([\w.]+)'", msg)
+        what = (f"There is no library called `{mod.group(1)}`. Check the spelling. If it is right, "
+                "open the notebook in the `pygile` environment, which has all the course libraries."
+                if mod else f"Python says: {msg}.")
+    elif kind == "FileNotFoundError":
+        f = re.search(r"'([^']+)'", msg)
+        what = (f"There is no file `{f.group(1)}`. Check the folder and the file name. The course "
+                "data is in `../data`." if f else "Python cannot find the file.")
+    else:
+        what = f"Python says: {msg.rstrip('.')}. " + ERROR_HINTS.get(kind, "")
+
+    parts = []
+    if n:
+        parts.append(f"**Line {n}:** `{src}`")
+    parts.append(what.strip())
+    if fix and fix.strip() and fix.strip() != src:
+        fix = _capital_fix(fix)
+        parts.append(f"**Try:** `{fix.strip()}`")
+    caps = _capitals_in(code)
+    if caps and kind != "NameError":
+        words = ", ".join(f"`{w}`" for w in caps)
+        parts.append(f"Also: write {words.lower()} in small letters, not {words}. "
+                     "Python cares about capital letters.")
+    return "\n".join(parts)
 
 
 SYSTEM_PROMPT = """You are the PyGILE tutor, a kind and patient teacher inside a Jupyter \
@@ -677,6 +871,7 @@ class Tutor:
         self.enabled = True
         self.tee = None
         self.tip_shown = False
+        self.errors_seen = 0
         self.before = {}
 
     # hooks ------------------------------------------------------------------
@@ -727,7 +922,10 @@ class Tutor:
 
         if error:
             verdict = "error"
-            reason = f"{error_hint(err)} Errors are normal: every programmer sees them every day."
+            reason = explain_error(err, code, self.shell.user_ns)
+            if not self.errors_seen:
+                reason += "\nErrors are normal: every programmer sees them every day."
+            self.errors_seen += 1
         else:
             ns = self.shell.user_ns
             got_vars = {n: fingerprint(ns[n]) for n in entry.get("vars", {}) if n in ns}
