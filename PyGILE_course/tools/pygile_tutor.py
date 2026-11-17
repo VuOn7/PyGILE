@@ -53,9 +53,8 @@ PROGRESS_FILE = HOME / "progress.json"
 
 ANSWER_STARTS = ("# Q1", "# Q2", "# Q3", "# Your answer")
 
-# The beginner's guide. When the repository moves to Geoinformatics-Lab,
-# change VuOn7 to Geoinformatics-Lab here (as in the main README).
-GUIDE_URL = "https://github.com/VuOn7/PyGILE/blob/main/PyGILE_course/AI_TUTOR.md"
+# The beginner's guide, opened from the links in the tutor's messages.
+GUIDE_URL = "https://github.com/Geoinformatics-Lab/PyGILE/blob/main/PyGILE_course/AI_TUTOR.md"
 
 # AI services that all speak the same (OpenAI-style) language. Facts checked
 # November 2026; services change their limits, so the guide says how to check.

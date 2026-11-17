@@ -1,7 +1,6 @@
 # PyGILE - Python GeoInformatics Lab Environment
 
-<!-- When this version replaces Geoinformatics-Lab/PyGILE, change VuOn7 to Geoinformatics-Lab in the two links below. -->
-[![Test notebooks](https://github.com/VuOn7/PyGILE/actions/workflows/test-notebooks.yml/badge.svg)](https://github.com/VuOn7/PyGILE/actions/workflows/test-notebooks.yml)
+[![Test notebooks](https://github.com/Geoinformatics-Lab/PyGILE/actions/workflows/test-notebooks.yml/badge.svg)](https://github.com/Geoinformatics-Lab/PyGILE/actions/workflows/test-notebooks.yml)
 
 PyGILE makes it easy to learn and apply geospatial analysis with Python. It comes with pre-configured Jupyter notebooks and works on Windows, Mac, and Linux. Whether you're a student, teacher, or researcher, PyGILE provides everything you need to start working with geospatial data.
 
@@ -108,7 +107,7 @@ If you add or remove a package, change [`environment.yml`](environment.yml) and 
 
 ## Credits
 
-Enhanced from [mmann1123/pyGIS](https://github.com/mmann1123/pyGIS) by Geoinformatics Lab.
+PyGILE grew from [pyGIS](https://github.com/mmann1123/pyGIS) by Michael Mann and contributors. Seven of its diagrams are still used in the course, with credit in each lesson and in [`PyGILE_course/images/README.md`](PyGILE_course/images/README.md). The original PyGILE notebooks are kept in the [`v1-legacy`](https://github.com/Geoinformatics-Lab/PyGILE/tree/v1-legacy) version.
 
 ## Reference & Citation
 
