@@ -156,6 +156,33 @@ ERROR_HINTS = {
                            "name is misspelled.",
 }
 
+def error_hint(err):
+    """A short, specific explanation of an error, for a beginner. The full error is
+    already shown in red above the box, so it is not repeated."""
+    kind, msg = type(err).__name__, getattr(err, "msg", None) or str(err)
+    missing = re.search(r"name '(\w+)' is not defined", msg)
+    if missing:
+        name = missing.group(1)
+        if name != name.lower() and hasattr(__import__("builtins"), name.lower()):
+            return (f"Python cares about capital letters: write `{name.lower()}`, "
+                    "all in small letters.")
+        return (f"Python does not know the name `{name}`. Check its spelling and capital "
+                "letters, and make sure you ran the cells above this one.")
+    if "Missing parentheses in call to" in msg:
+        return "`print` needs round brackets around what it shows, like this: `print(\"Namaste\")`."
+    if "invalid decimal literal" in msg:
+        return "A name cannot start with a digit. Start it with a letter, for example `peak_2`."
+    if "unterminated string" in msg or "EOL while scanning" in msg:
+        return "A quote mark is missing: text needs a quote mark at the start and at the end."
+    if "was never closed" in msg or "unexpected EOF" in msg:
+        return "A bracket was opened but never closed. Count the `(` and `)` in your line."
+    hint = ERROR_HINTS.get(kind, "Read the last line of the red message first.")
+    suggestion = re.search(r"Did you mean[^?]*\?", msg)
+    if suggestion and kind not in ("NameError",):
+        hint = f"Python suggests a fix in the red message: \"{suggestion.group(0)}\" " + hint
+    return f"**{kind}.** " + hint
+
+
 SYSTEM_PROMPT = """You are the PyGILE tutor, a kind and patient teacher inside a Jupyter \
 notebook. The learner is an absolute beginner in Python and GIS, often a student in Nepal. \
 English may be their second language.
@@ -700,15 +727,7 @@ class Tutor:
 
         if error:
             verdict = "error"
-            hint = ERROR_HINTS.get(type(err).__name__, "Read the last line of the error first.")
-            missing_name = re.search(r"name '(\w+)' is not defined", str(err))
-            if missing_name and missing_name.group(1) != missing_name.group(1).lower() and \
-                    hasattr(__import__("builtins"), missing_name.group(1).lower()):
-                hint = (f"Python cares about capital letters: write `{missing_name.group(1).lower()}`, "
-                        "all in small letters.")
-            if "invalid decimal literal" in str(err):
-                hint = "A name cannot start with a digit. Start it with a letter, for example  peak_2 ."
-            reason = f"`{error[:200]}`\n{hint} Errors are normal: every programmer sees them every day."
+            reason = f"{error_hint(err)} Errors are normal: every programmer sees them every day."
         else:
             ns = self.shell.user_ns
             got_vars = {n: fingerprint(ns[n]) for n in entry.get("vars", {}) if n in ns}
