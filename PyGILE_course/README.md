@@ -21,6 +21,8 @@ Type your answer in the empty cell under each question, run it, then click **Sho
 
 **Your answers are marked as you go.** Run the first code cell of a lesson, and every answer you run gets a small box: ✅ Correct, 🟡 Nearly there or 🔴 Not yet, with a plain-English explanation of any error. It works offline, with no account. You can also add a **free AI tutor** that writes a short, personal hint for you: see **[The PyGILE tutor: marks, hints and a free AI helper](AI_TUTOR.md)** for step-by-step help.
 
+**Try it on your own country.** The last lesson of each part ends with an optional exercise that repeats the part's main skills on a place you choose, anywhere in the world. It is not marked; the AI tutor gives feedback on it.
+
 **The rule that makes it work:** try every question before you open the solution. Being stuck for a few minutes is not failure; it is how the skill is built.
 
 ## Part A · Python for geoscientists

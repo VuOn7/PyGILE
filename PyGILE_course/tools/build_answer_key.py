@@ -27,7 +27,7 @@ TOOLS = Path(__file__).resolve().parent
 COURSE = TOOLS.parent
 sys.path.insert(0, str(TOOLS))
 import add_nav  # noqa: E402
-from pygile_tutor import ANSWER_STARTS, KEY_FILE, names_in  # noqa: E402
+from pygile_tutor import ANSWER_STARTS, KEY_FILE, OWN_START, names_in  # noqa: E402
 
 SOL = re.compile(r"```python\n(.*?)\n```", re.S)
 MARK = "<<PYGILE-VARS>>"
@@ -58,8 +58,12 @@ def build(path):
         f"import sys as _s, json as _j\n_s.path.insert(0, {str(TOOLS)!r})\n"
         "from pygile_tutor import fingerprint as _fp")
     cells.append(setup)
+    own = []
     for i, c in enumerate(run.cells):
-        if c.cell_type == "code" and c.source.lstrip().startswith(ANSWER_STARTS):
+        if c.cell_type == "code" and c.source.lstrip().startswith(OWN_START):
+            own.append(c.id)                  # open exercise: nothing to run or record
+            cells.append(c)
+        elif c.cell_type == "code" and c.source.lstrip().startswith(ANSWER_STARTS):
             nxt = run.cells[i + 1] if i + 1 < len(run.cells) else None
             m = SOL.search(nxt.source) if nxt is not None and nxt.cell_type == "markdown" else None
             if not m:
@@ -116,6 +120,9 @@ def build(path):
             out[a["id"]]["open"] = True
         if UNSTABLE.search(a["sol"].source):
             out[a["id"]]["unstable"] = True
+    for cell_id in own:
+        out[cell_id] = {"lesson": rel, "label": "Your own country", "free": True, "output": "",
+                        "vars": {}, "required": [], "image": False}
     return rel, out
 
 
@@ -128,7 +135,7 @@ def main(paths):
         rel, entries = build(path)
         key["answers"] = {k: v for k, v in key["answers"].items() if v["lesson"] != rel}
         key["answers"].update(entries)
-        key["lessons"][rel] = len(entries)
+        key["lessons"][rel] = sum(1 for e in entries.values() if not e.get("free"))
         print(f"  {len(entries)} answers")
     key["lessons"] = dict(sorted(key["lessons"].items()))
     KEY_FILE.write_text(json.dumps(key, indent=0, ensure_ascii=False, sort_keys=True) + "\n",
