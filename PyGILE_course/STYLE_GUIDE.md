@@ -23,6 +23,7 @@ Someone who has never written code and never studied GIS. Assume nothing. Every 
       Each question is a text cell with the question, then an empty code cell starting with `# Q1: your answer`, then a text cell with the hidden solution (see below).
 3. **When it breaks** — at least one cell per lesson that raises a real error on purpose, with the tag `raises-exception`, followed by an explanation of how to read that error.
 4. **Mixed review** — 3 to 5 longer exercises (5 to 10 lines) that combine the whole lesson. Same hidden-solution format.
+   The last lesson of each part (A12, B12, C9, D6) then has **Your own country (optional)**: an open task that repeats the part's main skills on a place the learner chooses. Its code cell starts with `# Your own country`; it has no hidden solution and is not marked, and the AI tutor gives feedback on it. Code that needs the internet (downloads) goes in a fenced block in the text, never in a code cell.
 5. **Recap** — five bullet points.
 6. **Words you learned** — a two-column table.
 7. **Next** — one sentence about the next lesson.

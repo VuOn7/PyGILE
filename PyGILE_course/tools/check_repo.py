@@ -131,7 +131,7 @@ for path in lessons:
     rel = path.relative_to(COURSE).as_posix()
     nb = nbformat.read(path, as_version=4)
     ids = {c.id for c in nb.cells if c.cell_type == "code"
-           and (c.source.startswith("# Q") or c.source.startswith("# Your answer"))}
+           and c.source.startswith(("# Q", "# Your answer", "# Your own country"))}
     keyed = {i for i, v in key.items() if v["lesson"] == rel}
     if ids != keyed:
         fail(f"{rel}: the tutor's answer key is out of date ({len(ids - keyed)} answer cells missing, "

@@ -45,6 +45,7 @@ That's all. Now answer the questions as usual: type your code in the cell under 
 | 🟡 **Nearly there** | Part of your result is right. The box says which part to check. |
 | 🔴 **Not yet** | Your result is different, or Python found an error. The box explains the error in plain words. |
 | ▶️ **It ran** | The answer is a chart or a map. A computer cannot judge a picture, so compare yours with the solution. |
+| 🌍 **Your own project** | The optional exercise at the end of each part, on data from your own country. There is no single right answer, so it is not marked. With the AI tutor (Part 2), you get feedback on it. |
 
 Under each box you also see your progress, for example **⭐ 6 of 28 questions done in this lesson**.
 

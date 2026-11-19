@@ -52,6 +52,8 @@ CONFIG_FILE = HOME / "tutor.json"
 PROGRESS_FILE = HOME / "progress.json"
 
 ANSWER_STARTS = ("# Q1", "# Q2", "# Q3", "# Your answer")
+# An open exercise on the learner's own data: no solution, no Correct mark.
+OWN_START = "# Your own country"
 
 # The beginner's guide, opened from the links in the tutor's messages.
 GUIDE_URL = "https://github.com/Geoinformatics-Lab/PyGILE/blob/main/PyGILE_course/AI_TUTOR.md"
@@ -817,6 +819,7 @@ STYLE = {
     "not_yet": ("🔴", "Not yet", "#cf222e"),
     "error": ("🔴", "Not yet: Python found an error", "#cf222e"),
     "ran": ("▶️", "It ran", "#0969da"),
+    "own": ("🌍", "Your own project", "#0969da"),
 }
 
 
@@ -919,12 +922,17 @@ class Tutor:
             if not re.search(r" at 0x[0-9a-fA-F]+>", text):    # a map or chart is a picture
                 shown = (shown + "\n" + text).strip()
 
+        free = entry.get("free", False)
         if error:
             verdict = "error"
             reason = explain_error(err, code, self.shell.user_ns)
             if not self.errors_seen:
                 reason += "\nErrors are normal: every programmer sees them every day."
             self.errors_seen += 1
+        elif free:
+            verdict = "own"
+            reason = ("This is your own project, so there is no single right answer to compare "
+                      "with. Check that each result makes sense for the place you chose.")
         else:
             ns = self.shell.user_ns
             got_vars = {n: fingerprint(ns[n]) for n in entry.get("vars", {}) if n in ns}
@@ -938,17 +946,19 @@ class Tutor:
         # progress
         prog = load_json(PROGRESS_FILE, {})
         solved = set(prog.get(entry["lesson"], []))
-        if verdict in ("correct", "ran"):
+        if verdict in ("correct", "ran") and not free:
             solved.add(info.cell_id)
             prog[entry["lesson"]] = sorted(solved)
             save_json(PROGRESS_FILE, prog)
         total = key["lessons"].get(entry["lesson"], 0)
-        progress = f"⭐ {len(solved)} of {total} questions done in this lesson" if total else ""
+        progress = (f"⭐ {len(solved)} of {total} questions done in this lesson"
+                    if total and not free else "")
         if verdict == "correct" and total and len(solved) == total:
             progress = f"🎉 All {total} questions in this lesson done. Outstanding work!"
 
         cheer = {"correct": PRAISE, "nearly": NEARLY, "not_yet": NOT_YET,
-                 "error": NOT_YET, "ran": ["Good."]}[verdict]
+                 "error": NOT_YET, "ran": ["Good."],
+                 "own": ["Well done for trying it on your own data."]}[verdict]
         reason = f"{random.choice(cheer)} {reason}"
 
         cfg = load_json(CONFIG_FILE, {})
@@ -965,6 +975,11 @@ class Tutor:
         if not use_ai:
             return
         question, solution = lesson_text(entry["lesson"], info.cell_id)
+        if free:
+            solution = ("(None: this is an open exercise on the learner's own country. Judge "
+                        "whether the code does the step of the task the learner is working on, "
+                        "and whether the results look plausible for the place they chose. The "
+                        "learner works one step at a time, so unfinished later steps are fine.)")
         ai_text, note = ask_ai(cfg, question, solution, code, printed, error, verdict, reason)
         if ai_text:
             ai_verdict, ai_text = split_ai_verdict(ai_text)
@@ -972,9 +987,10 @@ class Tutor:
             # a mark when an answer is valid but solved another way. It never lowers a
             # mark, and an answer that raised an error stays "Not yet".
             rank = {"not_yet": 0, "nearly": 1, "correct": 2}
-            if ai_verdict and (verdict == "ran" or rank.get(ai_verdict, -1) > rank.get(verdict, 9)):
+            if ai_verdict and (verdict in ("ran", "own")
+                               or rank.get(ai_verdict, -1) > rank.get(verdict, 9)):
                 verdict, reason = ai_verdict, ""      # the AI's words explain the new mark
-                if verdict == "correct":
+                if verdict == "correct" and not free:
                     solved.add(info.cell_id)
                     prog[entry["lesson"]] = sorted(solved)
                     save_json(PROGRESS_FILE, prog)
