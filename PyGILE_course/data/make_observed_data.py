@@ -16,8 +16,8 @@ Download these files by hand into the folder `_raw_observed/` next to this scrip
    seasonal "Preliminary precipitation and temperature summary" reports,
    from https://www.dhm.gov.np/climate-services/climate%20reports/monthly-reports
    -> JJAS_2024.pdf (the monsoon of 2024) and January_2025.pdf ... December_2025.pdf
-   (2025, not 2024: in the annex of DHM's December 2024 report, 55 stations carry exactly
-   their October 2024 totals, up to 234 mm, which cannot be right for a December)
+   (2025, not 2024: page 8 of DHM's December 2024 report, the stations Jalesor to Rara,
+   is October 2024's page 9 printed again, so those December values are October's)
 
 Needs the `pygile` environment plus pypdf (pip install pypdf).
 Run from this folder:  python make_observed_data.py
