@@ -19,7 +19,7 @@ Each lesson is a Jupyter notebook made of short **steps**. Every step has:
 
 Type your answer in the empty cell under each question, run it, then click **Show solution** to check. Each lesson also shows a real error message and how to read it, ends with longer **mixed review** exercises, and finishes with a recap and a glossary of new words.
 
-**Your answers are marked as you go.** Run the first code cell of a lesson, and every answer you run gets a small box: ✅ Correct, 🟡 Nearly there or 🔴 Not yet, with a plain-English explanation of any error. It works offline, with no account. You can also add a **free AI tutor** that writes a short, personal hint for you: see **[The PyGILE tutor: marks, hints and a free AI helper](AI_TUTOR.md)** for step-by-step help.
+**Your answers are marked as you go.** Run the first code cell of a lesson, and every answer you run gets a small box: ✅ Correct, 🟡 Nearly there or 🔴 Not yet, with a plain-English explanation of any error. It works offline, with no account. You can also add a **free AI tutor** that writes a short, personal hint for you, and answers your follow-up questions when something is unclear: see **[The PyGILE tutor: marks, hints and a free AI helper](AI_TUTOR.md)** for step-by-step help.
 
 **Try it on your own country.** The last lesson of each part ends with an optional exercise that repeats the part's main skills on a place you choose, anywhere in the world. It is not marked; the AI tutor gives feedback on it.
 

@@ -64,6 +64,8 @@ The marks tell you *whether* your answer is right. The AI tutor tells you *why*,
 
 > 🤖 You picked the item with the right idea: square brackets and an index. Remember that Python counts from 0, so the second peak is at index 1, not 2.
 
+**You can also talk with it.** If a hint is not clear, or you want to know more, type `%tutor ask` and your question in a new cell (see [Ask the tutor a question](#ask-the-tutor-a-question)).
+
 **It is optional.** Everything in Part 1 works without it.
 
 **Before you start, three things to know:**
@@ -145,6 +147,25 @@ Use this if the free services are not enough for you. You add a small amount of 
 
 **When the money runs out**, the hints stop until you top up again. Your marks keep working.
 
+### Ask the tutor a question
+
+When something is unclear, ask. Click **+** to add a new cell under your answer, type `%tutor ask` and your question, and press **Shift+Enter**:
+
+```
+%tutor ask why do we start counting at 0?
+```
+
+> 💬 You asked · about Q2: why do we start counting at 0?
+> 🤖 Python counts the distance from the start of the list. The first item is 0 steps from the start, so its position is 0 …
+
+- **It knows what you are working on**: the question you last ran, your code, what it showed and the hint it gave. You do not need to copy any of that.
+- **Keep asking.** Each new `%tutor ask` continues the same conversation, so you can say *"I still don't get it"* or *"show me a smaller example"*.
+- **A new question starts a new conversation.** When you run the answer to another question, the tutor starts fresh. Running the same answer again keeps the conversation, with your new code.
+- **Long questions** can go on several lines in the same cell, as long as the cell starts with `%tutor ask`.
+- **Any language.** You can ask in Nepali or English; the tutor answers in the language you write in.
+- It explains and gives hints, but it does not write the whole answer for you. The full answer is always under **Show solution**.
+- Each question uses one message of your daily limit, like a hint does. The privacy rule above applies here too: never type personal information.
+
 ### When the free AI runs out
 
 If you practise a lot, you may use up a free daily limit. Then the box under your answer says so, and tells you what you can do:
@@ -162,6 +183,7 @@ Type a command in any cell of a lesson, after you have run the first code cell, 
 | Command | What it does |
 | --- | --- |
 | `%tutor` | Shows what is on, and which AI services you have added |
+| `%tutor ask` *your question* | Asks the AI tutor about the answer you last ran (see [Ask the tutor a question](#ask-the-tutor-a-question)) |
 | `%tutor setup` | Adds an AI service, step by step |
 | `%tutor help` | Shows a link to this page |
 | `%tutor progress` | Shows how many questions you have done in each lesson |

@@ -25,8 +25,13 @@ its free daily limit, the tutor moves to the next one. Keys are stored in
 ~/.pygile/tutor.json on the learner's computer, never in the notebook.
 The beginner's guide is PyGILE_course/AI_TUTOR.md.
 
-Commands:  %tutor (status) · %tutor setup · %tutor help · %tutor remove NAME
-·  %tutor ai off / on · %tutor off / on · %tutor progress · %tutor reset
+The learner can also talk with the AI tutor:  %tutor ask why do we use iloc here?
+It remembers the answer they last ran (the task, their code, the result and the
+hint) and the conversation about it, until they run another answer cell.
+
+Commands:  %tutor (status) · %tutor ask QUESTION · %tutor setup · %tutor help
+·  %tutor remove NAME · %tutor ai off / on · %tutor off / on · %tutor progress
+·  %tutor reset
 Advanced: change a service's "model" (or add a "url" for any OpenAI-style
 server, such as Ollama) by editing ~/.pygile/tutor.json.
 """
@@ -396,6 +401,27 @@ Sentences that are worded differently from the solution are fine if the numbers 
 Use plain English and short sentences. Never use the words simply, just, obviously or easy. \
 Be warm, never childish, never sarcastic. Do not use Markdown headings."""
 
+# For %tutor ask: a conversation about the answer the learner last ran.
+ASK_PROMPT = """You are the PyGILE tutor, a kind and patient teacher inside a Jupyter \
+notebook. The learner is an absolute beginner in Python and GIS, often a student in Nepal. \
+English may be their second language.
+
+The learner has typed a question to you. Below is what they are working on: the course \
+question, the course's own solution (hidden from the learner, for you only), their code, \
+what it showed, and the earlier conversation. Answer what they actually ask.
+
+- Explain the idea behind the step in plain words, with a small everyday example if it helps.
+- You may show a short code example of 1 to 3 lines that illustrates the idea, but do not \
+write the full answer to the course question. If they ask for the answer, encourage one \
+more try, then remind them that the solution is under "Show solution" below the question.
+- If they are stuck after several tries, give a bigger, more concrete hint than before.
+- If the question is not about Python, GIS or this course, answer briefly and kindly, \
+then bring them back to the lesson.
+- Reply in the language the learner writes in (for example Nepali or English).
+- At most 8 short sentences. Use plain words and short sentences. Never use the words \
+simply, just, obviously or easy. Be warm, never childish, never sarcastic. No Markdown \
+headings. Never ask for personal information."""
+
 
 # ---------------------------------------------------------------------------
 # Fingerprints: a small, comparable summary of any value.
@@ -697,16 +723,18 @@ def service_name(svc):
     return PROVIDERS.get(svc.get("provider"), {}).get("name", svc.get("provider", "AI service"))
 
 
-def call_service(svc, system, user):
+def call_service(svc, system, user, history=()):
     """One request to one service. Returns (text, problem): problem is None,
-    'limit', 'key', 'network' or 'other'."""
+    'limit', 'key', 'network' or 'other'. history holds earlier turns of a
+    conversation, as (role, text) pairs with role 'user' or 'assistant'."""
     prov = PROVIDERS.get(svc.get("provider"), {})
     url = svc.get("url") or prov.get("url")
     model = svc.get("model") or prov.get("model")
     body = json.dumps({
         "model": model,
-        "messages": [{"role": "system", "content": system},
-                     {"role": "user", "content": user}],
+        "messages": ([{"role": "system", "content": system}]
+                     + [{"role": r, "content": t} for r, t in history]
+                     + [{"role": "user", "content": user}]),
         "temperature": 0.4,
         "max_tokens": 1200,
     }).encode()
@@ -736,12 +764,9 @@ def call_service(svc, system, user):
     return (text, None) if text else (None, "other")
 
 
-def ask_ai(cfg, question, solution, code, output, error, verdict, reason):
-    """Try each saved service in turn. Returns (text, help_html)."""
-    svcs = services(cfg)
-    if not svcs:
-        return None, None
-    user = (
+def answer_context(question, solution, code, output, error, verdict, reason):
+    """The facts about one answer, as the AI reads them."""
+    return (
         f"QUESTION:\n{question.strip()[:3000]}\n\n"
         f"COURSE SOLUTION (hidden from the learner):\n{solution.strip()[:3000]}\n\n"
         f"LEARNER'S CODE:\n{code.strip()[:3000]}\n\n"
@@ -749,13 +774,26 @@ def ask_ai(cfg, question, solution, code, output, error, verdict, reason):
         + (f"ERROR:\n{error[:1500]}\n\n" if error else "")
         + f"AUTOMATIC CHECK: {verdict} ({reason})"
     )
+
+
+def try_services(cfg, system, user, history=()):
+    """Try each saved service in turn. Returns (text, help_html)."""
+    svcs = services(cfg)
+    if not svcs:
+        return None, None
     problems = []
     for svc in svcs:
-        text, problem = call_service(svc, SYSTEM_PROMPT, user)
+        text, problem = call_service(svc, system, user, history)
         if text:
             return text, None
         problems.append((svc, problem))
     return None, help_for(problems)
+
+
+def ask_ai(cfg, question, solution, code, output, error, verdict, reason):
+    """Feedback on one answer. Returns (text, help_html)."""
+    return try_services(cfg, SYSTEM_PROMPT,
+                        answer_context(question, solution, code, output, error, verdict, reason))
 
 
 def link(text, anchor=""):
@@ -831,7 +869,8 @@ def md_inline(s):
     return s.replace("\n", "<br>")
 
 
-def card(verdict, title_extra, reason, progress, ai_text=None, ai_note=None, waiting=False):
+def card(verdict, title_extra, reason, progress, ai_text=None, ai_note=None, waiting=False,
+         footer=None):
     icon, label, colour = STYLE[verdict]
     lines = [f"<div style='font-size:1.05em'><b>{icon} {label}</b>"
              f"{' · ' + md_inline(title_extra) if title_extra else ''}</div>"]
@@ -845,6 +884,8 @@ def card(verdict, title_extra, reason, progress, ai_text=None, ai_note=None, wai
         lines.append(f"<div style='margin-top:6px'>🤖 {ai_note}</div>")
     if progress:
         lines.append(f"<div style='margin-top:6px;opacity:.75;font-size:.9em'>{progress}</div>")
+    if footer:
+        lines.append(f"<div style='margin-top:4px;opacity:.75;font-size:.9em'>{footer}</div>")
     return (f"<div style='border-left:4px solid {colour};padding:8px 12px;margin:6px 0;"
             f"background:color-mix(in srgb, {colour} 9%, transparent);border-radius:4px;"
             f"font-family:var(--jp-ui-font-family, sans-serif);line-height:1.45'>"
@@ -876,11 +917,15 @@ class Tutor:
         self.tip_shown = False
         self.errors_seen = 0
         self.before = {}
+        self.ask_tips = 0       # cards that showed the "%tutor ask" tip, this session
+        self.chat = None        # the last answer run, and the conversation about it
 
     # hooks ------------------------------------------------------------------
     def pre_run_cell(self, info):
         self.tee = None
         cell_id = getattr(info, "cell_id", None) or ""
+        if (getattr(info, "raw_cell", "") or "").lstrip().startswith(("%tutor", "%%tutor")):
+            return                                   # a tutor command, not an answer
         if self.enabled and cell_id in answer_key()["answers"]:
             # Found by the cell's id, so it works even if the learner deleted
             # the "# Q1: your answer" line.
@@ -971,17 +1016,31 @@ class Tutor:
             tip = ("Want a personal hint as well? You can add a free AI tutor: type "
                    "<code>%tutor setup</code> in a new cell and follow the steps. "
                    + link("What is this?"))
+        footer = None
+        if has_ai and self.ask_tips < 3:             # the first few cards only
+            self.ask_tips += 1
+            footer = ("💬 Something unclear? In a new cell, type <code>%tutor ask</code> and "
+                      "your question, for example <code>%tutor ask why is my answer wrong?</code>")
         handle = display(HTML(card(verdict, label, reason, progress, ai_note=tip,
-                                   waiting=bool(use_ai))), display_id=True)
-        if not use_ai:
-            return
+                                   waiting=bool(use_ai), footer=footer)), display_id=True)
+
         question, solution = lesson_text(entry["lesson"], info.cell_id)
         if free:
             solution = ("(None: this is an open exercise on the learner's own country. Judge "
                         "whether the code does the step of the task the learner is working on, "
                         "and whether the results look plausible for the place they chose. The "
                         "learner works one step at a time, so unfinished later steps are fine.)")
+        # Remember this answer for %tutor ask. Running another question starts a new
+        # conversation; running the same one again keeps it, with the latest code.
+        same = self.chat is not None and self.chat["cell"] == info.cell_id
+        self.chat = {"cell": info.cell_id, "label": label,
+                     "facts": [question, solution, code, printed, error, verdict, reason],
+                     "hint": None, "turns": self.chat["turns"] if same else []}
+        if not use_ai:
+            return
         ai_text, note = ask_ai(cfg, question, solution, code, printed, error, verdict, reason)
+        if ai_text:
+            self.chat["hint"] = ai_text
         if ai_text:
             ai_verdict, ai_text = split_ai_verdict(ai_text)
             # The AI marks answers the automatic check cannot (plots, maps), and may raise
@@ -996,7 +1055,56 @@ class Tutor:
                     prog[entry["lesson"]] = sorted(solved)
                     save_json(PROGRESS_FILE, prog)
                     progress = f"⭐ {len(solved)} of {total} questions done in this lesson"
-        handle.update(HTML(card(verdict, label, reason, progress, ai_text, note)))
+        handle.update(HTML(card(verdict, label, reason, progress, ai_text, note, footer=footer)))
+
+    # talking with the tutor ---------------------------------------------------
+    def ask(self, text):
+        """%tutor ask: answer a learner's question about the answer they last ran."""
+        text = text.strip()
+        if not text:
+            show("Type your question after <code>%tutor ask</code>, for example:<br>"
+                 "<code>%tutor ask what does iloc do?</code><br>"
+                 "A longer question can go on several lines, all in the same cell.")
+            return
+        cfg = load_json(CONFIG_FILE, {})
+        if not services(cfg):
+            show("To ask questions, add a free AI tutor first: type <code>%tutor setup</code> "
+                 "in a new cell and follow the steps. " + link("What is this?") + "<br>"
+                 "Until then, read the step above the question again, or open "
+                 "<b>Show solution</b> after you have tried.")
+            return
+        if not cfg.get("ai", True):
+            show("The AI tutor is paused. Type <code>%tutor ai on</code> to start it again.")
+            return
+        chat = self.chat
+        if chat is None:
+            system = (ASK_PROMPT + "\n\nThe learner has not run an answer cell yet, so you "
+                      "do not know which question they are on. Answer in general, for the "
+                      "PyGILE course (Python, GIS and remote sensing, with examples from Nepal).")
+            turns = []
+        else:
+            q, sol, code, out, err, verdict, reason = chat["facts"]
+            system = (ASK_PROMPT + "\n\nWHAT THE LEARNER IS WORKING ON (their latest run; "
+                      "the code may have changed since earlier messages):\n\n"
+                      + answer_context(q, sol, code, out, err, verdict, reason)
+                      + (f"\n\nHINT THE TUTOR ALREADY GAVE:\n{chat['hint']}" if chat["hint"] else ""))
+            turns = chat["turns"][-8:]               # the last four exchanges are enough
+        from IPython.display import HTML, display
+        about = f" · about {md_inline(chat['label'])}" if chat else ""
+        head = f"<div style='opacity:.75;font-size:.9em'>💬 You asked{about}: {md_inline(text[:300])}</div>"
+        handle = display(HTML(BOX.format(head + "<div style='margin-top:6px;opacity:.7'>"
+                                         "🤖 Thinking…</div>")), display_id=True)
+        answer, note = try_services(cfg, system, text[:2000], turns)
+        if answer:
+            if chat is not None:
+                chat["turns"] += [("user", text[:2000]), ("assistant", answer)]
+            body = f"<div style='margin-top:6px'>🤖 {md_inline(answer)}</div>"
+            body += ("<div style='margin-top:6px;opacity:.7;font-size:.9em'>Ask more with "
+                     "<code>%tutor ask</code>. The tutor remembers this conversation until "
+                     "you run another answer.</div>")
+        else:
+            body = f"<div style='margin-top:6px'>🤖 {note}</div>"
+        handle.update(HTML(BOX.format(head + body)))
 
 
 # ---------------------------------------------------------------------------
@@ -1011,8 +1119,11 @@ def show(html_text):
     display(HTML(BOX.format(html_text)))
 
 
-def tutor_magic(line):
+def tutor_magic(line, cell=None):
     args = line.split()
+    if args and args[0] == "ask":
+        _TUTOR.ask(line.strip()[3:] + ("\n" + cell if cell else ""))
+        return
     t = _TUTOR
     cfg = load_json(CONFIG_FILE, {})
     if not args:
@@ -1022,6 +1133,7 @@ def tutor_magic(line):
         show(f"<b>Marking:</b> {'on' if t.enabled else 'off'}<br>"
              f"<b>AI tutor:</b> {ai}{paused}<br>"
              "<b>Commands</b> (type one in a cell and run it):<br>"
+             "<code>%tutor ask</code> and a question: talk with the AI tutor · "
              "<code>%tutor setup</code> add an AI service · <code>%tutor help</code> the guide · "
              "<code>%tutor progress</code> your progress · <code>%tutor ai off</code> pause the AI · "
              "<code>%tutor remove gemini</code> remove a service")
@@ -1131,6 +1243,16 @@ def setup(cfg):
 _TUTOR = None
 
 
+def _ask_cell(lines):
+    """Turn a cell that starts with  %tutor ask  into one call with the whole cell as
+    the question. Without this, Jupyter treats a question ending in "?" as a request
+    for its own help page, and the question is lost."""
+    if not lines or not lines[0].lstrip().startswith("%tutor ask"):
+        return lines
+    text = "".join(lines).lstrip()[len("%tutor ask"):].strip()
+    return [f"get_ipython().run_line_magic('tutor', {('ask ' + text)!r})\n"]
+
+
 def load_ipython_extension(shell):
     global _TUTOR
     if _TUTOR is not None:
@@ -1138,7 +1260,8 @@ def load_ipython_extension(shell):
     _TUTOR = Tutor(shell)
     shell.events.register("pre_run_cell", _TUTOR.pre_run_cell)
     shell.events.register("post_run_cell", _TUTOR.post_run_cell)
-    shell.register_magic_function(tutor_magic, "line", "tutor")
+    shell.register_magic_function(tutor_magic, "line_cell", "tutor")
+    shell.input_transformers_cleanup.append(_ask_cell)
 
 
 def unload_ipython_extension(shell):
@@ -1147,4 +1270,6 @@ def unload_ipython_extension(shell):
         return
     shell.events.unregister("pre_run_cell", _TUTOR.pre_run_cell)
     shell.events.unregister("post_run_cell", _TUTOR.post_run_cell)
+    if _ask_cell in shell.input_transformers_cleanup:
+        shell.input_transformers_cleanup.remove(_ask_cell)
     _TUTOR = None
