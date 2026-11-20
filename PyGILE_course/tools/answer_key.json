@@ -136,21 +136,22 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "1610.0 1610.0",
+"output": "3804.2 3949.1",
 "required": [],
 "vars": {
 "col": {
 "dtype": "i",
 "nan": 0,
 "shape": [],
-"sum": 93.0,
+"sum": 73.0,
 "type": "ndarray"
 },
+"i": 65,
 "row": {
 "dtype": "i",
 "nan": 0,
 "shape": [],
-"sum": 17.0,
+"sum": 49.0,
 "type": "ndarray"
 }
 }
@@ -711,7 +712,7 @@
 "image": false,
 "label": "Review 1 · Landslides per district, with terrain",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "60\n                 elev_m  slope_deg   n\ndistrict                              \nDhading          1459.0       29.3   1\nKabhrepalanchok  1305.0       36.2  11\nKathmandu        1682.2       32.4   4\nLalitpur         1402.0       43.9   1\nMakawanpur       1756.5       37.8   2\nNuwakot          1612.2       36.7  20\nSindhupalchok    2051.7       36.8  21",
+"output": "283\n                 elev_m  slope_deg    n\ndistrict                               \nKabhrepalanchok  1109.2       29.1    4\nKathmandu        1407.5       29.5    2\nNuwakot          1976.5       41.1   46\nRasuwa           1645.0       36.0    1\nSindhupalchok    1875.6       41.8  230",
 "required": [],
 "vars": {
 "joined": {
@@ -730,10 +731,10 @@
 "slope_deg"
 ],
 "shape": [
-60,
+283,
 12
 ],
-"sum": 181256.022,
+"sum": 3888531.712,
 "type": "GeoDataFrame"
 },
 "summary": {
@@ -743,10 +744,10 @@
 "n"
 ],
 "shape": [
-7,
+5,
 3
 ],
-"sum": 11581.796,
+"sum": 8474.344,
 "type": "DataFrame"
 }
 }
@@ -755,7 +756,7 @@
 "image": false,
 "label": "Review 1 · Landslides per province",
 "lesson": "B_Vector/B06_Joins_and_dissolve.ipynb",
-"output": "province  count\n0          Koshi    4.0\n1        Madhesh    0.0\n2        Bagmati   26.0\n3        Gandaki   10.0\n4        Lumbini    0.0\n5        Karnali    0.0\n6  Sudurpashchim    0.0",
+"output": "province  count\n0          Koshi   17.0\n1        Madhesh    0.0\n2        Bagmati   47.0\n3        Gandaki   53.0\n4        Lumbini   23.0\n5        Karnali   16.0\n6  Sudurpashchim   10.0",
 "required": [],
 "vars": {
 "ax": {
@@ -770,10 +771,10 @@
 "count"
 ],
 "shape": [
-3,
+6,
 2
 ],
-"sum": 40.0,
+"sum": 166.0,
 "type": "DataFrame"
 },
 "prov_slides": {
@@ -790,7 +791,7 @@
 7,
 7
 ],
-"sum": 148161.856,
+"sum": 148287.856,
 "type": "GeoDataFrame"
 }
 }
@@ -966,7 +967,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "24",
+"output": "109",
 "required": [],
 "vars": {}
 },
@@ -1014,7 +1015,7 @@
 77,
 7
 ],
-"sum": 148058.616,
+"sum": 148195.696,
 "type": "GeoDataFrame"
 },
 "dmap": {
@@ -1026,26 +1027,26 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "8413 70.2",
+"output": "4094 69.2",
 "required": [],
 "vars": {
 "close": {
 "dtype": "b",
 "nan": 0,
 "shape": [
-11990
+5919
 ],
-"sum": 8413.0,
+"sum": 4094.0,
 "type": "ndarray"
 },
 "idw8_mm": {
 "dtype": "f",
-"nan": 250,
+"nan": 8868,
 "shape": [
-102,
-120
+93,
+159
 ],
-"sum": 17873909.9,
+"sum": 8782561.142,
 "type": "ndarray"
 }
 }
@@ -1150,7 +1151,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "2.55",
+"output": "2.93",
 "required": [],
 "vars": {
 "share_ground": 0.3002
@@ -1168,7 +1169,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "7\n      id  slope_deg  area_m2\n0   M001       51.8     5000\n18  M019       47.1      150\n24  M025       52.7      600\n42  M043       46.1      150\n46  M047       53.6    12000\n49  M050       59.8     1200\n50  M051       46.7     5000",
+"output": "102\n       id  slope_deg  area_m2\n0    G001       52.5     6017\n2    G003       46.6    13098\n5    G006       59.1     6410\n6    G007       50.5    11076\n7    G008       51.1    10687\n..    ...        ...      ...\n264  G265       51.9     8075\n267  G268       59.5     5932\n271  G272       46.8     6283\n272  G273       45.7    15283\n274  G275       46.2     8542\n\n[102 rows x 3 columns]",
 "required": [],
 "vars": {
 "very_steep": {
@@ -1182,10 +1183,10 @@
 "elev_utm_m"
 ],
 "shape": [
-7,
+102,
 7
 ],
-"sum": 49673.026,
+"sum": 1537895.61,
 "type": "DataFrame"
 }
 }
@@ -1290,7 +1291,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B08_Buffers_and_nearest_features.ipynb",
-"output": "20.1975",
+"output": "13.288554216867471",
 "required": [],
 "vars": {}
 },
@@ -1638,7 +1639,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B03_GeoDataFrames_and_file_formats.ipynb",
-"output": "10.769\n{\n\"type\": \"FeatureCollection\",\n\"name\": \"b3_landslides\",\n\"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\" } },\n\"features\": [\n{ \"type\": \"Feature\", \"properties\": { \"id\": \"LS001\", \"date\": \"2023-08-18\", \"district\": \"Dolakha\", \"province\": \"Bagmati\", \"lat\": 27.872, \"lon\": 86",
+"output": "46.834\n{\n\"type\": \"FeatureCollection\",\n\"name\": \"b3_landslides\",\n\"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\" } },\n\"features\": [\n{ \"type\": \"Feature\", \"properties\": { \"id\": 9682, \"date\": \"2008-08-30\", \"district\": \"Tanahun\", \"province\": \"Gandaki\", \"lat\": 28.1003, \"lon\": 84.4",
 "required": [],
 "vars": {
 "slides_path": {
@@ -2095,7 +2096,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B08_Buffers_and_nearest_features.ipynb",
-"output": "id  district\n18  LS019  Chitawan\n19  LS020  Chitawan\n36  LS037  Chitawan",
+"output": "id  district\n133  9256  Chitawan",
 "required": [],
 "vars": {
 "bharatpur": {
@@ -2109,15 +2110,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-3,
-9
+1,
+10
 ],
-"sum": 30336.303,
+"sum": 9368.235,
 "type": "GeoDataFrame"
 }
 }
@@ -2337,11 +2339,11 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B12_Interactive_web_maps.ipynb",
-"output": "<b>LS001</b><br>2023-08-18",
+"output": "<b>9682</b><br>2008-08-30",
 "required": [],
 "vars": {
 "first": {
-"len": 9,
+"len": 10,
 "name": "0",
 "type": "Series"
 }
@@ -2695,10 +2697,10 @@
 "area_m2"
 ],
 "shape": [
-60,
+283,
 4
 ],
-"sum": 75550.693,
+"sum": 3341052.128,
 "type": "DataFrame"
 },
 "slides_gdf": {
@@ -2710,10 +2712,10 @@
 "geometry"
 ],
 "shape": [
-60,
+283,
 5
 ],
-"sum": 75550.693,
+"sum": 3341052.128,
 "type": "GeoDataFrame"
 }
 }
@@ -2757,7 +2759,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "(40, 13) <StringArray>\n['MultiPolygon']\nLength: 1, dtype: str",
+"output": "(166, 14) <StringArray>\n['MultiPolygon']\nLength: 1, dtype: str",
 "required": [],
 "vars": {
 "swapped": {
@@ -2773,14 +2775,15 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger"
 ],
 "shape": [
-40,
-13
+166,
+14
 ],
-"sum": 192559.691,
+"sum": 1015580.206,
 "type": "GeoDataFrame"
 }
 }
@@ -2819,7 +2822,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B06_Joins_and_dissolve.ipynb",
-"output": "8",
+"output": "48",
 "required": [],
 "vars": {
 "counts_fixed": {
@@ -2828,10 +2831,10 @@
 "count"
 ],
 "shape": [
-8,
+48,
 2
 ],
-"sum": 40.0,
+"sum": 166.0,
 "type": "DataFrame"
 },
 "per_district": {
@@ -2846,7 +2849,7 @@
 77,
 5
 ],
-"sum": 40.0,
+"sum": 166.0,
 "type": "GeoDataFrame"
 }
 }
@@ -3013,7 +3016,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "id  elev_m\n45  M046    3692",
+"output": "id  elev_m\n118  G119    3189",
 "required": [],
 "vars": {}
 },
@@ -3032,6 +3035,12 @@
 },
 "handles_t": {
 "items": [
+{
+"type": "Line2D"
+},
+{
+"type": "Line2D"
+},
 {
 "type": "Line2D"
 },
@@ -3537,7 +3546,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B08_Buffers_and_nearest_features.ipynb",
-"output": "9\nname\nDhunche      5\nBharatpur    3\nCharikot     1\nName: count, dtype: int64",
+"output": "59\nname\nBaglung         6\nTamghas         6\nKusma           5\nManma           4\nTaplejung       3\nBhojpur         3\nDamauli         2\nBeni            2\nBhaktapur       2\nKathmandu       2\nTansen          2\nGorkha          2\nIlam            2\nPhidim          1\nSyangja         1\nMangalsen       1\nOkhaldhunga     1\nSalyan          1\nJajarkot        1\nRamechhap       1\nLibang          1\nBidur           1\nPokhara         1\nDhulikhel       1\nDailekh         1\nBharatpur       1\nChautara        1\nDadeldhura      1\nPyuthan         1\nSindhulimadi    1\nDhadingbesi     1\nName: count, dtype: int64",
 "required": [],
 "vars": {
 "within_10km": {
@@ -3548,7 +3557,8 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -3556,10 +3566,10 @@
 "dist_m"
 ],
 "shape": [
-9,
-12
+59,
+13
 ],
-"sum": 131174.978,
+"sum": 645827.052,
 "type": "GeoDataFrame"
 }
 }
@@ -3863,7 +3873,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "1526.7 332.3",
+"output": "1784.4 291.2",
 "required": [],
 "vars": {
 "durbar_mm": {
@@ -3872,7 +3882,7 @@
 "shape": [
 1
 ],
-"sum": 1526.655,
+"sum": 1784.396,
 "type": "ndarray"
 },
 "durbar_var": {
@@ -3881,7 +3891,7 @@
 "shape": [
 1
 ],
-"sum": 110446.615,
+"sum": 84803.154,
 "type": "ndarray"
 }
 }
@@ -4134,7 +4144,7 @@
 "image": false,
 "label": "Review 3 · Density per province",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "province_code  n_landslides  density_per_100km2\n0          NP01             4               0.015\n1          NP02             0               0.000\n2          NP03            26               0.128\n3          NP04            10               0.045\n4          NP05             0               0.000\n5          NP06             0               0.000\n6          NP07             0               0.000",
+"output": "province_code  n_landslides  density_per_100km2\n0          NP01            17               0.065\n1          NP02             0               0.000\n2          NP03            47               0.232\n3          NP04            53               0.241\n4          NP05            23               0.119\n5          NP06            16               0.052\n6          NP07            10               0.050",
 "required": [],
 "vars": {
 "p_counts": {
@@ -4143,10 +4153,10 @@
 "n_landslides"
 ],
 "shape": [
-3,
+6,
 2
 ],
-"sum": 40.0,
+"sum": 166.0,
 "type": "DataFrame"
 },
 "p_join": {
@@ -4157,17 +4167,18 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
 "province_code"
 ],
 "shape": [
-40,
-11
+166,
+12
 ],
-"sum": 191861.691,
+"sum": 1002370.206,
 "type": "GeoDataFrame"
 },
 "provinces_utm": {
@@ -4181,7 +4192,7 @@
 7,
 4
 ],
-"sum": 40.189,
+"sum": 166.759,
 "type": "GeoDataFrame"
 }
 }
@@ -4190,26 +4201,29 @@
 "image": false,
 "label": "Review 2 · Landslides in a study box",
 "lesson": "B_Vector/B02_Points_lines_and_polygons.ipynb",
-"output": "9 {'Chitwan'}",
+"output": "12 {'Sindhupalchok'}",
 "required": [],
 "vars": {
 "names": {
 "items": [
-"Chitwan",
-"Chitwan",
-"Chitwan",
-"Chitwan",
-"Chitwan",
-"Chitwan",
-"Chitwan",
-"Chitwan",
-"Chitwan"
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok",
+"Sindhupalchok"
 ],
 "type": "list"
 },
 "row": {
-"len": 8,
-"name": "39",
+"len": 9,
+"name": "165",
 "type": "Series"
 },
 "slides": {
@@ -4220,14 +4234,15 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger"
 ],
 "shape": [
-40,
-8
+166,
+9
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "DataFrame"
 },
 "study_box": {
@@ -4530,7 +4545,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B08_Buffers_and_nearest_features.ipynb",
-"output": "2",
+"output": "35",
 "required": [],
 "vars": {}
 },
@@ -4556,7 +4571,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B07_Clip_and_select_by_location.ipynb",
-"output": "10",
+"output": "53",
 "required": [],
 "vars": {
 "gandaki": {
@@ -5097,7 +5112,7 @@
 "output": "True True",
 "required": [],
 "vars": {
-"layers_text": "<!DOCTYPE html>\n<html>\n<head>\n    \n    <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />\n    <script src=\"https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js\"></script>\n    <script src=\"https://code.jquery.com/jquery-3.7.1.min.js\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js\"></script>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css\"/>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\"/>\n    <link rel=\"stylesheet\" href=\"https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css\"/>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css\"/>\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css\"/>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css\"/>\n    \n            <meta name=\"viewport\" content=\"width=device-width,\n                initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n            <style>\n                #map_00447cc2abaaac0eefee406c0c7830a0 {\n                    position: relative;\n                    width: 100.0%;\n                    height: 100.0%;\n                    left: 0.0%;\n                    top: 0.0%;\n                }\n                .leaflet-container { font-size: 1rem; }\n            </style>\n\n            <style>html, body {\n                width: 100%;\n                height: 100%;\n                margin: 0;\n                padding: 0;\n            }\n            </style>\n\n            <style>#map {\n                position:absolute;\n                top:0;\n                bottom:0;\n               "
+"layers_text": "<!DOCTYPE html>\n<html>\n<head>\n    \n    <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />\n    <script src=\"https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js\"></script>\n    <script src=\"https://code.jquery.com/jquery-3.7.1.min.js\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js\"></script>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css\"/>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\"/>\n    <link rel=\"stylesheet\" href=\"https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css\"/>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css\"/>\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css\"/>\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css\"/>\n    \n            <meta name=\"viewport\" content=\"width=device-width,\n                initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n            <style>\n                #map_65f8e21e05695a378f471b4d0f4de917 {\n                    position: relative;\n                    width: 100.0%;\n                    height: 100.0%;\n                    left: 0.0%;\n                    top: 0.0%;\n                }\n                .leaflet-container { font-size: 1rem; }\n            </style>\n\n            <style>html, body {\n                width: 100%;\n                height: 100%;\n                margin: 0;\n                padding: 0;\n            }\n            </style>\n\n            <style>#map {\n                position:absolute;\n                top:0;\n                bottom:0;\n               "
 }
 },
 "45c1d973": {
@@ -5236,7 +5251,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B07_Clip_and_select_by_location.ipynb",
-"output": "Dolakha 9\nRasuwa 5\nSindhupalchok 3\nGorkha 4",
+"output": "Dolakha 5\nRasuwa 5\nSindhupalchok 17\nGorkha 8",
 "required": [],
 "vars": {
 "shape": {
@@ -5534,7 +5549,7 @@
 "image": false,
 "label": "Review 1 · Landslides per province, zeros included",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "province  n_landslides\n0          Koshi             4\n1        Madhesh             0\n2        Bagmati            26\n3        Gandaki            10\n4        Lumbini             0\n5        Karnali             0\n6  Sudurpashchim             0",
+"output": "province  n_landslides\n0          Koshi            17\n1        Madhesh             0\n2        Bagmati            47\n3        Gandaki            53\n4        Lumbini            23\n5        Karnali            16\n6  Sudurpashchim            10",
 "required": [],
 "vars": {
 "in_province": {
@@ -5545,17 +5560,18 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
 "province_code"
 ],
 "shape": [
-40,
-11
+166,
+12
 ],
-"sum": 191861.691,
+"sum": 1002370.206,
 "type": "GeoDataFrame"
 },
 "names": {
@@ -5577,10 +5593,10 @@
 "n_landslides"
 ],
 "shape": [
-3,
+6,
 2
 ],
-"sum": 40.0,
+"sum": 166.0,
 "type": "DataFrame"
 },
 "provinces": {
@@ -5595,7 +5611,7 @@
 7,
 5
 ],
-"sum": 68.0,
+"sum": 194.0,
 "type": "GeoDataFrame"
 }
 }
@@ -5604,7 +5620,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "id  elev_m  slope_deg  hq_km\n53  M054    2812       35.7   32.6\n59  M060    1900       36.0   33.0",
+"output": "id  elev_m  slope_deg  hq_km\n1   G002    1784       34.3   33.0\n12  G013    2580       45.6   33.0",
 "required": [],
 "vars": {
 "farthest": {
@@ -5619,10 +5635,10 @@
 "hq_km"
 ],
 "shape": [
-60,
+283,
 8
 ],
-"sum": 284386.5,
+"sum": 4420385.921,
 "type": "DataFrame"
 }
 }
@@ -5705,28 +5721,30 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "-336.4",
+"output": "186.6",
 "required": [
 "gauges_utm"
 ],
 "vars": {
 "gauges_utm": {
 "columns": [
-"gauge",
+"station",
+"district",
+"province",
 "lat",
 "lon",
 "elevation_m",
-"annual_rain_mm",
+"monsoon_mm",
 "geometry",
 "x_m",
 "y_m",
 "loo_err_mm"
 ],
 "shape": [
-24,
-9
+109,
+11
 ],
-"sum": 82130164.649,
+"sum": 362833536.008,
 "type": "GeoDataFrame"
 }
 }
@@ -5919,20 +5937,20 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "gauge  elevation_m  annual_rain_mm\n20   G21          914             931\n5    G06         2289            2005",
+"output": "station  elevation_m  monsoon_mm\n46  Jomsom         2741       284.1\n65   Lumle         1738      3949.1",
 "required": [],
 "vars": {
 "by_rain": {
 "columns": [
-"gauge",
+"station",
 "elevation_m",
-"annual_rain_mm"
+"monsoon_mm"
 ],
 "shape": [
-24,
+109,
 3
 ],
-"sum": 67860.0,
+"sum": 288936.0,
 "type": "DataFrame"
 }
 }
@@ -5966,7 +5984,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B06_Joins_and_dissolve.ipynb",
-"output": "40",
+"output": "166",
 "required": [
 "inner_fixed"
 ],
@@ -5979,15 +5997,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "district_code"
 ],
 "shape": [
-40,
-9
+166,
+10
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "DataFrame"
 }
 }
@@ -6103,7 +6122,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B12_Interactive_web_maps.ipynb",
-"output": "trigger\nrainfall      29\nroad cut       8\nearthquake     3\nName: count, dtype: int64",
+"output": "trigger\ndownpour             73\nunknown              28\nrain                 27\ncontinuous_rain      26\nmonsoon               7\nearthquake            4\nsnowfall_snowmelt     1\nName: count, dtype: int64",
 "required": [],
 "vars": {}
 },
@@ -6366,7 +6385,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B06_Joins_and_dissolve.ipynb",
-"output": "_merge\nboth          7\nleft_only     1\nright_only    0\nName: count, dtype: int64",
+"output": "_merge\nboth          43\nleft_only      5\nright_only     0\nName: count, dtype: int64",
 "required": [],
 "vars": {}
 },
@@ -6462,7 +6481,7 @@
 "image": false,
 "label": "Review 1 · A 20 km grid over Gandaki",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "81 cells; 17 counted; 10 in Gandaki\n10 counted after selecting",
+"output": "81 cells; 65 counted; 53 in Gandaki\n53 counted after selecting",
 "required": [],
 "vars": {
 "g_cells": {
@@ -6884,16 +6903,17 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right"
 ],
 "shape": [
-17,
-10
+65,
+11
 ],
-"sum": 83208.906,
+"sum": 380033.752,
 "type": "GeoDataFrame"
 },
 "g_points": {
@@ -6904,15 +6924,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-10,
-9
+53,
+10
 ],
-"sum": 26094.696,
+"sum": 298935.555,
 "type": "GeoDataFrame"
 },
 "gandaki": {
@@ -6959,7 +6980,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "np.float64(1459.9769876578646)",
+"output": "np.float64(1738.5108476865992)",
 "required": [],
 "vars": {}
 },
@@ -7104,10 +7125,10 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "1505.6 1404.3",
+"output": "1485.7 1617.9",
 "required": [],
 "vars": {
-"thiessen_mean_mm": 1505.6333
+"thiessen_mean_mm": 1485.6529
 }
 },
 "5d3f5c2e": {
@@ -7256,7 +7277,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "'G17'",
+"output": "'Lumle'",
 "required": [],
 "vars": {}
 },
@@ -7416,16 +7437,16 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "9.0",
+"output": "6.7",
 "required": [],
 "vars": {
 "dist_km": {
-"len": 24,
+"len": 109,
 "name": "None",
-"sum": 772.892,
+"sum": 25272.937,
 "type": "Series"
 },
-"g10": {
+"jomsom": {
 "type": "Point"
 }
 }
@@ -7484,7 +7505,7 @@
 "image": false,
 "label": "Review 4 · Which landslide districts are on the map?",
 "lesson": "B_Vector/B05_Selecting_by_attribute.ipynb",
-"output": "7\n['Dolakha', 'Gorkha', 'Kaski', 'Myagdi', 'Rasuwa', 'Sindhupalchok', 'Taplejung']\n9\ndistrict\nChitwan    9\nName: count, dtype: int64",
+"output": "43\n['Achham', 'Baglung', 'Baitadi', 'Bajhang', 'Bhaktapur', 'Bhojpur', 'Dadeldhura', 'Dailekh', 'Darchula', 'Dhading', 'Dolakha', 'Doti', 'Gorkha', 'Gulmi', 'Ilam', 'Jajarkot', 'Kalikot', 'Kaski', 'Kathmandu', 'Khotang', 'Lalitpur', 'Lamjung', 'Mugu', 'Myagdi', 'Nuwakot', 'Okhaldhunga', 'Palpa', 'Panchthar', 'Parbat', 'Pyuthan', 'Ramechhap', 'Rasuwa', 'Rolpa', 'Rukum East', 'Rukum West', 'Rupandehi', 'Salyan', 'Sindhuli', 'Sindhupalchok', 'Solukhumbu', 'Syangja', 'Taplejung', 'Udayapur']\n16\ndistrict\nTanahun           9\nKavrepalanchok    3\nChitwan           2\nTehrathum         1\nMakwanpur         1\nName: count, dtype: int64",
 "required": [],
 "vars": {
 "unmatched": {
@@ -7495,15 +7516,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-9,
-9
+16,
+10
 ],
-"sum": 80979.142,
+"sum": 90776.217,
 "type": "GeoDataFrame"
 },
 "with_slides": {
@@ -7516,10 +7538,10 @@
 "area_km2"
 ],
 "shape": [
-7,
+43,
 6
 ],
-"sum": 17841.6,
+"sum": 77251.8,
 "type": "GeoDataFrame"
 }
 }
@@ -7601,7 +7623,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B11_Making_a_beautiful_map.ipynb",
-"output": "643 156",
+"output": "737 179",
 "required": [],
 "vars": {
 "web_path": {
@@ -7919,7 +7941,7 @@
 "image": false,
 "label": "Review 4 · Landslides near a headquarters, by spatial join",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "9 pairs\n9 unique landslides\nname\nDhunche      5\nBharatpur    3\nCharikot     1\nName: count, dtype: int64",
+"output": "69 pairs\n59 unique landslides\nname\nKusma           9\nBaglung         7\nTamghas         6\nBeni            5\nManma           4\nBhaktapur       3\nTaplejung       3\nBhojpur         3\nDamauli         2\nKathmandu       2\nTansen          2\nGorkha          2\nIlam            2\nPhidim          1\nSyangja         1\nMangalsen       1\nOkhaldhunga     1\nSalyan          1\nJajarkot        1\nRamechhap       1\nLibang          1\nBidur           1\nLalitpur        1\nPokhara         1\nDhulikhel       1\nDailekh         1\nBharatpur       1\nChautara        1\nDadeldhura      1\nPyuthan         1\nSindhulimadi    1\nDhadingbesi     1\nName: count, dtype: int64",
 "required": [],
 "vars": {
 "landslides_utm": {
@@ -7930,15 +7952,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-40,
-9
+166,
+10
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "GeoDataFrame"
 },
 "near_hq": {
@@ -7949,7 +7972,8 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -7957,10 +7981,10 @@
 "hq_district"
 ],
 "shape": [
-9,
-12
+69,
+13
 ],
-"sum": 74089.306,
+"sum": 412296.687,
 "type": "GeoDataFrame"
 }
 }
@@ -8376,7 +8400,7 @@
 "image": false,
 "label": "Review 2 · Landslides per district, after the fix",
 "lesson": "B_Vector/B06_Joins_and_dissolve.ipynb",
-"output": "district  count\n11       Chitawan    9.0\n19        Dolakha    9.0\n45         Myagdi    5.0\n56         Rasuwa    5.0\n22         Gorkha    4.0\n74      Taplejung    4.0\n67  Sindhupalchok    3.0\n34          Kaski    1.0",
+"output": "district  count\n67  Sindhupalchok   17.0\n34          Kaski   10.0\n52         Parbat   10.0\n73         Tanahu    9.0\n22         Gorkha    8.0\n23          Gulmi    6.0\n31        Kalikot    6.0\n72        Syangja    6.0",
 "required": [],
 "vars": {
 "ax": {
@@ -8388,10 +8412,10 @@
 "count"
 ],
 "shape": [
-8,
+48,
 2
 ],
-"sum": 40.0,
+"sum": 166.0,
 "type": "DataFrame"
 },
 "fig": {
@@ -8409,7 +8433,7 @@
 77,
 5
 ],
-"sum": 40.0,
+"sum": 166.0,
 "type": "GeoDataFrame"
 }
 }
@@ -8447,7 +8471,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B07_Clip_and_select_by_location.ipynb",
-"output": "0",
+"output": "7",
 "required": [],
 "vars": {}
 },
@@ -8502,45 +8526,130 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "np.float64(1387.6650486476933)",
+"output": "np.float64(1537.9767549035735)",
 "required": [],
 "vars": {}
 },
 "6e587a75": {
 "image": false,
-"label": "Review 2 · Trend plus interpolated residuals",
+"label": "Review 2 · Line plus interpolated residuals",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "153.3",
+"output": "450.4",
 "required": [],
 "vars": {
-"a": 0.7529,
-"b": 324.6848,
+"a": -0.218,
+"b": 1843.3188,
 "combo_errors_mm": {
 "items": [
--250.9251,
-206.21,
--201.0559,
--3.6935,
-55.5306,
-7.1412,
-244.2692,
-192.9694,
-37.8543,
--24.6761,
-120.5682,
-32.6774,
-17.1384,
--12.4622,
-93.038,
--55.052,
--246.1178,
--111.6201,
--232.7466,
--62.6121,
-253.7197,
--145.2982,
-88.9669,
--252.438
+391.7317,
+-411.4509,
+167.78,
+-682.8895,
+-338.2947,
+-61.3519,
+302.6522,
+454.4515,
+-318.9423,
+363.1274,
+243.0893,
+190.7938,
+-208.7973,
+-115.4942,
+-894.0423,
+-312.8598,
+49.0702,
+-575.6623,
+-160.8973,
+16.03,
+-340.868,
+-351.6198,
+296.0296,
+-1204.8627,
+-193.7949,
+582.7229,
+-345.3236,
+181.7139,
+-0.8241,
+559.9562,
+-103.2797,
+364.7214,
+35.3891,
+893.6063,
+-158.4114,
+619.844,
+-284.932,
+-188.0126,
+125.6137,
+433.8604,
+-209.7824,
+1069.753,
+681.1953,
+479.9325,
+244.1462,
+-426.1913,
+263.0305,
+43.6868,
+-33.5698,
+-1027.102,
+-1167.5217,
+61.035,
+-82.6495,
+6.0069,
+-179.3311,
+197.586,
+112.8134,
+297.732,
+-859.4652,
+-86.0684,
+-201.9907,
+525.8431,
+54.3786,
+138.0624,
+465.592,
+-1863.8441,
+-236.6538,
+-223.5319,
+-97.5849,
+997.575,
+305.5471,
+-603.699,
+-601.6576,
+662.3183,
+31.7203,
+-121.7083,
+35.5038,
+-351.5962,
+236.845,
+-189.6127,
+403.0452,
+240.5319,
+-118.6166,
+303.7256,
+239.5577,
+493.6688,
+-712.7579,
+-48.1174,
+-122.9347,
+280.5827,
+128.0224,
+-359.4758,
+484.5887,
+99.9342,
+85.9047,
+230.9841,
+-514.4401,
+396.8579,
+-24.4426,
+-311.2199,
+-143.6935,
+37.9846,
+-361.1908,
+252.0702,
+-177.1731,
+442.3333,
+297.5863,
+127.2115,
+-126.7686
 ],
 "type": "list"
 },
@@ -8548,19 +8657,19 @@
 "dtype": "b",
 "nan": 0,
 "shape": [
-24
+109
 ],
-"sum": 23.0,
+"sum": 108.0,
 "type": "ndarray"
 },
-"residual_here": -57.8081,
+"residual_here": -152.6529,
 "residuals": {
 "dtype": "f",
 "nan": 0,
 "shape": [
-23
+108
 ],
-"sum": -0.0,
+"sum": 0.0,
 "type": "ndarray"
 }
 }
@@ -8688,13 +8797,13 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "province_code\nNP03    26\nNP04    10\nNP01     4\nName: count, dtype: int64\n40",
+"output": "province_code\nNP04    53\nNP03    47\nNP05    23\nNP01    17\nNP06    16\nNP07    10\nName: count, dtype: int64\n166",
 "required": [],
 "vars": {
 "per_province": {
-"len": 3,
+"len": 6,
 "name": "count",
-"sum": 40.0,
+"sum": 166.0,
 "type": "Series"
 }
 }
@@ -9350,7 +9459,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "40",
+"output": "166",
 "required": [],
 "vars": {
 "checked": {
@@ -9361,7 +9470,8 @@
 "province_x",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -9372,10 +9482,10 @@
 "province_y"
 ],
 "shape": [
-40,
-15
+166,
+16
 ],
-"sum": 193295.691,
+"sum": 1009662.206,
 "type": "GeoDataFrame"
 },
 "names": {
@@ -9564,13 +9674,13 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B06_Joins_and_dissolve.ipynb",
-"output": "province\nBagmati    26\nGandaki    10\nKoshi       4\nName: count, dtype: int64\n40 of 40",
+"output": "province\nGandaki          53\nBagmati          47\nLumbini          23\nKoshi            17\nKarnali          16\nSudurpashchim    10\nName: count, dtype: int64\n166 of 166",
 "required": [],
 "vars": {
 "match": {
-"len": 40,
+"len": 166,
 "name": "province",
-"sum": 40.0,
+"sum": 166.0,
 "type": "Series"
 }
 }
@@ -9585,34 +9695,32 @@
 },
 "7902424f": {
 "image": false,
-"label": "Review 3 · Rainfall per district",
+"label": "Review 3 · Monsoon rainfall per province",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "mean  count         district\n5  1676.2    192       Makawanpur\n8  1597.3   4036    Sindhupalchok\n3  1497.4   1653        Kathmandu\n4  1490.5    664         Lalitpur\n6  1443.0   2281          Nuwakot\n0  1420.5    488        Bhaktapur\n7  1411.1    141           Rasuwa\n1  1377.8    117          Dhading\n2  1337.9   2418  Kabhrepalanchok",
+"output": "mean  count province_code       province\n2  1838.3    812          NP03        Bagmati\n3  1817.7    885          NP04        Gandaki\n0  1651.3   1040          NP01          Koshi\n4  1590.5    772          NP05        Lumbini\n1  1541.5    378          NP02        Madhesh\n6  1454.0    801          NP07  Sudurpashchim\n5  1154.1   1231          NP06        Karnali",
 "required": [],
 "vars": {
-"districts": {
+"names": {
 "columns": [
-"district",
-"district_code",
 "province_code",
-"geometry"
+"province_number",
+"province"
 ],
 "shape": [
-77,
-4
+7,
+3
 ],
-"type": "GeoDataFrame"
+"sum": 28.0,
+"type": "DataFrame"
 },
-"near": {
+"provinces": {
 "columns": [
-"district",
-"district_code",
 "province_code",
 "geometry"
 ],
 "shape": [
-9,
-4
+7,
+2
 ],
 "type": "GeoDataFrame"
 },
@@ -9620,64 +9728,50 @@
 "items": [
 {
 "items": {
-"count": 488,
-"mean": 1420.5187
+"count": 1040,
+"mean": 1651.327
 },
 "type": "dict"
 },
 {
 "items": {
-"count": 117,
-"mean": 1377.8083
+"count": 378,
+"mean": 1541.4521
 },
 "type": "dict"
 },
 {
 "items": {
-"count": 2418,
-"mean": 1337.9213
+"count": 812,
+"mean": 1838.2661
 },
 "type": "dict"
 },
 {
 "items": {
-"count": 1653,
-"mean": 1497.361
+"count": 885,
+"mean": 1817.6863
 },
 "type": "dict"
 },
 {
 "items": {
-"count": 664,
-"mean": 1490.5484
+"count": 772,
+"mean": 1590.4826
 },
 "type": "dict"
 },
 {
 "items": {
-"count": 192,
-"mean": 1676.2316
+"count": 1231,
+"mean": 1154.1396
 },
 "type": "dict"
 },
 {
 "items": {
-"count": 2281,
-"mean": 1442.9927
-},
-"type": "dict"
-},
-{
-"items": {
-"count": 141,
-"mean": 1411.0676
-},
-"type": "dict"
-},
-{
-"items": {
-"count": 4036,
-"mean": 1597.2618
+"count": 801,
+"mean": 1454.0499
 },
 "type": "dict"
 }
@@ -9688,13 +9782,14 @@
 "columns": [
 "mean",
 "count",
-"district"
+"province_code",
+"province"
 ],
 "shape": [
-9,
-3
+7,
+4
 ],
-"sum": 25241.711,
+"sum": 16966.403,
 "type": "DataFrame"
 }
 }
@@ -9845,7 +9940,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "<StringArray>\n['Chitwan']\nLength: 1, dtype: str",
+"output": "<StringArray>\n['Tanahun', 'Chitwan', 'Kavrepalanchok', 'Tehrathum', 'Makwanpur']\nLength: 5, dtype: str",
 "required": [],
 "vars": {
 "bad_names": {
@@ -9966,7 +10061,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "5.8318734",
+"output": "9.684448",
 "required": [],
 "vars": {
 "slides": {
@@ -9980,10 +10075,10 @@
 "elev_utm_m"
 ],
 "shape": [
-60,
+283,
 7
 ],
-"sum": 283324.139,
+"sum": 4414860.212,
 "type": "DataFrame"
 }
 }
@@ -10106,23 +10201,23 @@
 },
 "811b63f8": {
 "image": false,
-"label": "Review 5 · Where would a 25th gauge help most?",
+"label": "Review 5 · Where would a 110th station help most?",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "0 58 378.3 mm\n85.49 28.001",
+"output": "17 56 596.3 mm\n82.918 29.706",
 "required": [],
 "vars": {
 "col": {
 "dtype": "i",
 "nan": 0,
 "shape": [],
-"sum": 58.0,
+"sum": 56.0,
 "type": "ndarray"
 },
 "row": {
 "dtype": "i",
 "nan": 0,
 "shape": [],
-"sum": 0.0,
+"sum": 17.0,
 "type": "ndarray"
 },
 "spot": {
@@ -10130,8 +10225,8 @@
 "name": "None",
 "type": "GeoSeries"
 },
-"x_m": 351509.3659,
-"y_m": 3098273.4935
+"x_m": 104976.1827,
+"y_m": 3293169.091
 }
 },
 "813377d5": {
@@ -10171,92 +10266,96 @@
 "image": false,
 "label": "Review 1 · A hold-out test",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "['G01', 'G05', 'G09', 'G13', 'G17', 'G21']\nmean: 431.3\nIDW:  372.8\nline: 160.0",
+"output": "28 test gauges, 81 training gauges\nmean: 464.6\nIDW:  287.6\nline: 426.7",
 "required": [],
 "vars": {
-"a": 0.6743,
-"b": 438.7181,
+"a": -0.2133,
+"b": 1806.1102,
 "idw_test": {
 "dtype": "f",
 "nan": 0,
 "shape": [
-6
+28
 ],
-"sum": 7412.697,
+"sum": 46239.542,
 "type": "ndarray"
 },
 "obs_mm": {
-"dtype": "i",
+"dtype": "f",
 "nan": 0,
 "shape": [
-6
+28
 ],
-"sum": 8343.0,
+"sum": 48886.7,
 "type": "ndarray"
 },
 "test": {
 "columns": [
-"gauge",
+"station",
+"district",
+"province",
 "lat",
 "lon",
 "elevation_m",
-"annual_rain_mm",
+"monsoon_mm",
 "geometry",
 "x_m",
 "y_m",
 "loo_err_mm"
 ],
 "shape": [
-6,
-9
+28,
+11
 ],
-"sum": 20532875.71,
+"sum": 93105476.001,
 "type": "GeoDataFrame"
 },
 "train": {
 "columns": [
-"gauge",
+"station",
+"district",
+"province",
 "lat",
 "lon",
 "elevation_m",
-"annual_rain_mm",
+"monsoon_mm",
 "geometry",
 "x_m",
 "y_m",
 "loo_err_mm"
 ],
 "shape": [
-18,
-9
+81,
+11
 ],
-"sum": 61597288.938,
+"sum": 269728060.007,
 "type": "GeoDataFrame"
 },
 "tv": {
 "dtype": "f",
 "nan": 0,
 "shape": [
-18
+81
 ],
-"sum": 25361.0,
+"sum": 127468.3,
 "type": "ndarray"
 },
 "tx": {
 "dtype": "f",
 "nan": 0,
 "shape": [
-18
+81
 ],
-"sum": 6285099.365,
+"sum": 18392979.414,
 "type": "ndarray"
 },
 "ty": {
 "dtype": "f",
 "nan": 0,
 "shape": [
-18
+81
 ],
-"sum": 55259517.148,
+"sum": 251109137.502,
 "type": "ndarray"
 }
 }
@@ -10545,13 +10644,13 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "NaturalBreaks\n\n  Interval     Count\n--------------------\n[0.05, 0.12] |     4\n(0.12, 0.22] |     1\n(0.22, 0.42] |     3",
+"output": "NaturalBreaks\n\n  Interval     Count\n--------------------\n[0.03, 0.30] |    37\n(0.30, 0.68] |     9\n(0.68, 1.85] |     2",
 "required": [],
 "vars": {
 "dens": {
-"len": 8,
+"len": 48,
 "name": "density_per_100km2",
-"sum": 1.761,
+"sum": 12.853,
 "type": "Series"
 }
 }
@@ -10711,15 +10810,13 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "district_right\nChitawan         79970\nDolakha          35390\nRasuwa           27920\nMyagdi           21500\nTaplejung         9700\nSindhupalchok     9300\nGorkha            3220\nKaski              250\nName: area_m2, dtype: int64",
-"required": [
-"area_m2"
-],
+"output": "district_right\nRasuwa           250\nSindhupalchok    195\nTaplejung         58\nKaski             48\nRukum West        18\nGulmi             17\nKalikot           17\nDolakha           12\nName: fatalities, dtype: int64",
+"required": [],
 "vars": {
-"area_m2": {
-"len": 8,
-"name": "area_m2",
-"sum": 187250.0,
+"deaths": {
+"len": 48,
+"name": "fatalities",
+"sum": 721.0,
 "type": "Series"
 }
 }
@@ -10801,9 +10898,9 @@
 },
 "876bbc5c": {
 "image": false,
-"label": "Review 1 · The nearest landslides to LS001",
+"label": "Review 1 · The nearest landslides to the first record",
 "lesson": "B_Vector/B04_Coordinate_reference_systems.ipynb",
-"output": "id district   dist_km\n0   LS001  Dolakha  0.000000\n32  LS033  Dolakha  0.710898\n30  LS031  Dolakha  2.583078\n38  LS039  Dolakha  3.876256",
+"output": "id district    dist_km\n0   9682  Tanahun   0.000000\n29  3698  Tanahun  16.597152\n26  3686  Tanahun  18.519977\n1   1114  Tanahun  20.043883",
 "required": [],
 "vars": {
 "closest": {
@@ -10814,19 +10911,20 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "dist_km"
 ],
 "shape": [
-40,
-10
+166,
+11
 ],
-"sum": 196782.075,
+"sum": 1026466.923,
 "type": "GeoDataFrame"
 },
-"ls001": {
+"first": {
 "type": "Point"
 },
 "slides": {
@@ -10837,14 +10935,15 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger"
 ],
 "shape": [
-40,
-8
+166,
+9
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "DataFrame"
 },
 "slides_gdf": {
@@ -10855,15 +10954,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-40,
-9
+166,
+10
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "GeoDataFrame"
 },
 "slides_utm": {
@@ -10874,16 +10974,17 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "dist_km"
 ],
 "shape": [
-40,
-10
+166,
+11
 ],
-"sum": 196782.075,
+"sum": 1026466.923,
 "type": "GeoDataFrame"
 }
 }
@@ -10922,15 +11023,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-40,
-9
+166,
+10
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "GeoDataFrame"
 },
 "slides": {
@@ -10941,14 +11043,15 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger"
 ],
 "shape": [
-40,
-8
+166,
+9
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "DataFrame"
 }
 }
@@ -10957,7 +11060,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "18\n16",
+"output": "38\n31",
 "required": [],
 "vars": {}
 },
@@ -11010,7 +11113,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "51.831363677978516",
+"output": "52.49611282348633",
 "required": [],
 "vars": {}
 },
@@ -11171,7 +11274,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C09_Spatial_autocorrelation.ipynb",
-"output": "24.860681315359066 19.621473846520214",
+"output": "27.231891912289907 18.873140029378938",
 "required": [],
 "vars": {}
 },
@@ -11245,7 +11348,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "id district_left\n6   LS007        Gorkha\n7   LS008        Gorkha\n8   LS009     Taplejung\n9   LS010        Myagdi\n14  LS015        Myagdi\n17  LS018        Myagdi\n22  LS023        Myagdi\n24  LS025         Kaski\n25  LS026     Taplejung\n26  LS027        Gorkha\n28  LS029     Taplejung\n29  LS030     Taplejung\n33  LS034        Gorkha\n35  LS036        Myagdi",
+"output": "id district_left\n0    9682        Tanahu\n1    1114        Tanahu\n2    1158          Doti\n3    1175       Bhojpur\n4    1179       Baglung\n..    ...           ...\n154  9164       Bhojpur\n156  9190         Palpa\n158  9206       Pyuthan\n161  9588        Myagdi\n165  9521         Gulmi\n\n[119 rows x 2 columns]",
 "required": [],
 "vars": {
 "check": {
@@ -11256,7 +11359,8 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -11265,10 +11369,10 @@
 "province_code"
 ],
 "shape": [
-40,
-13
+166,
+14
 ],
-"sum": 192530.691,
+"sum": 1004052.206,
 "type": "GeoDataFrame"
 },
 "outside": {
@@ -11279,7 +11383,8 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -11288,10 +11393,10 @@
 "province_code"
 ],
 "shape": [
-14,
-13
+119,
+14
 ],
-"sum": 36255.85,
+"sum": 698089.671,
 "type": "GeoDataFrame"
 }
 }
@@ -11332,7 +11437,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B07_Clip_and_select_by_location.ipynb",
-"output": "9",
+"output": "2",
 "required": [],
 "vars": {}
 },
@@ -11354,7 +11459,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B06_Joins_and_dissolve.ipynb",
-"output": "district     _merge\n1  Chitwan  left_only",
+"output": "district     _merge\n3          Tanahun  left_only\n23  Kavrepalanchok  left_only\n25         Chitwan  left_only\n44       Tehrathum  left_only\n47       Makwanpur  left_only",
 "required": [],
 "vars": {
 "problems": {
@@ -11365,10 +11470,10 @@
 "_merge"
 ],
 "shape": [
-1,
+5,
 4
 ],
-"sum": 9.0,
+"sum": 16.0,
 "type": "DataFrame"
 }
 }
@@ -11377,44 +11482,129 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "357.9",
+"output": "558.5",
 "required": [],
 "vars": {
 "keep": {
 "dtype": "b",
 "nan": 0,
 "shape": [
-24
+109
 ],
-"sum": 23.0,
+"sum": 108.0,
 "type": "ndarray"
 },
 "lin_errors": {
 "items": [
--168.0264,
--115.919,
--370.087,
-331.9977,
-332.5495,
--673.2668,
-512.5127,
-83.73,
--495.878,
--83.8923,
-129.8127,
-167.654,
-335.5651,
--138.6646,
-39.9818,
-439.433,
--584.9248,
--269.8857,
--253.6607,
--281.7578,
-532.3965,
-348.3191,
--341.969,
-497.3714
+-188.2848,
+-840.3643,
+320.871,
+-403.3486,
+-320.6353,
+-32.3096,
+243.7671,
+328.9635,
+-471.5929,
+356.715,
+151.8507,
+358.4404,
+-89.1486,
+-766.6981,
+-917.1573,
+-484.7414,
+-180.0768,
+-518.2185,
+155.6943,
+0.7598,
+-590.5821,
+-10.9266,
+15.1022,
+-956.6407,
+-370.3387,
+758.4872,
+-434.3087,
+354.2769,
+166.0468,
+434.457,
+-5.6708,
+226.9953,
+-4.8797,
+861.9731,
+-478.7621,
+630.318,
+-385.8306,
+-62.4082,
+-7.2734,
+558.2574,
+-80.6956,
+1420.6261,
+505.7927,
+685.8928,
+349.2068,
+-393.0343,
+1226.2809,
+620.2309,
+582.0455,
+-785.3032,
+-933.6892,
+-63.2967,
+-19.8133,
+139.8758,
+-941.3,
+289.1518,
+232.1828,
+390.6416,
+-1303.7058,
+134.1539,
+-665.591,
+425.4315,
+618.5515,
+96.7183,
+349.9176,
+-2118.8272,
+-404.2274,
+94.4775,
+369.9296,
+668.3672,
+256.6229,
+-662.9485,
+-300.7269,
+784.51,
+168.1059,
+43.1439,
+-120.5761,
+-282.7905,
+287.9465,
+335.8724,
+390.8087,
+202.4585,
+17.8946,
+403.3282,
+62.3169,
+654.3906,
+-1643.7444,
+-3.2529,
+-223.4818,
+172.7389,
+446.3223,
+-160.7522,
+756.4759,
+97.9816,
+90.699,
+436.2097,
+-552.6432,
+366.0161,
+37.937,
+-1052.8896,
+-94.5336,
+20.5608,
+-32.2129,
+-21.1651,
+-296.2602,
+727.5131,
+1211.2193,
+-145.2704,
+-110.4478
 ],
 "type": "list"
 },
@@ -11473,7 +11663,7 @@
 "image": false,
 "label": "Review 2 · Edge cells and the small-area trap",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "n_landslides  area_km2  density_per_100km2\n20              1     18.29                5.47\n219             4    100.00                4.00\n232             3    100.00                3.00",
+"output": "n_landslides  area_km2  density_per_100km2\n177             5     100.0                 5.0\n120             4     100.0                 4.0\n110             3     100.0                 3.0",
 "required": [],
 "vars": {
 "clipped": {
@@ -11488,7 +11678,7 @@
 253,
 5
 ],
-"sum": 52227.48,
+"sum": 52264.419,
 "type": "GeoDataFrame"
 },
 "top": {
@@ -11503,7 +11693,7 @@
 253,
 5
 ],
-"sum": 52227.48,
+"sum": 52264.419,
 "type": "GeoDataFrame"
 }
 }
@@ -11616,7 +11806,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B03_GeoDataFrames_and_file_formats.ipynb",
-"output": "40",
+"output": "166",
 "required": [],
 "vars": {}
 },
@@ -11900,7 +12090,7 @@
 "image": false,
 "label": "Review 3 · The landslides of Bagmati",
 "lesson": "B_Vector/B07_Clip_and_select_by_location.ipynb",
-"output": "26\ndistrict\nDolakha          9\nChitawan         9\nRasuwa           5\nSindhupalchok    3\nName: count, dtype: int64",
+"output": "47\ndistrict\nSindhupalchok      17\nDolakha             5\nRasuwa              5\nKabhrepalanchok     3\nNuwakot             3\nDhading             3\nSindhuli            2\nBhaktapur           2\nKathmandu           2\nChitawan            2\nRamechhap           1\nMakawanpur          1\nLalitpur            1\nName: count, dtype: int64",
 "required": [],
 "vars": {
 "ax": {
@@ -11925,15 +12115,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-26,
-9
+47,
+10
 ],
-"sum": 155523.842,
+"sum": 303795.535,
 "type": "GeoDataFrame"
 },
 "fig": {
@@ -11953,7 +12144,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B08_Buffers_and_nearest_features.ipynb",
-"output": "2.979249396299102",
+"output": "12.055706526605626",
 "required": [],
 "vars": {
 "dhunche": {
@@ -12092,24 +12283,24 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "658.2 44 76",
+"output": "2157.7 44 73",
 "required": [],
 "vars": {
 "col": {
 "dtype": "i",
 "nan": 0,
 "shape": [],
-"sum": 76.0,
+"sum": 73.0,
 "type": "ndarray"
 },
 "diff_mm": {
 "dtype": "f",
-"nan": 250,
+"nan": 8868,
 "shape": [
-102,
-120
+93,
+159
 ],
-"sum": 2055766.296,
+"sum": 1742211.742,
 "type": "ndarray"
 },
 "row": {
@@ -12540,7 +12731,7 @@
 "image": false,
 "label": "Review 3 · Rings around Charikot",
 "lesson": "B_Vector/B08_Buffers_and_nearest_features.ipynb",
-"output": "5 km: 0\n10 km: 1\n20 km: 1\n30 km: 7",
+"output": "5 km: 0\n10 km: 0\n20 km: 6\n30 km: 13",
 "required": [],
 "vars": {
 "charikot": {
@@ -12550,7 +12741,7 @@
 "dtype": "i",
 "nan": 0,
 "shape": [],
-"sum": 7.0,
+"sum": 13.0,
 "type": "ndarray"
 },
 "zone": {
@@ -12599,7 +12790,7 @@
 "image": false,
 "label": "Review 1 · From CSV to GeoPackage and back",
 "lesson": "B_Vector/B03_GeoDataFrames_and_file_formats.ipynb",
-"output": "40 EPSG:4326\nTrue",
+"output": "166 EPSG:4326\nTrue",
 "required": [],
 "vars": {
 "copy": {
@@ -12610,15 +12801,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-40,
-9
+166,
+10
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "GeoDataFrame"
 },
 "layer": {
@@ -12629,15 +12821,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-40,
-9
+166,
+10
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "GeoDataFrame"
 },
 "path": {
@@ -12654,14 +12847,15 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger"
 ],
 "shape": [
-40,
-8
+166,
+9
 ],
-"sum": 191779.691,
+"sum": 1001885.206,
 "type": "DataFrame"
 }
 }
@@ -12769,17 +12963,14 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "8.5",
+"output": "16 1111.8 1705.0",
 "required": [],
 "vars": {
-"above": {
-"dtype": "b",
-"nan": 0,
-"shape": [
-11990
-],
-"sum": 1014.0,
-"type": "ndarray"
+"high": {
+"len": 109,
+"name": "elevation_m",
+"sum": 16.0,
+"type": "Series"
 }
 }
 },
@@ -12885,7 +13076,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "23.4 36.4",
+"output": "23.4 41.4",
 "required": [],
 "vars": {}
 },
@@ -12908,7 +13099,7 @@
 "image": false,
 "label": "Review 4 · A report of remote landslides",
 "lesson": "B_Vector/B08_Buffers_and_nearest_features.ipynb",
-"output": "id  district       name  dist_km\n26  LS027    Gorkha      Chame     39.9\n17  LS018    Myagdi       Beni     34.3\n20  LS021   Dolakha   Charikot     31.8\n9   LS010    Myagdi     Jomsom     31.5\n21  LS022  Chitawan  Bharatpur     31.5\n31  LS032   Dolakha   Charikot     30.5\n6\nTrue",
+"output": "id  district         name  dist_km\n105  7103    Gorkha      Dhunche     51.1\n106  7104    Gorkha      Dhunche     51.1\n113  7081  Sindhuli  Okhaldhunga     35.0\n111  7006    Gorkha       Gorkha     31.4\n70   5438   Baglung         Beni     30.3\n5\nTrue",
 "required": [],
 "vars": {
 "remote": {
@@ -12919,7 +13110,8 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -12928,10 +13120,10 @@
 "dist_km"
 ],
 "shape": [
-6,
-13
+5,
+14
 ],
-"sum": 224424.103,
+"sum": 233604.935,
 "type": "GeoDataFrame"
 },
 "report": {
@@ -12942,10 +13134,10 @@
 "dist_km"
 ],
 "shape": [
-6,
+5,
 4
 ],
-"sum": 199.5,
+"sum": 33930.9,
 "type": "DataFrame"
 }
 }
@@ -13446,14 +13638,16 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B11_Making_a_beautiful_map.ipynb",
-"output": "['rainfall', 'road cut', 'earthquake']",
+"output": "['downpour', 'rain', 'continuous_rain', 'earthquake', 'unknown']",
 "required": [],
 "vars": {
 "trigger_colours": {
 "items": {
+"continuous_rain": "tab:purple",
+"downpour": "tab:blue",
 "earthquake": "tab:red",
-"rainfall": "tab:blue",
-"road cut": "tab:orange"
+"rain": "tab:cyan",
+"unknown": "tab:grey"
 },
 "type": "dict"
 }
@@ -13463,7 +13657,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B11_Making_a_beautiful_map.ipynb",
-"output": "636",
+"output": "729",
 "required": [],
 "vars": {}
 },
@@ -13599,7 +13793,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "cell_id  n_landslides\n219      219             4\n232      232             3",
+"output": "cell_id  n_landslides\n110      110             3\n120      120             4\n177      177             5",
 "required": [],
 "vars": {
 "busy": {
@@ -13609,10 +13803,10 @@
 "n_landslides"
 ],
 "shape": [
-2,
+3,
 3
 ],
-"sum": 458.0,
+"sum": 419.0,
 "type": "GeoDataFrame"
 }
 }
@@ -14108,7 +14302,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B07_Clip_and_select_by_location.ipynb",
-"output": "district\nMyagdi    5\nGorkha    4\nKaski     1\nName: count, dtype: int64",
+"output": "district\nParbat     10\nKaski      10\nTanahu      9\nGorkha      8\nSyangja     6\nBaglung     5\nMyagdi      3\nLamjung     2\nName: count, dtype: int64",
 "required": [],
 "vars": {}
 },
@@ -14225,7 +14419,7 @@
 450,
 5
 ],
-"sum": 18202.571,
+"sum": 18378.571,
 "type": "GeoDataFrame"
 },
 "columns": {
@@ -14439,7 +14633,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "12240",
+"output": "14787",
 "required": [],
 "vars": {}
 },
@@ -15028,7 +15222,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "26\n26",
+"output": "47\n47",
 "required": [],
 "vars": {
 "touching": {
@@ -15039,17 +15233,18 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
 "cell_id"
 ],
 "shape": [
-26,
-11
+47,
+12
 ],
-"sum": 165093.842,
+"sum": 322928.535,
 "type": "GeoDataFrame"
 }
 }
@@ -16360,23 +16555,23 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "G17 250.0",
+"output": "Lumle 2484.7",
 "required": [],
 "vars": {
 "biggest": {
 "dtype": "i",
 "nan": 0,
 "shape": [],
-"sum": 16.0,
+"sum": 65.0,
 "type": "ndarray"
 },
 "residual_mm": {
 "dtype": "f",
 "nan": 0,
 "shape": [
-24
+109
 ],
-"sum": -0.0,
+"sum": 0.0,
 "type": "ndarray"
 }
 }
@@ -16404,7 +16599,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B06_Joins_and_dissolve.ipynb",
-"output": "77\n70",
+"output": "77\n34",
 "required": [],
 "vars": {
 "all_districts": {
@@ -16417,7 +16612,7 @@
 77,
 3
 ],
-"sum": 31.0,
+"sum": 150.0,
 "type": "GeoDataFrame"
 }
 }
@@ -16453,7 +16648,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "0.023812418352534337",
+"output": "0.02108193800482816",
 "required": [],
 "vars": {
 "exact": {
@@ -16468,10 +16663,10 @@
 "hq_m"
 ],
 "shape": [
-60,
+283,
 8
 ],
-"sum": 1139479.082,
+"sum": 8871479.135,
 "type": "GeoDataFrame"
 }
 }
@@ -16480,7 +16675,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "124.6 17.9",
+"output": "225.7 109.8",
 "required": [],
 "vars": {}
 },
@@ -16645,10 +16840,10 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "15 30 0.51\n30 45 2.37\n45 90 4.57",
+"output": "15 30 0.24\n30 45 1.89\n45 90 14.12",
 "required": [],
 "vars": {
-"found": 0.1167,
+"found": 0.3604,
 "ground": 0.0255
 }
 },
@@ -16740,10 +16935,10 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "district_right\nChitawan         8\nDolakha          8\nGorkha           2\nKaski            1\nMyagdi           2\nRasuwa           5\nSindhupalchok    2\nTaplejung        1\ndtype: int64",
+"output": "district_right\nTanahu           7\nKalikot          6\nSindhupalchok    5\nSyangja          5\nKaski            4\nBaglung          4\nGulmi            3\nBhojpur          3\ndtype: int64",
 "required": [],
 "vars": {
-"rain_slides": {
+"downpour": {
 "columns": [
 "id",
 "date",
@@ -16751,7 +16946,8 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -16760,10 +16956,10 @@
 "province_code"
 ],
 "shape": [
-29,
-13
+73,
+14
 ],
-"sum": 159728.122,
+"sum": 366662.966,
 "type": "GeoDataFrame"
 }
 }
@@ -16792,7 +16988,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "9",
+"output": "21",
 "required": [],
 "vars": {}
 },
@@ -16947,7 +17143,7 @@
 13,
 7
 ],
-"sum": 26.0,
+"sum": 47.0,
 "type": "GeoDataFrame"
 },
 "bagmati_slides": {
@@ -16958,15 +17154,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-26,
-9
+47,
+10
 ],
-"sum": 155523.842,
+"sum": 303795.535,
 "type": "GeoDataFrame"
 },
 "fig": {
@@ -17319,7 +17516,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "15\n25.0",
+"output": "104\n36.7",
 "required": [],
 "vars": {
 "high": {
@@ -17331,10 +17528,10 @@
 "elev_m"
 ],
 "shape": [
-15,
+104,
 5
 ],
-"sum": 63580.378,
+"sum": 1519121.315,
 "type": "DataFrame"
 }
 }
@@ -17410,7 +17607,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "0.027",
+"output": "0.112",
 "required": [],
 "vars": {
 "total_km2": 148016.8558,
@@ -17418,7 +17615,7 @@
 "dtype": "i",
 "nan": 0,
 "shape": [],
-"sum": 40.0,
+"sum": 166.0,
 "type": "ndarray"
 }
 }
@@ -17579,25 +17776,25 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "1715.1 56.0",
+"output": "24763.2 16.7",
 "required": [],
 "vars": {
 "wet": {
 "columns": [
 "geometry",
 "index_right",
-"gauge",
-"annual_rain_mm",
+"station",
+"monsoon_mm",
 "area_km2"
 ],
 "shape": [
-11,
+24,
 5
 ],
-"sum": 20886.057,
+"sum": 84868.686,
 "type": "GeoDataFrame"
 },
-"wet_km2": 1715.0569
+"wet_km2": 24763.1861
 }
 },
 "d1e77306": {
@@ -18129,7 +18326,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "26 <StringArray>\n['Dolakha', 'Chitawan', 'Rasuwa', 'Sindhupalchok']\nLength: 4, dtype: str",
+"output": "47 <StringArray>\n[      'Bhaktapur',         'Dolakha',   'Sindhupalchok',         'Nuwakot',\n        'Chitawan',       'Ramechhap',       'Kathmandu',        'Lalitpur',\n         'Dhading',          'Rasuwa', 'Kabhrepalanchok',        'Sindhuli',\n      'Makawanpur']\nLength: 13, dtype: str",
 "required": [],
 "vars": {
 "in_bagmati": {
@@ -18140,7 +18337,8 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -18149,10 +18347,10 @@
 "province_code"
 ],
 "shape": [
-26,
-13
+47,
+14
 ],
-"sum": 156274.842,
+"sum": 305962.535,
 "type": "GeoDataFrame"
 }
 }
@@ -18218,7 +18416,7 @@
 77,
 7
 ],
-"sum": 40.0,
+"sum": 166.0,
 "type": "GeoDataFrame"
 },
 "fig": {
@@ -18349,7 +18547,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "[0.   0.1  0.2  0.3  0.45]",
+"output": "[0.   0.25 0.5  1.   2.  ]",
 "required": [],
 "vars": {}
 },
@@ -18549,7 +18747,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "697 27",
+"output": "697 203",
 "required": [],
 "vars": {
 "inside": {
@@ -18563,10 +18761,10 @@
 "area_km2"
 ],
 "shape": [
-27,
+203,
 7
 ],
-"sum": 265791.206,
+"sum": 3269288.072,
 "type": "GeoDataFrame"
 },
 "patches_01": {
@@ -18627,7 +18825,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "['0', '1', '2', '3 to 4'] [237   9   5   2]",
+"output": "['0', '1', '2', '3 to 5'] [222  21   7   3]",
 "required": [],
 "vars": {
 "cell_labels": {
@@ -18635,7 +18833,7 @@
 "0",
 "1",
 "2",
-"3 to 4"
+"3 to 5"
 ],
 "type": "list"
 }
@@ -18709,7 +18907,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B03_GeoDataFrames_and_file_formats.ipynb",
-"output": "trigger\nrainfall      29\nroad cut       8\nearthquake     3\nName: count, dtype: int64\n[83.417  27.401  87.8635 28.6402]",
+"output": "trigger\ndownpour             73\nunknown              28\nrain                 27\ncontinuous_rain      26\nmonsoon               7\nearthquake            4\nsnowfall_snowmelt     1\nName: count, dtype: int64\n[80.4934 26.8823 87.9125 29.7535]",
 "required": [],
 "vars": {}
 },
@@ -18810,7 +19008,7 @@
 77,
 8
 ],
-"sum": 148174.617,
+"sum": 148308.709,
 "type": "GeoDataFrame"
 },
 "kathmandu": {
@@ -18828,7 +19026,7 @@
 1,
 8
 ],
-"sum": 414.293,
+"sum": 416.776,
 "type": "GeoDataFrame"
 }
 }
@@ -18837,7 +19035,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "np.int64(4)",
+"output": "np.int64(12)",
 "required": [],
 "vars": {}
 },
@@ -19094,10 +19292,10 @@
 "fig": {
 "type": "Figure"
 },
-"max_x": 87.8635,
-"max_y": 28.6402,
-"min_x": 83.417,
-"min_y": 27.401
+"max_x": 87.9125,
+"max_y": 29.7535,
+"min_x": 80.4934,
+"min_y": 26.8823
 }
 },
 "e72c17c5": {
@@ -19199,13 +19397,13 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "district_right\nChitawan    1\nDolakha     1\nGorkha      1\ndtype: int64",
+"output": "district_right\nGorkha             1\nKabhrepalanchok    1\nKathmandu          1\nSindhupalchok      1\ndtype: int64",
 "required": [],
 "vars": {
 "quake_counts": {
-"len": 3,
+"len": 4,
 "name": "None",
-"sum": 3.0,
+"sum": 4.0,
 "type": "Series"
 },
 "quakes": {
@@ -19216,7 +19414,8 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry",
 "index_right",
@@ -19225,10 +19424,10 @@
 "province_code"
 ],
 "shape": [
-3,
-13
+4,
+14
 ],
-"sum": 16991.203,
+"sum": 28784.792,
 "type": "GeoDataFrame"
 }
 }
@@ -19277,7 +19476,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B05_Selecting_by_attribute.ipynb",
-"output": "district\nChitwan    9\nMyagdi     5\nGorkha     4\nKaski      1\nName: count, dtype: int64",
+"output": "district\nParbat        10\nKaski         10\nTanahun        9\nGorkha         8\nSyangja        6\nGulmi          6\nKalikot        6\nBaglung        5\nPalpa          5\nRolpa          4\nPyuthan        4\nDoti           3\nRupandehi      3\nRukum West     3\nMugu           3\nMyagdi         3\nChitwan        2\nAchham         2\nBaitadi        2\nDhading        2\nJajarkot       2\nLamjung        2\nRukum East     1\nSalyan         1\nBajhang        1\nDailekh        1\nDadeldhura     1\nDarchula       1\nName: count, dtype: int64",
 "required": [
 "west_slides"
 ],
@@ -19290,15 +19489,16 @@
 "province",
 "lat",
 "lon",
-"area_m2",
+"fatalities",
+"size",
 "trigger",
 "geometry"
 ],
 "shape": [
-19,
-9
+106,
+10
 ],
-"sum": 107073.838,
+"sum": 622767.037,
 "type": "GeoDataFrame"
 }
 }
@@ -19816,7 +20016,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "B_Vector/B09_Spatial_joins_and_overlays.ipynb",
-"output": "district  n_landslides\n11       Chitawan             9\n19        Dolakha             9\n45         Myagdi             5\n56         Rasuwa             5\n22         Gorkha             4\n74      Taplejung             4\n67  Sindhupalchok             3\n34          Kaski             1",
+"output": "district  n_landslides\n67  Sindhupalchok            17\n34          Kaski            10\n52         Parbat            10\n73         Tanahu             9\n22         Gorkha             8\n23          Gulmi             6\n31        Kalikot             6\n72        Syangja             6",
 "required": [],
 "vars": {}
 },
@@ -20164,11 +20364,11 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B01_Maps_and_coordinates.ipynb",
-"output": "27.872 86.1506",
+"output": "28.1003 84.4214",
 "required": [],
 "vars": {
-"slide_lat": 27.872,
-"slide_lon": 86.1506
+"slide_lat": 28.1003,
+"slide_lon": 84.4214
 }
 },
 "f48872fc": {
@@ -20344,10 +20544,10 @@
 "image": false,
 "label": "Q3",
 "lesson": "B_Vector/B11_Making_a_beautiful_map.ipynb",
-"output": "Chitawan (9)\nDolakha (9)\nGorkha (4)\nKaski (1)\nMyagdi (5)\nRasuwa (5)\nSindhupalchok (3)\nTaplejung (4)",
+"output": "Gorkha (8)\nGulmi (6)\nKalikot (6)\nKaski (10)\nParbat (10)\nSindhupalchok (17)\nSyangja (6)\nTanahu (9)",
 "required": [],
 "vars": {
-"label": "Taplejung (4)"
+"label": "Tanahu (9)"
 }
 },
 "f6da8935": {
@@ -20489,7 +20689,7 @@
 "image": false,
 "label": "Review 2 · How big is the edge effect?",
 "lesson": "C_Raster/C07_Vector_and_raster_together.ipynb",
-"output": "14 landslides\nnearest_hq\nDhunche    10\nBidur       4\nName: count, dtype: int64\n33.0 26.2",
+"output": "58 landslides\nnearest_hq\nDhunche    56\nBidur       2\nName: count, dtype: int64\n33.0 27.9",
 "required": [
 "slides"
 ],
@@ -20506,10 +20706,10 @@
 "hq_m"
 ],
 "shape": [
-60,
+283,
 8
 ],
-"sum": 1035275.404,
+"sum": 8408711.266,
 "type": "GeoDataFrame"
 },
 "slides": {
@@ -20526,10 +20726,10 @@
 "nearest_hq"
 ],
 "shape": [
-60,
+283,
 10
 ],
-"sum": 285344.908,
+"sum": 4425448.824,
 "type": "DataFrame"
 },
 "too_far": {
@@ -20546,10 +20746,10 @@
 "nearest_hq"
 ],
 "shape": [
-14,
+58,
 10
 ],
-"sum": 90207.036,
+"sum": 1141964.834,
 "type": "DataFrame"
 }
 }
@@ -20600,9 +20800,9 @@
 },
 "f9a82d67": {
 "image": false,
-"label": "Review 4 · Save the trend map and read it back",
+"label": "Review 4 · Save the IDW map and read it back",
 "lesson": "C_Raster/C08_Interpolation.ipynb",
-"output": "EPSG:32645 (500.0, 500.0) True\n1318.0 mm at Durbar Square",
+"output": "EPSG:32645 (5000.0, 5000.0) True\n1696.3 mm at Durbar Square",
 "required": [
 "src"
 ],
@@ -20618,12 +20818,12 @@
 },
 "driver": "GTiff",
 "dtype": "float32",
-"height": 102,
+"height": 93,
 "nodata": null,
 "transform": {
 "type": "Affine"
 },
-"width": 120
+"width": 159
 },
 "type": "dict"
 },
@@ -21013,13 +21213,13 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B08_Buffers_and_nearest_features.ipynb",
-"output": "name\nCharikot      9\nBharatpur     9\nDhunche       5\nTaplejung     4\nBeni          4\nChautara      3\nGorkha        2\nBesishahar    1\nJomsom        1\nPokhara       1\nChame         1\nName: count, dtype: int64",
+"output": "name\nChautara           13\nTansen              9\nPokhara             9\nKusma               8\nDhunche             8\nBaglung             7\nTamghas             7\nSyangja             6\nCharikot            6\nGorkha              6\nDamauli             5\nManma               5\nBeni                4\nTaplejung           4\nLibang              4\nPyuthan             4\nBesishahar          3\nSilgadhi            3\nBhaktapur           3\nKathmandu           3\nBhojpur             3\nJumlikhalanga       3\nGamgadhi            3\nJajarkot            3\nRamechhap           3\nDhulikhel           3\nBharatpur           2\nMangalsen           2\nGaighat             2\nOkhaldhunga         2\nBidur               2\nSalleri             2\nDhadingbesi         2\nIlam                2\nDarchula            2\nKhandabari          1\nPhidim              1\nShidharthanagar     1\nSalyan              1\nMartadi             1\nChainpur            1\nDiktel              1\nBaitadi             1\nLalitpur            1\nDailekh             1\nDadeldhura          1\nSindhulimadi        1\nHetauda             1\nName: count, dtype: int64",
 "required": [],
 "vars": {
 "per_hq": {
-"len": 11,
+"len": 48,
 "name": "count",
-"sum": 40.0,
+"sum": 166.0,
 "type": "Series"
 }
 }
@@ -21143,12 +21343,12 @@
 "image": false,
 "label": "Q2",
 "lesson": "B_Vector/B10_Counting_points_and_density_maps.ipynb",
-"output": "Kaski 0.048",
+"output": "Bajhang 0.029",
 "required": [],
 "vars": {
 "lowest": {
 "len": 7,
-"name": "34",
+"name": "4",
 "type": "Series"
 }
 }
