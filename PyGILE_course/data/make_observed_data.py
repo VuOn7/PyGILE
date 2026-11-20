@@ -13,9 +13,11 @@ Download these files by hand into the folder `_raw_observed/` next to this scrip
    the zip Roback_Nepal_final_files.zip from https://doi.org/10.5066/F7DZ06F9
    -> Roback_Nepal_final_files.zip
 3. Department of Hydrology and Meteorology (DHM), Government of Nepal, monthly and
-   seasonal "Preliminary precipitation and temperature summary" reports for 2024,
+   seasonal "Preliminary precipitation and temperature summary" reports,
    from https://www.dhm.gov.np/climate-services/climate%20reports/monthly-reports
-   -> JJAS_2024.pdf (monsoon) and January_2024.pdf ... December_2024.pdf
+   -> JJAS_2024.pdf (the monsoon of 2024) and January_2025.pdf ... December_2025.pdf
+   (2025, not 2024: in the annex of DHM's December 2024 report, 55 stations carry exactly
+   their October 2024 totals, up to 234 mm, which cannot be right for a December)
 
 Needs the `pygile` environment plus pypdf (pip install pypdf).
 Run from this folder:  python make_observed_data.py
@@ -90,7 +92,7 @@ def landslides_melamchi():
 
 
 # One station in the DHM annex: name, latitude, longitude, elevation, total, % of normal
-STATION = re.compile(r"([A-Z][A-Za-z.()' /-]*?)\s+(\d{2}\.\d+)\s+(\d{2}\.\d+)\s+(\d+)\s+([\d.]+|-)\s+([\d.]+|-)")
+STATION = re.compile(r"([A-Z][A-Za-z.()' /-]*?)\s+(\d{2}\.\d+)\s+(\d{2}\.\d+)\s+(\d+)\s+(\d+(?:\.\d+)?|-)\s+(\d+(?:\.\d+)?|-)")
 
 
 def dhm_stations(pdf_path):
@@ -121,7 +123,31 @@ def rain_gauges_monsoon():
     print("rain_gauges_monsoon_2024.csv:", len(out), "stations")
 
 
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August",
+          "September", "October", "November", "December"]
+# Six stations across Nepal with a total for every month of 2025: plains, hills, mountains
+STATIONS = {"Pokhara Airport": ("Kaski", "Gandaki"), "Kathmandu Airport": ("Kathmandu", "Bagmati"),
+            "Jomsom": ("Mustang", "Gandaki"), "Biratnagar Airport": ("Morang", "Koshi"),
+            "Jumla": ("Jumla", "Karnali"), "Chautara": ("Sindhupalchok", "Bagmati")}
+
+
+def rainfall_monthly():
+    """Monthly rainfall of 2025 at six DHM stations, rounded to whole millimetres."""
+    tables = {month: dhm_stations(RAW / f"{month}_2025.pdf").set_index("station") for month in MONTHS}
+    rows = []
+    for station, (district, province) in STATIONS.items():
+        row = {"station": station, "district": district, "province": province,
+               "elevation_m": int(tables["January"].loc[station, "elevation_m"])}
+        for month in MONTHS:
+            row[month[:3].lower() + "_mm"] = int(round(tables[month].loc[station, "total_mm"]))
+        rows.append(row)
+    out = pd.DataFrame(rows)
+    out.to_csv(HERE / "rainfall_monthly_2025.csv", index=False)
+    print("rainfall_monthly_2025.csv:", len(out), "stations")
+
+
 if __name__ == "__main__":
+    rainfall_monthly()
     landslides_nepal()
     landslides_melamchi()
     rain_gauges_monsoon()
