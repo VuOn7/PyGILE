@@ -29,7 +29,7 @@ PyGILE is an educational/application toolkit that includes:
 
 A step-by-step course for absolute beginners, in [`PyGILE_course/`](PyGILE_course/README.md). Every step has theory, a worked example on Nepal data, and practice questions with worked solutions; the lessons are linked in order like a book. **Complete: Part A · Python (12 lessons), Part B · Vector GIS (12 lessons), Part C · Rasters (9 lessons) and Part D · Satellite imagery (6 lessons), with 1,061 practice questions.** PyGILE-Plus continues from there, with landslide susceptibility modelling and deep learning.
 
-Every answer is **marked automatically** as you run it, offline and with no account, and an optional **free AI tutor** can add a personal hint. See [the tutor guide](PyGILE_course/AI_TUTOR.md).
+Every answer is **marked automatically** as you run it, offline and with no account, and an optional **free AI tutor** can add a personal hint and answer follow-up questions. See [the tutor guide](PyGILE_course/AI_TUTOR.md).
 
 ## Getting Started
 
