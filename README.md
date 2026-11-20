@@ -107,7 +107,7 @@ If you add or remove a package, change [`environment.yml`](environment.yml) and 
 
 ## Credits
 
-PyGILE grew from [pyGIS](https://github.com/mmann1123/pyGIS) by Michael Mann and contributors. Seven of its diagrams are still used in the course, with credit in each lesson and in [`PyGILE_course/images/README.md`](PyGILE_course/images/README.md). The original PyGILE notebooks are kept in the [`v1-legacy`](https://github.com/Geoinformatics-Lab/PyGILE/tree/v1-legacy) version.
+PyGILE grew from [pyGIS](https://github.com/mmann1123/pyGIS) by Michael Mann and contributors. Seven of its diagrams are still used in the course, with credit in each lesson and in [`PyGILE_course/images/README.md`](PyGILE_course/images/README.md). The original PyGILE notebooks are kept in the [`v1.0.0`](https://github.com/Geoinformatics-Lab/PyGILE/tree/v1.0.0) release.
 
 ## Reference & Citation
 
