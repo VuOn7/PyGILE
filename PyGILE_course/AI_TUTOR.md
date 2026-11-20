@@ -33,7 +33,7 @@ The first code cell of every lesson looks like this:
 
 Run it (click in the cell and press **Shift+Enter**). You will see:
 
-> ✅ Answer checking is on. Run an answer cell to see your mark. Type %tutor for options.
+> ✅ Answer checking is on. Run an answer cell to see your mark. Type %tutor for options, or %tutor ask and a question.
 
 That's all. Now answer the questions as usual: type your code in the cell under the question, and press **Shift+Enter**.
 

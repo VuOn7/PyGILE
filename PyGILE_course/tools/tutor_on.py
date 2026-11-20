@@ -17,4 +17,4 @@ if "pygile_tutor" in _manager.loaded:
 else:
     _manager.load_extension("pygile_tutor")
 print("✅ Answer checking is on. Run an answer cell to see your mark. "
-      "Type %tutor for options.")
+      "Type %tutor for options, or %tutor ask and a question.")
