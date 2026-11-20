@@ -76,7 +76,7 @@ All eight lessons use one real elevation model: a 30 m Copernicus DEM from the K
 | [C5 · Raster algebra and reclassification](C_Raster/C05_Raster_algebra_and_reclassification.ipynb) | Arithmetic on whole grids, conditions, elevation zones, filling gaps | 28 |
 | [C6 · Terrain analysis](C_Raster/C06_Terrain_analysis.ipynb) | Slope, aspect and hillshade, and the degrees-versus-metres trap | 28 |
 | [C7 · Vector and raster together](C_Raster/C07_Vector_and_raster_together.ipynb) | Sampling slope at landslides, zonal statistics, rasterizing, distance grids | 28 |
-| [C8 · Interpolation](C_Raster/C08_Interpolation.ipynb) | Nearest neighbour, IDW and kriging from 24 rain gauges, tested honestly | 26 |
+| [C8 · Interpolation](C_Raster/C08_Interpolation.ipynb) | Nearest neighbour, IDW and kriging from 109 DHM rain stations, tested honestly | 26 |
 | [C9 · Spatial autocorrelation](C_Raster/C09_Spatial_autocorrelation.ipynb) | Neighbours and weights, spatial lag, Moran's I, permutation tests, local clusters, why random test splits mislead on maps | 28 |
 
 **Part C total: 250 questions with worked solutions.**
