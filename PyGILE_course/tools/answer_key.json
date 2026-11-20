@@ -13,9 +13,9 @@
 "fig": {
 "type": "Figure"
 },
-"station_c_mm": {
+"jomsom_mm": {
 "len": 12,
-"name": "Station C",
+"name": "Jomsom",
 "type": "Series"
 }
 }
@@ -105,7 +105,7 @@
 "image": false,
 "label": "Review 4 · A safe file reader",
 "lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
-"output": "nepal_peaks.csv 8\npractice_rainfall.csv 6\nlandslides_nepal.csv 166\nMissing file: ../data/districts.csv\ndistricts.csv 0",
+"output": "nepal_peaks.csv 8\nrainfall_monthly_2025.csv 6\nlandslides_nepal.csv 166\nMissing file: ../data/districts.csv\ndistricts.csv 0",
 "required": [],
 "vars": {
 "f": {
@@ -1371,7 +1371,7 @@
 6,
 18
 ],
-"sum": 31583.215,
+"sum": 29326.18,
 "type": "DataFrame"
 },
 "fig": {
@@ -1380,7 +1380,7 @@
 "monsoon_mm": {
 "len": 6,
 "name": "None",
-"sum": 8808.0,
+"sum": 7231.0,
 "type": "Series"
 },
 "rain": {
@@ -1408,7 +1408,7 @@
 6,
 18
 ],
-"sum": 31583.215,
+"sum": 29326.18,
 "type": "DataFrame"
 }
 }
@@ -1472,9 +1472,9 @@
 "fig": {
 "type": "Figure"
 },
-"station_b_mm": {
+"kathmandu_mm": {
 "len": 12,
-"name": "Station B",
+"name": "Kathmandu Airport",
 "type": "Series"
 }
 }
@@ -2057,12 +2057,12 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "jun_mm    37\njul_mm    69\naug_mm    68\nsep_mm    37\nName: Station C, dtype: object\n211",
+"output": "jun_mm    39\njul_mm    29\naug_mm    46\nsep_mm    41\nName: Jomsom, dtype: object\n155",
 "required": [],
 "vars": {
 "monsoon_mm": {
 "len": 4,
-"name": "Station C",
+"name": "Jomsom",
 "type": "Series"
 }
 }
@@ -2278,11 +2278,11 @@
 "image": false,
 "label": "Review 4 · Rain on a roof",
 "lesson": "A_Python/A05_Functions.ipynb",
-"output": "16 mm -> 800 litres\n23 mm -> 1,150 litres\n28 mm -> 1,400 litres\n54 mm -> 2,700 litres\nTotal: 6,050 litres",
+"output": "46 mm -> 2,300 litres\n169 mm -> 8,450 litres\n320 mm -> 16,000 litres\n241 mm -> 12,050 litres\nTotal: 38,800 litres",
 "required": [],
 "vars": {
-"total_l": 6050,
-"water_l": 2700
+"total_l": 38800,
+"water_l": 12050
 }
 },
 "1917a038": {
@@ -2597,7 +2597,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
-"output": "['everest_trek', 'landslides_melamchi', 'landslides_nepal', 'nepal_peaks', 'practice_rainfall', 'province_names', 'rain_daily_melamchi_kathmandu', 'rain_gauges_monsoon_2024', 's2_melamchi_scenes']",
+"output": "['everest_trek', 'landslides_melamchi', 'landslides_nepal', 'nepal_peaks', 'province_names', 'rain_daily_melamchi_kathmandu', 'rain_gauges_monsoon_2024', 'rainfall_monthly_2025', 's2_melamchi_scenes']",
 "required": [],
 "vars": {
 "stems": {
@@ -2606,10 +2606,10 @@
 "landslides_melamchi",
 "landslides_nepal",
 "nepal_peaks",
-"practice_rainfall",
 "province_names",
 "rain_daily_melamchi_kathmandu",
 "rain_gauges_monsoon_2024",
+"rainfall_monthly_2025",
 "s2_melamchi_scenes"
 ],
 "type": "list"
@@ -2716,7 +2716,7 @@
 6,
 17
 ],
-"sum": 31110.0,
+"sum": 28926.0,
 "type": "DataFrame"
 },
 "fig": {
@@ -2746,7 +2746,7 @@
 6,
 17
 ],
-"sum": 31110.0,
+"sum": 28926.0,
 "type": "DataFrame"
 }
 }
@@ -2785,9 +2785,9 @@
 },
 "names": {
 "items": [
-"Station D",
-"Station E",
-"Station F"
+"Biratnagar Airport",
+"Jumla",
+"Chautara"
 ],
 "type": "list"
 }
@@ -3597,7 +3597,7 @@
 6,
 16
 ],
-"sum": 20000.0,
+"sum": 18909.0,
 "type": "DataFrame"
 }
 },
@@ -3634,7 +3634,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "station  monsoon_pct\n0  Station A         79.4\n1  Station B         80.2\n2  Station C         77.3\n3  Station D         79.0\n4  Station E         78.0\n5  Station F         79.4",
+"output": "station  monsoon_pct\n0     Pokhara Airport         83.2\n1   Kathmandu Airport         73.3\n2              Jomsom         41.3\n3  Biratnagar Airport         53.9\n4               Jumla         70.0\n5            Chautara         78.5",
 "required": [
 "rain"
 ],
@@ -3665,7 +3665,7 @@
 6,
 19
 ],
-"sum": 40391.3,
+"sum": 36557.2,
 "type": "DataFrame"
 }
 }
@@ -3753,10 +3753,10 @@
 "image": false,
 "label": "Q2",
 "lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
-"output": "1553",
+"output": "1638",
 "required": [],
 "vars": {
-"station_b_total_mm": 1553
+"kathmandu_total_mm": 1638
 }
 },
 "2e254483": {
@@ -5391,7 +5391,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
-"output": "Index(['Station A', 'Station B', 'Station C', 'Station D', 'Station E',\n       'Station F'],\n      dtype='str', name='station')",
+"output": "Index(['Pokhara Airport', 'Kathmandu Airport', 'Jomsom', 'Biratnagar Airport',\n       'Jumla', 'Chautara'],\n      dtype='str', name='station')",
 "required": [],
 "vars": {}
 },
@@ -5905,12 +5905,12 @@
 "image": false,
 "label": "Review 4 · The wettest station",
 "lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
-"output": "Station A (Kaski): 3,936 mm\nStation C (Mustang): 273 mm\nStation F (Sindhupalchok): 2,669 mm\nWettest: Station A, 3,936 mm",
+"output": "Pokhara Airport (Kaski): 2,672 mm\nJomsom (Mustang): 375 mm\nChautara (Sindhupalchok): 2,607 mm\nWettest: Pokhara Airport, 2,672 mm",
 "required": [
 "wettest_mm"
 ],
 "vars": {
-"annual_mm": 2669,
+"annual_mm": 2607,
 "stations": {
 "items": [
 {
@@ -5918,22 +5918,22 @@
 "district": "Kaski",
 "monthly_mm": {
 "items": [
-35,
-59,
-78,
-151,
-206,
+0,
+10,
+18,
+125,
+129,
+480,
 536,
-1045,
-952,
-592,
-198,
-42,
-42
+514,
+693,
+145,
+22,
+0
 ],
 "type": "list"
 },
-"name": "Station A"
+"name": "Pokhara Airport"
 },
 "type": "dict"
 },
@@ -5942,22 +5942,22 @@
 "district": "Mustang",
 "monthly_mm": {
 "items": [
-3,
-5,
-6,
+0,
+4,
+0,
+34,
 11,
-17,
-37,
-69,
-68,
-37,
-14,
-3,
-3
+39,
+29,
+46,
+41,
+144,
+27,
+0
 ],
 "type": "list"
 },
-"name": "Station C"
+"name": "Jomsom"
 },
 "type": "dict"
 },
@@ -5966,30 +5966,30 @@
 "district": "Sindhupalchok",
 "monthly_mm": {
 "items": [
-29,
-34,
-54,
-90,
-155,
-358,
-754,
-648,
-359,
-129,
-29,
-30
+0,
+0,
+32,
+46,
+243,
+274,
+678,
+618,
+476,
+207,
+33,
+0
 ],
 "type": "list"
 },
-"name": "Station F"
+"name": "Chautara"
 },
 "type": "dict"
 }
 ],
 "type": "list"
 },
-"wettest_mm": 3936,
-"wettest_name": "Station A"
+"wettest_mm": 2672,
+"wettest_name": "Pokhara Airport"
 }
 },
 "508129cf": {
@@ -6266,11 +6266,11 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "27.1",
+"output": "5.6",
 "required": [],
 "vars": {
-"jan_mean_mm": 18.3333,
-"jul_mean_mm": 496.8333
+"apr_mean_mm": 58.3333,
+"jul_mean_mm": 327.3333
 }
 },
 "5423dc36": {
@@ -7195,7 +7195,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
-"output": "1045",
+"output": "693",
 "required": [],
 "vars": {}
 },
@@ -8354,7 +8354,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A10_Plotting_with_Matplotlib.ipynb",
-"output": "station  elevation_m  annual_mm\n0  Station A          830       3936\n1  Station B         1340       1553\n2  Station C         2740        273\n3  Station D           80       1867\n4  Station E         2300        812\n5  Station F         1600       2669",
+"output": "station  elevation_m  annual_mm\n0     Pokhara Airport          827       2672\n1   Kathmandu Airport         1337       1638\n2              Jomsom         2741        375\n3  Biratnagar Airport           72       1869\n4               Jumla         2363        856\n5            Chautara         1552       2607",
 "required": [],
 "vars": {}
 },
@@ -8514,7 +8514,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "province\nBagmati    2111.0\nGandaki    2104.5\nKarnali     812.0\nKoshi      1867.0\nName: annual_mm, dtype: float64\nprovince\nBagmati    2\nGandaki    2\nKarnali    1\nKoshi      1\nName: annual_mm, dtype: int64",
+"output": "province\nBagmati    2122.5\nGandaki    1523.5\nKarnali     856.0\nKoshi      1869.0\nName: annual_mm, dtype: float64\nprovince\nBagmati    2\nGandaki    2\nKarnali    1\nKoshi      1\nName: annual_mm, dtype: int64",
 "required": [],
 "vars": {
 "by_province": {
@@ -9416,7 +9416,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
-"output": "nepal_peaks.csv True\npractice_rainfall.csv True\nlandslides_nepal.csv True\ndistricts.csv False",
+"output": "nepal_peaks.csv True\nrainfall_monthly_2025.csv True\nlandslides_nepal.csv True\ndistricts.csv False",
 "required": [],
 "vars": {
 "path": {
@@ -9668,7 +9668,7 @@
 "image": false,
 "label": "Review 2 · Landslide counts with a name check",
 "lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
-"output": "missing from map: {'Tanahun', 'Makwanpur', 'Chitwan', 'Kavrepalanchok', 'Tehrathum'}\n{'Achham': 2, 'Baglung': 5, 'Baitadi': 2, 'Bajhang': 1, 'Bhaktapur': 2, 'Bhojpur': 4, 'Chitawan': 2, 'Dadeldhura': 1, 'Dailekh': 1, 'Darchula': 1, 'Dhading': 3, 'Dolakha': 5, 'Doti': 3, 'Gorkha': 8, 'Gulmi': 6, 'Ilam': 2, 'Jajarkot': 2, 'Kalikot': 6, 'Kaski': 10, 'Kathmandu': 2, 'Kabhrepalanchok': 3, 'Khotang': 1, 'Lalitpur': 1, 'Lamjung': 2, 'Makawanpur': 1, 'Mugu': 3, 'Myagdi': 3, 'Nuwakot': 3, 'Okhaldhunga': 1, 'Palpa': 5, 'Panchthar': 1, 'Parbat': 10, 'Pyuthan': 4, 'Ramechhap': 1, 'Rasuwa': 5, 'Rolpa': 4, 'Rukum East': 1, 'Rukum West': 3, 'Rupandehi': 3, 'Salyan': 1, 'Sindhuli': 2, 'Sindhupalchok': 17, 'Solukhumbu': 2, 'Syangja': 6, 'Tanahu': 9, 'Taplejung': 3, 'Terhathum': 1, 'Udayapur': 2}",
+"output": "missing from map: {'Kavrepalanchok', 'Tehrathum', 'Tanahun', 'Chitwan', 'Makwanpur'}\n{'Achham': 2, 'Baglung': 5, 'Baitadi': 2, 'Bajhang': 1, 'Bhaktapur': 2, 'Bhojpur': 4, 'Chitawan': 2, 'Dadeldhura': 1, 'Dailekh': 1, 'Darchula': 1, 'Dhading': 3, 'Dolakha': 5, 'Doti': 3, 'Gorkha': 8, 'Gulmi': 6, 'Ilam': 2, 'Jajarkot': 2, 'Kalikot': 6, 'Kaski': 10, 'Kathmandu': 2, 'Kabhrepalanchok': 3, 'Khotang': 1, 'Lalitpur': 1, 'Lamjung': 2, 'Makawanpur': 1, 'Mugu': 3, 'Myagdi': 3, 'Nuwakot': 3, 'Okhaldhunga': 1, 'Palpa': 5, 'Panchthar': 1, 'Parbat': 10, 'Pyuthan': 4, 'Ramechhap': 1, 'Rasuwa': 5, 'Rolpa': 4, 'Rukum East': 1, 'Rukum West': 3, 'Rupandehi': 3, 'Salyan': 1, 'Sindhuli': 2, 'Sindhupalchok': 17, 'Solukhumbu': 2, 'Syangja': 6, 'Tanahu': 9, 'Taplejung': 3, 'Terhathum': 1, 'Udayapur': 2}",
 "required": [],
 "vars": {
 "counts": {
@@ -10325,10 +10325,10 @@
 "image": false,
 "label": "Q2",
 "lesson": "A_Python/A06_Errors_are_friends.ipynb",
-"output": "195.25",
+"output": "317.0",
 "required": [],
 "vars": {
-"average_mm": 195.25
+"average_mm": 317.0
 }
 },
 "7f4660c3": {
@@ -10706,7 +10706,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
-"output": "(14, 394)",
+"output": "(0, 345)",
 "required": [],
 "vars": {}
 },
@@ -11354,7 +11354,7 @@
 "image": false,
 "label": "Review 1 · The wettest and the driest station",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "Station A Kaski 3936\nStation C Mustang 273\n14.4",
+"output": "Pokhara Airport Kaski 2672\nJomsom Mustang 375\n7.1",
 "required": [],
 "vars": {
 "driest": {
@@ -11386,7 +11386,7 @@
 6,
 17
 ],
-"sum": 31110.0,
+"sum": 28926.0,
 "type": "DataFrame"
 },
 "ranked": {
@@ -11413,7 +11413,7 @@
 6,
 17
 ],
-"sum": 31110.0,
+"sum": 28926.0,
 "type": "DataFrame"
 },
 "wettest": {
@@ -12081,7 +12081,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "station       district province  elevation_m  jan_mm  feb_mm  mar_mm  \\\n0  Station A          Kaski  Gandaki          830      35      59      78   \n1  Station B      Kathmandu  Bagmati         1340      16      23      28   \n2  Station C        Mustang  Gandaki         2740       3       5       6   \n3  Station D         Morang    Koshi           80      19      24      40   \n4  Station E          Jumla  Karnali         2300       8      14      16   \n5  Station F  Sindhupalchok  Bagmati         1600      29      34      54   \n\n   apr_mm  may_mm  jun_mm  jul_mm  aug_mm  sep_mm  oct_mm  nov_mm  dec_mm  \n0     151     206     536    1045     952     592     198      42      42  \n1      54      79     246     384     394     222      79      14      14  \n2      11      17      37      69      68      37      14       3       3  \n3      64     111     276     507     456     235      95      20      20  \n4      29      58     127     222     175     109      38       7       9  \n5      90     155     358     754     648     359     129      29      30",
+"output": "station       district province  elevation_m  jan_mm  feb_mm  \\\n0     Pokhara Airport          Kaski  Gandaki          827       0      10   \n1   Kathmandu Airport      Kathmandu  Bagmati         1337       0       0   \n2              Jomsom        Mustang  Gandaki         2741       0       4   \n3  Biratnagar Airport         Morang    Koshi           72       0      20   \n4               Jumla          Jumla  Karnali         2363       3      15   \n5            Chautara  Sindhupalchok  Bagmati         1552       0       0   \n\n   mar_mm  apr_mm  may_mm  jun_mm  jul_mm  aug_mm  sep_mm  oct_mm  nov_mm  \\\n0      18     125     129     480     536     514     693     145      22   \n1       7      46     169     320     241     345     294     198      18   \n2       0      34      11      39      29      46      41     144      27   \n3      32      47     274     189     293     297     229     422      66   \n4      86      52      57      90     187     239      83      42       2   \n5      32      46     243     274     678     618     476     207      33   \n\n   dec_mm  \n0       0  \n1       0  \n2       0  \n3       0  \n4       0  \n5       0",
 "required": [],
 "vars": {}
 },
@@ -12450,7 +12450,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
-"output": "jun 246",
+"output": "jun 320",
 "required": [
 "i"
 ],
@@ -13092,17 +13092,17 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A04_Dictionaries_and_decisions.ipynb",
-"output": "{'name': 'Station B', 'district': 'Kathmandu', 'elevation_m': 1340, 'annual_mm': 1553}",
+"output": "{'name': 'Kathmandu Airport', 'district': 'Kathmandu', 'elevation_m': 1337, 'annual_mm': 1638}",
 "required": [
 "station"
 ],
 "vars": {
 "station": {
 "items": {
-"annual_mm": 1553,
+"annual_mm": 1638,
 "district": "Kathmandu",
-"elevation_m": 1340,
-"name": "Station B"
+"elevation_m": 1337,
+"name": "Kathmandu Airport"
 },
 "type": "dict"
 }
@@ -13354,7 +13354,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
-"output": "\"\"\"Print the annual rainfall of the practice stations (made-up data).\"\"\"\nimport pandas as pd\n\nrain = pd.read_csv(\"../data/practice_rainfall.csv\")\nrain[\"annual_mm\"] = rain.loc[:, \"jan_mm\":\"dec_mm\"].sum(axis=1)\nranked = rain.sort_values(\"annual_mm\", ascending=False)\n\nprint(\"Annual rainfall, practice stations (made-up data)\")\nprint(ranked[[\"station\", \"district\", \"annual_mm\"]])\nprint(\"Wettest:\", ranked.iloc[0][\"station\"])",
+"output": "\"\"\"Print the rainfall of 2025 at six DHM stations, wettest first.\"\"\"\nimport pandas as pd\n\nrain = pd.read_csv(\"../data/rainfall_monthly_2025.csv\")\nrain[\"annual_mm\"] = rain.loc[:, \"jan_mm\":\"dec_mm\"].sum(axis=1)\nranked = rain.sort_values(\"annual_mm\", ascending=False)\n\nprint(\"Rainfall in 2025 at six DHM stations\")\nprint(ranked[[\"station\", \"district\", \"annual_mm\"]])\nprint(\"Wettest:\", ranked.iloc[0][\"station\"])",
 "required": [],
 "vars": {}
 },
@@ -13967,7 +13967,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A06_Errors_are_friends.ipynb",
-"output": "3936",
+"output": "2672",
 "required": [],
 "vars": {}
 },
@@ -14044,7 +14044,7 @@
 "image": false,
 "label": "Review 1 · The wettest station",
 "lesson": "A_Python/A07_Files_folders_and_paths.ipynb",
-"output": "Station A 3936\nStation B 1553\nStation C 273\nStation D 1867\nStation E 812\nStation F 2669\nWettest: Station A, 3,936 mm",
+"output": "Pokhara Airport 2672\nKathmandu Airport 1638\nJomsom 375\nBiratnagar Airport 1869\nJumla 856\nChautara 2607\nWettest: Pokhara Airport, 2,672 mm",
 "required": [],
 "vars": {
 "f": {
@@ -14071,136 +14071,136 @@
 "items": [
 {
 "items": {
-"apr_mm": "151",
-"aug_mm": "952",
-"dec_mm": "42",
+"apr_mm": "125",
+"aug_mm": "514",
+"dec_mm": "0",
 "district": "Kaski",
-"elevation_m": "830",
-"feb_mm": "59",
-"jan_mm": "35",
-"jul_mm": "1045",
-"jun_mm": "536",
-"mar_mm": "78",
-"may_mm": "206",
-"nov_mm": "42",
-"oct_mm": "198",
+"elevation_m": "827",
+"feb_mm": "10",
+"jan_mm": "0",
+"jul_mm": "536",
+"jun_mm": "480",
+"mar_mm": "18",
+"may_mm": "129",
+"nov_mm": "22",
+"oct_mm": "145",
 "province": "Gandaki",
-"sep_mm": "592",
-"station": "Station A"
+"sep_mm": "693",
+"station": "Pokhara Airport"
 },
 "type": "dict"
 },
 {
 "items": {
-"apr_mm": "54",
-"aug_mm": "394",
-"dec_mm": "14",
+"apr_mm": "46",
+"aug_mm": "345",
+"dec_mm": "0",
 "district": "Kathmandu",
-"elevation_m": "1340",
-"feb_mm": "23",
-"jan_mm": "16",
-"jul_mm": "384",
-"jun_mm": "246",
-"mar_mm": "28",
-"may_mm": "79",
-"nov_mm": "14",
-"oct_mm": "79",
+"elevation_m": "1337",
+"feb_mm": "0",
+"jan_mm": "0",
+"jul_mm": "241",
+"jun_mm": "320",
+"mar_mm": "7",
+"may_mm": "169",
+"nov_mm": "18",
+"oct_mm": "198",
 "province": "Bagmati",
-"sep_mm": "222",
-"station": "Station B"
+"sep_mm": "294",
+"station": "Kathmandu Airport"
 },
 "type": "dict"
 },
 {
 "items": {
-"apr_mm": "11",
-"aug_mm": "68",
-"dec_mm": "3",
+"apr_mm": "34",
+"aug_mm": "46",
+"dec_mm": "0",
 "district": "Mustang",
-"elevation_m": "2740",
-"feb_mm": "5",
-"jan_mm": "3",
-"jul_mm": "69",
-"jun_mm": "37",
-"mar_mm": "6",
-"may_mm": "17",
-"nov_mm": "3",
-"oct_mm": "14",
+"elevation_m": "2741",
+"feb_mm": "4",
+"jan_mm": "0",
+"jul_mm": "29",
+"jun_mm": "39",
+"mar_mm": "0",
+"may_mm": "11",
+"nov_mm": "27",
+"oct_mm": "144",
 "province": "Gandaki",
-"sep_mm": "37",
-"station": "Station C"
+"sep_mm": "41",
+"station": "Jomsom"
 },
 "type": "dict"
 },
 {
 "items": {
-"apr_mm": "64",
-"aug_mm": "456",
-"dec_mm": "20",
+"apr_mm": "47",
+"aug_mm": "297",
+"dec_mm": "0",
 "district": "Morang",
-"elevation_m": "80",
-"feb_mm": "24",
-"jan_mm": "19",
-"jul_mm": "507",
-"jun_mm": "276",
-"mar_mm": "40",
-"may_mm": "111",
-"nov_mm": "20",
-"oct_mm": "95",
+"elevation_m": "72",
+"feb_mm": "20",
+"jan_mm": "0",
+"jul_mm": "293",
+"jun_mm": "189",
+"mar_mm": "32",
+"may_mm": "274",
+"nov_mm": "66",
+"oct_mm": "422",
 "province": "Koshi",
-"sep_mm": "235",
-"station": "Station D"
+"sep_mm": "229",
+"station": "Biratnagar Airport"
 },
 "type": "dict"
 },
 {
 "items": {
-"apr_mm": "29",
-"aug_mm": "175",
-"dec_mm": "9",
+"apr_mm": "52",
+"aug_mm": "239",
+"dec_mm": "0",
 "district": "Jumla",
-"elevation_m": "2300",
-"feb_mm": "14",
-"jan_mm": "8",
-"jul_mm": "222",
-"jun_mm": "127",
-"mar_mm": "16",
-"may_mm": "58",
-"nov_mm": "7",
-"oct_mm": "38",
+"elevation_m": "2363",
+"feb_mm": "15",
+"jan_mm": "3",
+"jul_mm": "187",
+"jun_mm": "90",
+"mar_mm": "86",
+"may_mm": "57",
+"nov_mm": "2",
+"oct_mm": "42",
 "province": "Karnali",
-"sep_mm": "109",
-"station": "Station E"
+"sep_mm": "83",
+"station": "Jumla"
 },
 "type": "dict"
 },
 {
 "items": {
-"apr_mm": "90",
-"aug_mm": "648",
-"dec_mm": "30",
+"apr_mm": "46",
+"aug_mm": "618",
+"dec_mm": "0",
 "district": "Sindhupalchok",
-"elevation_m": "1600",
-"feb_mm": "34",
-"jan_mm": "29",
-"jul_mm": "754",
-"jun_mm": "358",
-"mar_mm": "54",
-"may_mm": "155",
-"nov_mm": "29",
-"oct_mm": "129",
+"elevation_m": "1552",
+"feb_mm": "0",
+"jan_mm": "0",
+"jul_mm": "678",
+"jun_mm": "274",
+"mar_mm": "32",
+"may_mm": "243",
+"nov_mm": "33",
+"oct_mm": "207",
 "province": "Bagmati",
-"sep_mm": "359",
-"station": "Station F"
+"sep_mm": "476",
+"station": "Chautara"
 },
 "type": "dict"
 }
 ],
 "type": "list"
 },
-"total_mm": 2669,
-"wettest_mm": 3936,
-"wettest_name": "Station A"
+"total_mm": 2607,
+"wettest_mm": 2672,
+"wettest_name": "Pokhara Airport"
 }
 },
 "a678eef9": {
@@ -16512,7 +16512,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A06_Errors_are_friends.ipynb",
-"output": "3936",
+"output": "2672",
 "required": [],
 "vars": {}
 },
@@ -16584,7 +16584,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "0    Station A\n2    Station C\n4    Station E\n5    Station F\nName: station, dtype: str\n4",
+"output": "0    Pokhara Airport\n2             Jomsom\n4              Jumla\n5           Chautara\nName: station, dtype: str\n4",
 "required": [],
 "vars": {
 "mask": {
@@ -17010,15 +17010,15 @@
 "ax": {
 "type": "Axes"
 },
+"chautara_mm": {
+"len": 12,
+"name": "Chautara",
+"type": "Series"
+},
 "fig": {
 "type": "Figure"
 },
-"mean_mm": 222.4167,
-"station_f_mm": {
-"len": 12,
-"name": "Station F",
-"type": "Series"
-}
+"mean_mm": 217.25
 }
 },
 "c7f1466b": {
@@ -19015,28 +19015,28 @@
 "image": false,
 "label": "Review 4 · A year of rain",
 "lesson": "A_Python/A03_Lists_and_loops.ipynb",
-"output": "Year: 3,936 mm\nJune to September: 3,125 mm\nShare of the year: 79.4%\nWettest month: 1,045 mm",
+"output": "Year: 2,672 mm\nJune to September: 2,223 mm\nShare of the year: 83.2%\nWettest month: 693 mm",
 "required": [],
 "vars": {
-"monsoon_mm": 3125,
+"monsoon_mm": 2223,
 "rain_mm": {
 "items": [
-35,
-59,
-78,
-151,
-206,
+0,
+10,
+18,
+125,
+129,
+480,
 536,
-1045,
-952,
-592,
-198,
-42,
-42
+514,
+693,
+145,
+22,
+0
 ],
 "type": "list"
 },
-"total_mm": 3936
+"total_mm": 2672
 }
 },
 "dbe7507c": {
@@ -19138,7 +19138,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "1045",
+"output": "678",
 "required": [],
 "vars": {}
 },
@@ -19426,7 +19426,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "A_Python/A09_Pandas_tables.ipynb",
-"output": "Station F 754",
+"output": "Chautara 678",
 "required": [],
 "vars": {
 "last_row": {
@@ -19983,7 +19983,7 @@
 "image": false,
 "label": "Q2",
 "lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
-"output": "Station C 273",
+"output": "Jomsom 375",
 "required": [],
 "vars": {
 "driest": {
@@ -20926,7 +20926,7 @@
 "image": false,
 "label": "Q1",
 "lesson": "A_Python/A06_Errors_are_friends.ipynb",
-"output": "781.0",
+"output": "1268.0",
 "required": [],
 "vars": {}
 },
@@ -21311,7 +21311,7 @@
 "output": "dry",
 "required": [],
 "vars": {
-"annual_mm": 273
+"annual_mm": 375
 }
 },
 "fa0758ff": {
@@ -21601,7 +21601,7 @@
 "image": false,
 "label": "Q3",
 "lesson": "A_Python/A12_Scripts_modules_and_good_habits.ipynb",
-"output": "328.0",
+"output": "222.66666666666666",
 "required": [],
 "vars": {}
 },
