@@ -20,3 +20,7 @@ Thumbs.db
 pygile_install.log
 pygile_errors.log
 pygile_installation.log
+
+# Raw downloads for the data build scripts
+PyGILE_course/data/_raw/
+PyGILE_course/data/_raw_observed/
