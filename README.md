@@ -32,6 +32,8 @@ A step-by-step course for absolute beginners, in [`PyGILE_course/`](PyGILE_cours
 
 Every answer is **marked automatically** as you run it, offline and with no account, and an optional **free AI tutor** can add a personal hint and answer follow-up questions. See [the tutor guide](PyGILE_course/AI_TUTOR.md).
 
+The course uses Nepal's data, but every method works anywhere. To run all 39 lessons on **your own country's data**, see [Run PyGILE on your own country's data](PyGILE_course/YOUR_OWN_DATA.md): which files to replace, where to get them for free, and what to change in the lessons.
+
 ## Getting Started
 
 Choose one of three ways. Options 1 and 2 install the same libraries; option 3 uses a ready-made Docker image.

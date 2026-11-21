@@ -2,6 +2,8 @@
 
 Small files used by the lessons, kept tiny so the course works offline.
 
+To replace them with your own country's data, see [Run PyGILE on your own country's data](../YOUR_OWN_DATA.md) and the helper script `make_my_country_data.py`.
+
 ## Part A
 
 | File | What it is | Source |
